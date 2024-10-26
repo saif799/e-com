@@ -23,7 +23,10 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body className="h-screen">
         <Navbar />
+        <div className=" pt-16">
+
         {children}
+        </div>
       </body>
     </html>
   );
