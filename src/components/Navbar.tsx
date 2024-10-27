@@ -14,7 +14,7 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
-          <div className="flex items-center relative">
+          <div className="flex items-center relative ">
             <Input className="rounded-full pl-10 pr-4 bg-slate-50" type="text" placeholder="Search" />
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
           </div>
