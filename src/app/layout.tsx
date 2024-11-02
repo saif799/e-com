@@ -20,14 +20,17 @@ export default function RootLayout({
   children,
 }: { children: React.ReactNode }) {
   return (
+      <ClerkProvider>
     <html lang="en" className={`${GeistSans.variable}`}>
+
       <body className="h-screen">
         <Navbar />
-        <div className=" pt-16">
+        <div>
 
         {children}
         </div>
       </body>
     </html>
+      </ClerkProvider>
   );
 }

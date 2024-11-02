@@ -1,46 +1,29 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 
-export default function HomePage() {
-  return (
-    <main >
-      <div className="relative h-[calc(100vh-4rem)] overflow-hidden">
-        {/* Background text */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Image
-            src="/text mask.svg"
-            alt="LEBRON NXXT"
-            width={834}
-            height={352}
-            className="h-auto w-full max-w-5xl "
-          />
-        </div>
+import { auth, clerkClient, currentUser } from "@clerk/nextjs/server";
 
-{/*  <div className="absolute inset-0 flex items-center justify-center lg:justify-end lg:items-center lg:pr-16">
-        <div className="relative w-[80%] h-[50vh] max-w-[300px] lg:max-w-[500px] lg:h-[70vh] mt-20 lg:mt-0 lg:-ml-32">
-          <Image
-            src="/lakeres.svg"
-            alt="LEBRON NXXT Shoe"
-            layout="fill"
-            objectFit="contain"
-            className="transform scale-110 lg:scale-125"
-          />
-        </div>
-      </div>*/}
-        {/* Content container */}
-        <div className="z-10 flex h-full items-center lg:justify-around justify-center px-8">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div className="relative w-[80%] h-[50vh] max-w-[300px] lg:max-w-[500px] lg:h-[70vh] mt-20 lg:mt-0 lg:-ml-32">
-            <Image
-              src="/lakeres.svg"
-              alt="LEBRON NXXT Shoe"
-              layout="fill"
-              objectFit="contain"
-              className=" lg:scale-125 scale-110 transform"
-            />
-          </div>
-        </div>
+export default async function HomePage() {
+
+
+   return (
+    <main className="lg:flex flex-col items-start md:items-center justify-center h-screen">
+      <div className="md:h-[90vh] h-[40vh] w-full pr-6 md:pr-20 hidden md:block">
+        <img
+          src="/FULL LEBRON JAMES.svg"
+          alt="logo"
+          className="h-full w-full"
+          width={100}
+          height={100}
+        />
+      </div>
+      <div className="h-[60vh] w-full  md:hidden pt-6 lg:pt-0">
+        <img
+          src="/shoe.svg"
+          alt="logo"
+          className="h-full w-full object-contain"
+          width={677}
+          height={534}
+        />
       </div>
     </main>
   );
