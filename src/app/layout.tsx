@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import { CartContextProvider } from "@/hooks/useCart";
 import "@/styles/globals.css";
 import {
   ClerkProvider,
@@ -27,7 +28,9 @@ export default function RootLayout({
         <Navbar />
         <div>
 
+        <CartContextProvider>
         {children}
+        </CartContextProvider>
         </div>
       </body>
     </html>

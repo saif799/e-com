@@ -1,6 +1,8 @@
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
+import { db } from "@/server/db";
+import { usersTable } from "@/server/db/schema";
 
 export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -51,25 +53,33 @@ export async function POST(req: Request) {
 
   // Do something with the payload
   // For this guide, you simply log the payload to the console
-  const { id } = evt.data;
-  const {} = body;
   const eventType = evt.type;
   if (eventType === "user.created") {
-    const { id, phone_numbers, first_name, email_addresses, last_name } =
+    const { id, first_name, email_addresses, last_name, phone_numbers } =
       evt.data;
+    const phoneNumber = phone_numbers[0]?.phone_number;
 
     if (!id || !email_addresses) {
       return new Response("Error occurred -- missing data", { status: 400 });
     }
 
-    const user = {
+    
+    type userTYpe = typeof usersTable.$inferInsert
+    const user:userTYpe = {
       externalId: id,
-      first_name,
-      last_name,
-      phoneNumber: phone_numbers,
-      email: email_addresses[0]?.email_address,
+      firstName:first_name??"",
+      lastName:last_name,
+      phoneNumber: phoneNumber ?? '',
+      email: email_addresses[0]?.email_address ?? '',
+      id:crypto.randomUUID()
     };
-    console.log("user body:", user);
+    try {
+   const [use] =await db.insert(usersTable).values(user).returning();
+      console.log("user added succusfully ",use);
+      
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   
