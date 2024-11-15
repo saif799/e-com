@@ -27,30 +27,19 @@ const sizeOptions = [
 ];
 
 const colorOptions = [
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
+  "/image 5.svg",
+  "/image 5.svg",
+  "/image 5.svg",
+  "/image 5.svg",
+  "/image 5.svg",
 ];
 
 const productImages: string[] = [
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
-  "/Group 2.jpg",
+  "/image 5.svg",
+  "/image 5.svg",
+  "/image 5.svg",
+  "/image 5.svg",
+  "/image 5.svg",
 ];
 
 export default function Component() {
@@ -66,6 +55,9 @@ export default function Component() {
       (prev) => (prev - 1 + productImages.length) % productImages.length,
     );
   };
+  const setSlide = (num: number) => {
+    setCurrentSlide(num);
+  };
 
   // useEffect(() => {
   //   const timer = setInterval(() => {
@@ -76,9 +68,9 @@ export default function Component() {
   // }, []);
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 p-4 md:flex-row pt-20">
-      <div className="flex w-full md:w-2/3 items-center gap-10" >
-        <div className="flex flex-col space-x-2 overflow-x-auto pb-2 max-h-[600px]">
+    <div className="flex max-w-6xl flex-col items-center gap-8 pt-20 md:flex-row">
+      <div className="w-full md:w-2/3">
+        {/* <div className="flex max-h-[600px] space-x-2 overflow-x-auto pb-2 md:flex-col">
           {productImages.map((img, index) => (
             <button
               key={index}
@@ -97,8 +89,17 @@ export default function Component() {
               />
             </button>
           ))}
+        </div> */}
+        <div className="px-4">
+          <p className="mb-3 font-normal text-zinc-500"> Men  &gt;  shoes </p>
+          <h1 className="mb-3 text-xl font-medium">
+            Lebron NXXT Gen 20” - Lakers Purple
+          </h1>
+          <h2 className="mb-5 text-xl font-semibold text-purple-900">
+            25,000 DA
+          </h2>
         </div>
-        <div className="relative mb-4 h-[600px] w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden">
           <div
             className="flex h-full transition-transform duration-500 ease-out"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -108,13 +109,15 @@ export default function Component() {
                 key={index}
                 src={img}
                 alt={`Product image ${index + 1}`}
-                width={600}
-                height={600}
-                className="h-full w-full flex-shrink-0 object-cover"
+                width={500}
+                height={500}
+                className="object-fit h-full w-full flex-shrink-0"
               />
             ))}
           </div>
-          <div className="absolute bottom-4 right-4 flex gap-2">
+
+          {/* if u wants the buttons on the screen */}
+          {/* <div className="absolute bottom-4 right-4 flex gap-2">
             <Button
               variant="outline"
               size="icon"
@@ -133,32 +136,39 @@ export default function Component() {
               <ChevronRight className="h-4 w-4" />
               <span className="sr-only">Next image</span>
             </Button>
-          </div>
+          </div> */}
+        </div>
+        <div className="flex justify-center gap-2 rounded-full pt-3">
+          {productImages.map((img, index) => (
+            <button
+              className={cn(
+                "h-2 w-2 rounded-full bg-gray-300",
+                currentSlide === index && "bg-black",
+              )}
+              key={img}
+              onClick={() => setSlide(index)}
+            ></button>
+          ))}
         </div>
       </div>
       <div className="w-full md:w-1/3">
-        <div className="mb-4 flex items-center">
-          <Star className="h-5 w-5 fill-yellow-400 stroke-yellow-400" />
-          <span className="ml-2 text-sm">Bien noté</span>
-        </div>
-        <h2 className="mb-2 text-2xl font-bold">Nike Air Max Dn</h2>
-        <p className="mb-4 text-gray-600">Chaussure</p>
-        <p className="mb-6 text-2xl font-bold">169,99 €</p>
         <div className="mb-6">
-          <h3 className="mb-2 font-semibold">Couleurs</h3>
-          <div className="flex flex-wrap gap-2">
+          <h3 className="mb-2 px-2 font-extralight text-gray-500">
+            Available colors
+          </h3>
+          <div className="grid grid-cols-4 gap-2">
             {colorOptions.map((color, index) => (
-              <div
-                key={index}
-                className="h-12 w-12 overflow-hidden rounded-md border"
-              >
+              <div key={index} className="mx-auto overflow-hidden">
                 <Image
                   src={color}
                   alt={`Color ${index + 1}`}
-                  width={48}
-                  height={48}
+                  width={80}
+                  height={80}
                   className="object-cover"
                 />
+                <h3 className="px-1 text-center text-sm font-extralight">
+                  Lakers Purple{" "}
+                </h3>
               </div>
             ))}
           </div>

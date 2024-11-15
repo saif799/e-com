@@ -84,7 +84,7 @@ export const usersTable = createTable("users", {
   firstName: text("firstName", { length: 256 }).notNull(),
   lastName: text("lastName", { length: 256 }),
   email: text("email", { length: 256 }).unique(),
-  phoneNumber: text("phone_number", { length: 1024 }), 
+  phoneNumber: text("phone_number", { length: 1024 }),
   createdAt: int("created_at", { mode: "timestamp" })
     .default(sql`(unixepoch())`)
     .notNull(),
@@ -92,24 +92,39 @@ export const usersTable = createTable("users", {
     () => new Date(),
   ),
 });
+
 export const orders = createTable(
   "orders",
   {
     id: text("id").primaryKey(),
-    productId: text("product_id")
-      .notNull()
-      .references(() => products.id),
-    quantity: int("quantity", { mode: "number" }).notNull(),
     orderDate: int("order_date", { mode: "timestamp" })
       .default(sql`(unixepoch())`)
       .notNull(),
-    customerId: text("customer_id", { length: 256 })
-      .notNull()
-      .references(() => usersTable.id),
+    customerId: text("customer_id", { length: 256 }).references(
+      () => usersTable.id,
+    ),
   },
   (order) => ({
     customerIndex: index("customer_idx").on(order.customerId),
-    productIndex: index("productOrder_idx").on(order.productId),
+  }),
+);
+
+export const productsOrdered = createTable(
+  "products_Ordered",
+  {
+    id: text("id").primaryKey(),
+    quantity: int("quantity", { mode: "number" }).notNull(),
+    orderId: text("order_id")
+      .notNull()
+      .references(() => products.id),
+      productId: text("product_id")
+      .notNull()
+      .references(() => products.id),
+    
+  },
+  (ordered) => ({
+    orderIndex: index("order_made_idx").on(ordered.orderId),
+    productIndex: index("product_ordered_idx").on(ordered.productId),
   }),
 );
 

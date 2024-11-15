@@ -1,11 +1,10 @@
 
 export type customerType = {
-    id: string,
+    id?: string,
     username: string,
     phone: string,
     wilaya: string,
     baladia: string,
-    city: string,
     destination: "HOME" | "OFFICE",
 }
 
@@ -18,10 +17,9 @@ export type CartProductType = {
 }
 
 export type CartOrderType = {
-    id: string,
+    id?: string,
     buyerInfo: customerType,
     products: CartProductType[],
-    totalAmount: number,
     deliveryPrice: number,
     status: string,
     // orderManager: string,
