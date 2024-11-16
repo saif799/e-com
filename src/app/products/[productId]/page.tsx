@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import ProductCard from "@/components/productCard";
+import SizeBlock from "@/components/SizeBlock";
 
 const sizeOptions = [
   "EU 38.5",
@@ -68,30 +70,10 @@ export default function Component() {
   // }, []);
 
   return (
-    <div className="flex max-w-6xl flex-col items-center gap-8 pt-20 md:flex-row">
-      <div className="w-full md:w-2/3">
-        {/* <div className="flex max-h-[600px] space-x-2 overflow-x-auto pb-2 md:flex-col">
-          {productImages.map((img, index) => (
-            <button
-              key={index}
-              className={cn(
-                "h-20 w-20 flex-shrink-0 border-2",
-                currentSlide === index ? "border-black" : "border-transparent",
-              )}
-              onClick={() => setCurrentSlide(index)}
-            >
-              <Image
-                src={img}
-                alt={`Thumbnail ${index + 1}`}
-                width={80}
-                height={80}
-                className="object-cover"
-              />
-            </button>
-          ))}
-        </div> */}
+    <div className="flex flex-col items-center gap-8 pt-20 lg:flex-row">
+      <div className="w-full lg:w-3/4">
         <div className="px-4">
-          <p className="mb-3 font-normal text-zinc-500"> Men  &gt;  shoes </p>
+          <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
           <h1 className="mb-3 text-xl font-medium">
             Lebron NXXT Gen 20” - Lakers Purple
           </h1>
@@ -115,34 +97,12 @@ export default function Component() {
               />
             ))}
           </div>
-
-          {/* if u wants the buttons on the screen */}
-          {/* <div className="absolute bottom-4 right-4 flex gap-2">
-            <Button
-              variant="outline"
-              size="icon"
-              className="bg-white"
-              onClick={prevSlide}
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="sr-only">Previous image</span>
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="bg-white"
-              onClick={nextSlide}
-            >
-              <ChevronRight className="h-4 w-4" />
-              <span className="sr-only">Next image</span>
-            </Button>
-          </div> */}
         </div>
         <div className="flex justify-center gap-2 rounded-full pt-3">
           {productImages.map((img, index) => (
             <button
               className={cn(
-                "h-2 w-2 rounded-full bg-gray-300",
+                "h-2 w-2 rounded-full bg-gray-300 md:h-3 md:w-3",
                 currentSlide === index && "bg-black",
               )}
               key={img}
@@ -151,50 +111,59 @@ export default function Component() {
           ))}
         </div>
       </div>
-      <div className="w-full md:w-1/3">
+      <div className="w-full md:w-10/12">
         <div className="mb-6">
-          <h3 className="mb-2 px-2 font-extralight text-gray-500">
+          <h3 className="mb-2 px-2 font-extralight text-gray-500 md:text-xl md:font-normal">
             Available colors
           </h3>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-4 gap-2 md:grid-cols-5 md:gap-4">
             {colorOptions.map((color, index) => (
-              <div key={index} className="mx-auto overflow-hidden">
+              <div key={index} className="overflow-hidden">
                 <Image
                   src={color}
                   alt={`Color ${index + 1}`}
-                  width={80}
-                  height={80}
-                  className="object-cover"
+                  width={200}
+                  height={200}
+                  className="h-20 w-20 object-cover md:h-36 md:w-36"
                 />
-                <h3 className="px-1 text-center text-sm font-extralight">
+                <h3 className="px-1 text-center text-sm font-extralight md:text-lg">
                   Lakers Purple{" "}
                 </h3>
               </div>
             ))}
           </div>
         </div>
-        <div className="mb-6">
-          <h3 className="mb-2 font-semibold">Sélectionner la taille</h3>
-          <div className="grid grid-cols-3 gap-2">
-            {sizeOptions.map((size) => (
-              <Button
-                key={size}
-                variant="outline"
-                className={cn(
-                  "w-full",
-                  selectedSize === size &&
-                    "bg-black text-white hover:bg-black hover:text-white",
-                )}
-                onClick={() => setSelectedSize(size)}
-              >
-                {size}
-              </Button>
+        <div className="pb-5">
+          <div className="flex justify-between px-3 pb-2">
+            <h3 className="text-lg font-medium md:text-2xl">Select Size</h3>
+            <p className="text-secondary md:text-lg">Size guide</p>
+          </div>
+          <div className="grid grid-cols-5 justify-items-center gap-1 md:grid-cols-8 md:gap-3">
+            {[1, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 3].map((s, i) => (
+              <SizeBlock key={s + i} />
             ))}
           </div>
         </div>
-        <Button className="w-full bg-black text-white hover:bg-gray-800">
-          Ajouter au panier
-        </Button>
+
+        <div className="flex flex-col gap-2 px-5 pb-5">
+          <Button className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl">
+            Add to Bag
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
+          >
+            Order Now
+          </Button>
+        </div>
+        <h3 className="px-3 pb-5 text-lg font-semibold md:text-2xl">
+          Similar Products
+        </h3>
+        <div className="flex gap-3 overflow-scroll pb-3">
+          {productImages.map((p, i) => (
+            <ProductCard key={p} imageUrl={p} />
+          ))}
+        </div>
       </div>
     </div>
   );
