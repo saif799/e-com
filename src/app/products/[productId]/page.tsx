@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import ProductCard from "@/components/productCard";
 import SizeBlock from "@/components/SizeBlock";
+import DirectOrderForm from "@/components/DirectOrderForm";
 
 const sizeOptions = [
   "EU 38.5",
@@ -44,19 +45,21 @@ const productImages: string[] = [
   "/image 5.svg",
 ];
 
-export default function Component() {
-  const [selectedSize, setSelectedSize] = useState("");
+type Props = { params: { productId: string } };
+export default function Component({ params: { productId } }: Props) {
+  // const [selectedSize, setSelectedSize] = useState("");
   const [currentSlide, setCurrentSlide] = useState(0);
+  console.log(productId);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % productImages.length);
-  };
+  // const nextSlide = () => {
+  //   setCurrentSlide((prev) => (prev + 1) % productImages.length);
+  // };
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + productImages.length) % productImages.length,
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide(
+  //     (prev) => (prev - 1 + productImages.length) % productImages.length,
+  //   );
+  // };
   const setSlide = (num: number) => {
     setCurrentSlide(num);
   };
@@ -75,7 +78,7 @@ export default function Component() {
         <div className="px-4">
           <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
           <h1 className="mb-3 text-xl font-medium">
-            Lebron NXXT Gen 20” - Lakers Purple
+            Lebron NXXT Gen 20” - Lakers Purple{productId}
           </h1>
           <h2 className="mb-5 text-xl font-semibold text-purple-900">
             25,000 DA
@@ -105,7 +108,7 @@ export default function Component() {
                 "h-2 w-2 rounded-full bg-gray-300 md:h-3 md:w-3",
                 currentSlide === index && "bg-black",
               )}
-              key={img}
+              key={index}
               onClick={() => setSlide(index)}
             ></button>
           ))}
@@ -133,38 +136,47 @@ export default function Component() {
             ))}
           </div>
         </div>
-        <div className="pb-5">
-          <div className="flex justify-between px-3 pb-2">
-            <h3 className="text-lg font-medium md:text-2xl">Select Size</h3>
-            <p className="text-secondary md:text-lg">Size guide</p>
-          </div>
-          <div className="grid grid-cols-5 justify-items-center gap-1 md:grid-cols-8 md:gap-3">
-            {[1, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 3].map((s, i) => (
-              <SizeBlock key={s + i} />
-            ))}
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2 px-5 pb-5">
-          <Button className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl">
-            Add to Bag
-          </Button>
-          <Button
-            variant="outline"
-            className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
-          >
-            Order Now
-          </Button>
-        </div>
+        <OrderData />
         <h3 className="px-3 pb-5 text-lg font-semibold md:text-2xl">
           Similar Products
         </h3>
         <div className="flex gap-3 overflow-scroll pb-3">
           {productImages.map((p, i) => (
-            <ProductCard key={p} imageUrl={p} />
+            <ProductCard key={i} imageUrl={p} />
           ))}
         </div>
       </div>
     </div>
+  );
+}
+
+function OrderData() {
+  return (
+    <>
+      <div className="pb-5">
+        <div className="flex justify-between px-3 pb-2">
+          <h3 className="text-lg font-medium md:text-2xl">Select Size</h3>
+          <p className="text-secondary md:text-lg">Size guide</p>
+        </div>
+        <div className="grid grid-cols-5 justify-items-center gap-1 px-2 md:grid-cols-8 md:gap-3">
+          {[1, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 3].map((s, i) => (
+            <SizeBlock key={s + i} />
+          ))}
+        </div>
+      </div>
+
+      <div className="flex flex-col gap-2 px-5 pb-5">
+        <Button className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl">
+          Add to Bag
+        </Button>
+        {/* <Button
+            variant="outline"
+            className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
+          >
+            Order Now
+          </Button> */}
+        <DirectOrderForm />
+      </div>
+    </>
   );
 }
