@@ -1,30 +1,8 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/productCard";
-import SizeBlock from "@/components/SizeBlock";
-import DirectOrderForm from "@/components/DirectOrderForm";
 import ImageSlide from "@/components/imageSlide";
 import { GetProduct } from "@/actions/getProduct";
-
-const sizeOptions = [
-  "EU 38.5",
-  "EU 39",
-  "EU 40",
-  "EU 40.5",
-  "EU 41",
-  "EU 42",
-  "EU 42.5",
-  "EU 43",
-  "EU 44",
-  "EU 44.5",
-  "EU 45",
-  "EU 45.5",
-  "EU 46",
-  "EU 47",
-  "EU 47.5",
-  "EU 48.5",
-  "EU 49.5",
-];
+import { OrderData } from "@/components/OrderData";
 
 const colorOptions = [
   "/image 5.svg",
@@ -45,7 +23,14 @@ const productImages: string[] = [
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
   const product = await GetProduct(productId);
-  console.log(product);
+
+  if (!product) return;
+  const sizes = product
+    .map((p) => ({
+      size: p.product_sizes!.size,
+      quantity: p.product_sizes!.stock,
+    }))
+    .sort((a, b) => a.size - b.size);
 
   return (
     <div className="flex flex-col items-center gap-8 pt-20 lg:flex-row">
@@ -53,10 +38,10 @@ export default async function Component({ params: { productId } }: Props) {
         <div className="px-4">
           <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
           <h1 className="mb-3 text-xl font-medium">
-            {product?.products.name}” - Lakers Purple
+            {product[0]!.products.name}” - Lakers Purple
           </h1>
           <h2 className="mb-5 text-xl font-semibold text-purple-900">
-            {product?.products.price} DA
+            {product[0]?.products.price} DA
           </h2>
         </div>
         <ImageSlide productImages={productImages} />
@@ -83,7 +68,11 @@ export default async function Component({ params: { productId } }: Props) {
             ))}
           </div>
         </div>
-        <OrderData />
+        <OrderData
+          productId={productId}
+          sizes={sizes}
+          productPrice={product[0]!.products.price}
+        />
         <h3 className="px-3 pb-5 text-lg font-semibold md:text-2xl">
           Similar Products
         </h3>
@@ -94,36 +83,5 @@ export default async function Component({ params: { productId } }: Props) {
         </div>
       </div>
     </div>
-  );
-}
-
-function OrderData() {
-  return (
-    <>
-      <div className="pb-5">
-        <div className="flex justify-between px-3 pb-2">
-          <h3 className="text-lg font-medium md:text-2xl">Select Size</h3>
-          <p className="text-secondary md:text-lg">Size guide</p>
-        </div>
-        <div className="grid grid-cols-5 justify-items-center gap-1 px-2 md:grid-cols-8 md:gap-3">
-          {[1, 3, 4, 5, 3, 3, 3, 3, 3, 3, 3, 3].map((s, i) => (
-            <SizeBlock key={s + i} />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2 px-5 pb-5">
-        <Button className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl">
-          Add to Bag
-        </Button>
-        {/* <Button
-            variant="outline"
-            className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
-          >
-            Order Now
-          </Button> */}
-        <DirectOrderForm />
-      </div>
-    </>
   );
 }

@@ -51,9 +51,21 @@ const formSchema = z.object({
   city: z.string(),
 });
 
-export default function DirectOrderForm() {
+type CheckoutFormProps = {
+  productPrice: number;
+  productId: string;
+  selectedPiece: { size: number; quantity: number } | undefined;
+};
+export default function CheckoutForm({
+  productId,
+  selectedPiece,
+  productPrice,
+}: CheckoutFormProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [quantity, setQuantity] = useState<number>(1);
+
   const wilayas = getWilayaNames();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -82,7 +94,10 @@ export default function DirectOrderForm() {
 
   return (
     <Sheet>
-      <SheetTrigger className="w-full rounded-2xl border py-2 text-lg font-semibold md:py-8 md:text-xl">
+      <SheetTrigger
+        disabled={!selectedPiece}
+        className="w-full rounded-2xl border py-2 text-lg font-semibold md:py-8 md:text-xl"
+      >
         {" "}
         Order Now
       </SheetTrigger>
@@ -97,7 +112,27 @@ export default function DirectOrderForm() {
           </SheetTitle>
 
           <SheetDescription>
-            <ProductInfo />
+            <div className="flex gap-2 pb-4">
+              <div>
+                <Image
+                  src="/image 5.svg"
+                  alt="checkout product image"
+                  width={500}
+                  height={500}
+                  className="object-fit h-full max-h-24 w-full flex-shrink-0"
+                />
+              </div>
+              <div className="flex flex-col items-start gap-1">
+                <h3 className="font-medium text-black">
+                  Lebron NXXT Gen 20” - Lakers
+                </h3>
+                <p>ref : 105293</p>
+                <p>color : purple</p>
+                <p>size : {selectedPiece?.size}</p>
+                <p>qty : {quantity}</p>
+                <p>{productPrice * quantity} DA</p>
+              </div>
+            </div>
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
@@ -238,16 +273,17 @@ export default function DirectOrderForm() {
                       <Button
                         type="button"
                         variant={"outline"}
-                        // onClick={handleQtyDecrese}
-                        // disabled={cartProduct.quantity === 1}
+                        onClick={() => setQuantity(quantity - 1)}
+                        disabled={quantity === 1}
                       >
                         -
                       </Button>
-                      <span>1</span>
+                      <span>{quantity}</span>
                       <Button
                         type="button"
                         variant={"outline"}
-                        // onClick={handleQtyIncrese}
+                        disabled={quantity === selectedPiece?.quantity}
+                        onClick={() => setQuantity(quantity + 1)}
                       >
                         +
                       </Button>
@@ -266,29 +302,5 @@ export default function DirectOrderForm() {
         </SheetHeader>
       </SheetContent>
     </Sheet>
-  );
-}
-
-function ProductInfo() {
-  return (
-    <div className="flex gap-2 pb-4">
-      <div>
-        <Image
-          src="/image 5.svg"
-          alt="checkout product image"
-          width={500}
-          height={500}
-          className="object-fit h-full max-h-24 w-full flex-shrink-0"
-        />
-      </div>
-      <div className="flex flex-col items-start gap-1">
-        <h3 className="font-medium text-black">Lebron NXXT Gen 20” - Lakers</h3>
-        <p>ref : 105293</p>
-        <p>color : purple</p>
-        <p>size : 41</p>
-        <p>qty : 1</p>
-        <p>24,000 DA</p>
-      </div>
-    </div>
   );
 }

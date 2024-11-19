@@ -25,7 +25,7 @@ export const productsTable = createTable(
     name: text("name", { length: 256 }).notNull(),
     description: text("description", { length: 512 }),
     showcaseImage: text("show_case", { length: 256 }),
-    price: text("price", { length: 256 }),
+    price: int("price").notNull(),
     createdAt: int("created_at", { mode: "timestamp" })
       .default(sql`(unixepoch())`)
       .notNull(),
@@ -35,17 +35,6 @@ export const productsTable = createTable(
   },
   (product) => ({
     ProductNameIndex: index("ProductName_idx").on(product.name),
-  }),
-);
-export const sizesTable = createTable(
-  "sizes",
-  {
-    id: text("id").primaryKey(),
-    name: text("name", { length: 50 }).notNull().unique(), // e.g., "S", "M", "L", "XL"
-    displayOrder: int("display_order").default(0),
-  },
-  (size) => ({
-    sizeNameIndex: index("name_idx").on(size.name),
   }),
 );
 
@@ -58,11 +47,7 @@ export const productSizesTable = createTable(
       .references(() => productsTable.id, {
         onDelete: "cascade",
       }),
-    sizeId: text("size_id")
-      .notNull()
-      .references(() => sizesTable.id, {
-        onDelete: "restrict",
-      }),
+    size: int("size").notNull(),
     stock: int("stock").notNull().default(0),
     createdAt: int("created_at", { mode: "timestamp" })
       .default(sql`(unixepoch())`)
