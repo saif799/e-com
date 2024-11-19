@@ -30,6 +30,9 @@ import {
   SelectValue,
 } from "./ui/select";
 import Image from "next/image";
+import { getWilayaNames } from "@/hooks/getWilayas";
+import { useState } from "react";
+import { CartOrderType } from "@/lib/types";
 
 const phoneRegex = /^(05|06|07)\d{8}$/;
 
@@ -49,6 +52,8 @@ const formSchema = z.object({
 });
 
 export default function DirectOrderForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const wilayas = getWilayaNames();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -61,7 +66,17 @@ export default function DirectOrderForm() {
     },
   });
 
-  function onSubmit() {
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    setIsLoading(true);
+    const order: CartOrderType = {
+      buyerInfo: data,
+      deliveryPrice: 1,
+      status: "pending",
+      products: [{ productId: "", productName: "", price: 3, quantity: 3 }],
+    };
+    try {
+      // const res=
+    } catch (err) {}
     return;
   }
 
@@ -136,9 +151,11 @@ export default function DirectOrderForm() {
                                 <SelectValue placeholder="wilaya" />
                               </SelectTrigger>
                               <SelectContent>
-                                <SelectItem value="light">Light</SelectItem>
-                                <SelectItem value="dark">Dark</SelectItem>
-                                <SelectItem value="system">System</SelectItem>
+                                {wilayas.map((w, i) => (
+                                  <SelectItem key={w} value={w}>
+                                    {i + 1}. {w}
+                                  </SelectItem>
+                                ))}
                               </SelectContent>
                             </Select>
                           </FormControl>

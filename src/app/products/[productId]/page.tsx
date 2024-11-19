@@ -1,13 +1,10 @@
-"use client";
-
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import ProductCard from "@/components/productCard";
 import SizeBlock from "@/components/SizeBlock";
 import DirectOrderForm from "@/components/DirectOrderForm";
+import ImageSlide from "@/components/imageSlide";
+import { GetProduct } from "@/actions/getProduct";
 
 const sizeOptions = [
   "EU 38.5",
@@ -46,31 +43,9 @@ const productImages: string[] = [
 ];
 
 type Props = { params: { productId: string } };
-export default function Component({ params: { productId } }: Props) {
-  // const [selectedSize, setSelectedSize] = useState("");
-  const [currentSlide, setCurrentSlide] = useState(0);
-  console.log(productId);
-
-  // const nextSlide = () => {
-  //   setCurrentSlide((prev) => (prev + 1) % productImages.length);
-  // };
-
-  // const prevSlide = () => {
-  //   setCurrentSlide(
-  //     (prev) => (prev - 1 + productImages.length) % productImages.length,
-  //   );
-  // };
-  const setSlide = (num: number) => {
-    setCurrentSlide(num);
-  };
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     nextSlide();
-  //   }, 5000); // Change slide every 5 seconds
-
-  //   return () => clearInterval(timer);
-  // }, []);
+export default async function Component({ params: { productId } }: Props) {
+  const product = await GetProduct(productId);
+  console.log(product);
 
   return (
     <div className="flex flex-col items-center gap-8 pt-20 lg:flex-row">
@@ -78,41 +53,13 @@ export default function Component({ params: { productId } }: Props) {
         <div className="px-4">
           <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
           <h1 className="mb-3 text-xl font-medium">
-            Lebron NXXT Gen 20” - Lakers Purple{productId}
+            {product?.products.name}” - Lakers Purple
           </h1>
           <h2 className="mb-5 text-xl font-semibold text-purple-900">
-            25,000 DA
+            {product?.products.price} DA
           </h2>
         </div>
-        <div className="relative w-full overflow-hidden">
-          <div
-            className="flex h-full transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-          >
-            {productImages.map((img, index) => (
-              <Image
-                key={index}
-                src={img}
-                alt={`Product image ${index + 1}`}
-                width={500}
-                height={500}
-                className="object-fit h-full w-full flex-shrink-0"
-              />
-            ))}
-          </div>
-        </div>
-        <div className="flex justify-center gap-2 rounded-full pt-3">
-          {productImages.map((img, index) => (
-            <button
-              className={cn(
-                "h-2 w-2 rounded-full bg-gray-300 md:h-3 md:w-3",
-                currentSlide === index && "bg-black",
-              )}
-              key={index}
-              onClick={() => setSlide(index)}
-            ></button>
-          ))}
-        </div>
+        <ImageSlide productImages={productImages} />
       </div>
       <div className="w-full md:w-10/12">
         <div className="mb-6">

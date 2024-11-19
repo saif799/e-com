@@ -12,13 +12,13 @@ import { index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
  */
 export const createTable = sqliteTableCreator((name) => `${name}`);
 
-export const categories = createTable("categories", {
+export const categoriesTable = createTable("categories", {
   id: text("id").primaryKey(),
   name: text("name", { length: 256 }).notNull(),
   description: text("description", { length: 512 }),
 });
 
-export const products = createTable(
+export const productsTable = createTable(
   "products",
   {
     id: text("id").primaryKey(),
@@ -37,7 +37,7 @@ export const products = createTable(
     ProductNameIndex: index("ProductName_idx").on(product.name),
   }),
 );
-export const sizes = createTable(
+export const sizesTable = createTable(
   "sizes",
   {
     id: text("id").primaryKey(),
@@ -49,18 +49,18 @@ export const sizes = createTable(
   }),
 );
 
-export const productSizes = createTable(
+export const productSizesTable = createTable(
   "product_sizes",
   {
     id: text("id").primaryKey(),
     productId: text("product_id")
       .notNull()
-      .references(() => products.id, {
+      .references(() => productsTable.id, {
         onDelete: "cascade",
       }),
     sizeId: text("size_id")
       .notNull()
-      .references(() => sizes.id, {
+      .references(() => sizesTable.id, {
         onDelete: "restrict",
       }),
     stock: int("stock").notNull().default(0),
@@ -93,34 +93,25 @@ export const usersTable = createTable("users", {
   ),
 });
 
-export const orders = createTable(
-  "orders",
-  {
-    id: text("id").primaryKey(),
-    orderDate: int("order_date", { mode: "timestamp" })
-      .default(sql`(unixepoch())`)
-      .notNull(),
-    customerId: text("customer_id", { length: 256 }).references(
-      () => usersTable.id,
-    ),
-  },
-  (order) => ({
-    customerIndex: index("customer_idx").on(order.customerId),
-  }),
-);
+export const orderTable = createTable("orderTable", {
+  id: text("id").primaryKey(),
+  orderDate: int("order_date", { mode: "timestamp" })
+    .default(sql`(unixepoch())`)
+    .notNull(),
+  status: text("status").default("pending"),
+});
 
-export const productsOrdered = createTable(
+export const productsOrderedTable = createTable(
   "products_Ordered",
   {
     id: text("id").primaryKey(),
     quantity: int("quantity", { mode: "number" }).notNull(),
     orderId: text("order_id")
       .notNull()
-      .references(() => products.id),
-      productId: text("product_id")
+      .references(() => productsTable.id),
+    productId: text("product_id")
       .notNull()
-      .references(() => products.id),
-    
+      .references(() => productsTable.id),
   },
   (ordered) => ({
     orderIndex: index("order_made_idx").on(ordered.orderId),
@@ -128,13 +119,13 @@ export const productsOrdered = createTable(
   }),
 );
 
-export const Images = createTable(
+export const ImagesTable = createTable(
   "images",
   {
     id: text("id").primaryKey(),
     productId: text("product_id")
       .notNull()
-      .references(() => products.id, {
+      .references(() => productsTable.id, {
         onDelete: "cascade",
       }),
     createdAt: int("created_at", { mode: "timestamp" })

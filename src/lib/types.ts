@@ -1,26 +1,25 @@
-
 export type customerType = {
-    id?: string,
-    username: string,
-    phone: string,
-    wilaya: string,
-    baladia: string,
-    destination: "HOME" | "OFFICE",
-}
+  id?: string;
+  firstName: string;
+  familyName: string;
+  phone: string;
+  wilaya: string;
+  baladia: string;
+  city: string;
+};
 
 export type CartProductType = {
-    productId: string,
-    productName: string,
-    price: number,
-    quantity: number,
-  
-}
+  productId: string;
+  productName: string;
+  price: number;
+  quantity: number;
+};
 
 export type CartOrderType = {
-    id?: string,
-    buyerInfo: customerType,
-    products: CartProductType[],
-    deliveryPrice: number,
-    status: string,
-    // orderManager: string,
-}
+  id?: string;
+  buyerInfo: customerType;
+  products: CartProductType[];
+  deliveryPrice: number;
+  status: string;
+  // orderManager: string,
+};
