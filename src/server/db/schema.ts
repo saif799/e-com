@@ -80,10 +80,20 @@ export const usersTable = createTable("users", {
 
 export const orderTable = createTable("orderTable", {
   id: text("id").primaryKey(),
+  ProductId: text("product_id")
+    .notNull()
+    .references(() => productsTable.id),
+  price: int("price").notNull(),
+  quantity: int("quantity").notNull(),
+  status: text("status").default("pending"),
+  wilaya: text("wilaya").notNull(),
+  baladia: text("baladia").notNull(),
+  phoneNumber: text("phone_number").notNull(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name").notNull(),
   orderDate: int("order_date", { mode: "timestamp" })
     .default(sql`(unixepoch())`)
     .notNull(),
-  status: text("status").default("pending"),
 });
 
 export const productsOrderedTable = createTable(
@@ -93,7 +103,7 @@ export const productsOrderedTable = createTable(
     quantity: int("quantity", { mode: "number" }).notNull(),
     orderId: text("order_id")
       .notNull()
-      .references(() => productsTable.id),
+      .references(() => orderTable.id),
     productId: text("product_id")
       .notNull()
       .references(() => productsTable.id),

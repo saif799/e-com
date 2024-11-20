@@ -32,24 +32,7 @@ import {
 import Image from "next/image";
 import { getWilayaNames } from "@/hooks/getWilayas";
 import { useState } from "react";
-import { CartOrderType } from "@/lib/types";
-
-const phoneRegex = /^(05|06|07)\d{8}$/;
-
-const formSchema = z.object({
-  firstName: z.string(),
-  familyName: z.string(),
-  phone: z.string().refine((val) => phoneRegex.test(val), {
-    message: "must start with 05, 06, or 07 and contain 10 digits.",
-  }),
-  wilaya: z.string().min(2, {
-    message: "Please select a wilaya.",
-  }),
-  baladia: z.string().min(2, {
-    message: "Please select a baladia.",
-  }),
-  city: z.string(),
-});
+import { checkoutFormSchema, OrderType } from "@/lib/types";
 
 type CheckoutFormProps = {
   productPrice: number;
@@ -66,8 +49,8 @@ export default function CheckoutForm({
 
   const wilayas = getWilayaNames();
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof checkoutFormSchema>>({
+    resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
       firstName: "",
       familyName: "",
@@ -78,16 +61,18 @@ export default function CheckoutForm({
     },
   });
 
-  async function onSubmit(data: z.infer<typeof formSchema>) {
+  async function onSubmit(data: z.infer<typeof checkoutFormSchema>) {
     setIsLoading(true);
-    const order: CartOrderType = {
-      buyerInfo: data,
-      deliveryPrice: 1,
+    const order: OrderType = {
+      customerInfo: data,
+      productId,
+      price: productPrice,
+      quantity,
       status: "pending",
-      products: [{ productId: "", productName: "", price: 3, quantity: 3 }],
     };
+    const res = await fetch("/api/order")
+
     try {
-      // const res=
     } catch (err) {}
     return;
   }

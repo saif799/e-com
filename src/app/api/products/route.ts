@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { db } from "@/server/db";
-import { products, productSizes } from "@/server/db/schema";
+import { productSizesTable, productsTable } from "@/server/db/schema";
 import { auth } from "@clerk/nextjs/server";
+import { generateId } from "@/lib/generateId";
 
 export async function POST(req: Request) {
   try {
@@ -16,29 +17,30 @@ export async function POST(req: Request) {
       sizes: { sizeId: number; stock: number }[];
     };
 
-    const id = crypto.randomUUID();
+    const id = generateId();
     // Insert the product
     const [product] = await db.transaction(async (tx) => {
       const [newProduct] = await tx
-        .insert(products)
+        .insert(productsTable)
         .values({
           id,
           name,
           description,
+          price: 222,
         })
         .returning();
 
-        
-        if (sizes.length > 0) {
-          await tx.insert(productSizes).values(
-            sizes.map((size: { sizeId: number; stock: number }) => ({
-              sizeId: size.sizeId.toString(),
-              stock: size.stock,
-              productId: id,
-              id: crypto.randomUUID()
-            }))
-          );
-        }
+      if (sizes.length > 0) {
+        await tx.insert(productSizesTable).values(
+          sizes.map((size: { sizeId: number; stock: number }) => ({
+            sizeId: size.sizeId.toString(),
+            stock: size.stock,
+            productId: id,
+            id: crypto.randomUUID(),
+            size: 22,
+          })),
+        );
+      }
 
       // Insert the product sizes
 

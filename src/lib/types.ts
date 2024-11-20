@@ -1,5 +1,6 @@
+import { z } from "zod";
+
 export type customerType = {
-  id?: string;
   firstName: string;
   familyName: string;
   phone: string;
@@ -16,10 +17,35 @@ export type CartProductType = {
 };
 
 export type CartOrderType = {
-  id?: string;
-  buyerInfo: customerType;
+  id: string;
+  customerInfo: customerType;
   products: CartProductType[];
   deliveryPrice: number;
   status: string;
   // orderManager: string,
+};
+const phoneRegex = /^(05|06|07)\d{8}$/;
+
+export const checkoutFormSchema = z.object({
+  firstName: z.string(),
+  familyName: z.string(),
+  phone: z.string().refine((val) => phoneRegex.test(val), {
+    message: "must start with 05, 06, or 07 and contain 10 digits.",
+  }),
+  wilaya: z.string().min(2, {
+    message: "Please select a wilaya.",
+  }),
+  baladia: z.string().min(2, {
+    message: "Please select a baladia.",
+  }),
+  city: z.string(),
+});
+
+
+export type OrderType = {
+  customerInfo: z.infer<typeof checkoutFormSchema>;
+  productId: string;
+  price: number;
+  quantity: number;
+  status: string;
 };

@@ -24,6 +24,7 @@ type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
   const product = await GetProduct(productId);
 
+
   if (!product) return;
   const sizes = product
     .map((p) => ({
