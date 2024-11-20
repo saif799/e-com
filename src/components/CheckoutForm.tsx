@@ -32,12 +32,14 @@ import {
 import Image from "next/image";
 import { getWilayaNames } from "@/hooks/getWilayas";
 import { useState } from "react";
-import { checkoutFormSchema, OrderType } from "@/lib/types";
+import { checkoutFormSchema, type OrderType } from "@/lib/types";
+import { useCart } from "@/hooks/useCart";
+import { generateId } from "@/lib/generateId";
 
 type CheckoutFormProps = {
   productPrice: number;
   productId: string;
-  selectedPiece: { size: number; quantity: number } | undefined;
+  selectedPiece: { size: number; quantity: number };
 };
 export default function CheckoutForm({
   productId,
@@ -46,7 +48,7 @@ export default function CheckoutForm({
 }: CheckoutFormProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
-
+  const { handleAddOrder } = useCart();
   const wilayas = getWilayaNames();
 
   const form = useForm<z.infer<typeof checkoutFormSchema>>({
@@ -62,16 +64,39 @@ export default function CheckoutForm({
   });
 
   async function onSubmit(data: z.infer<typeof checkoutFormSchema>) {
+    // TODO : make sure to notify the user (toast) when the request succeeds or fails
     setIsLoading(true);
-    const order: OrderType = {
+    const id = generateId();
+    const order: OrderType & { size: number; originalQuantity: number } = {
+      id,
       customerInfo: data,
       productId,
       price: productPrice,
       quantity,
       status: "pending",
+      originalQuantity: selectedPiece.quantity,
+      size: selectedPiece.size,
     };
-    const res = await fetch("/api/order")
+    const res = await fetch("/api/order", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(order),
+    });
 
+    // TODO : compete the add to carte proccess and make sure it works
+    // TODO : try and improve this piece of crap and think more about the ordercarte price
+    if (res.status === 201 && res.ok)
+      handleAddOrder({
+        id,
+        customerInfo: data,
+        products: [
+          { price: productPrice, productId, quantity, productName: "" },
+        ],
+        status: "pending",
+        deliveryPrice: 0,
+      });
     try {
     } catch (err) {}
     return;

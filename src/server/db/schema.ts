@@ -2,7 +2,7 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
-import { index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
+import { check, index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -58,6 +58,7 @@ export const productSizesTable = createTable(
   },
   (product) => ({
     productIndex: index("product_idx").on(product.productId),
+    checkConstraint: check("age_check1", sql`${product.stock} > 0`),
   }),
 );
 // src/server/db/schema.ts

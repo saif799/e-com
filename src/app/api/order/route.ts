@@ -1,10 +1,8 @@
-// import { orderToGoogleSheet } from "@/actions/orderToGoogleSheet";
-// import Order from "@/lib/models/Order";
-// import { connectToDB } from "@/lib/mongoDB";
 import type { OrderType } from "@/lib/types";
 import { db } from "@/server/db";
 import { orderTable, productSizesTable } from "@/server/db/schema";
 import { and, eq } from "drizzle-orm";
+import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -13,9 +11,11 @@ export async function POST(req: Request) {
     const data: OrderType & { size: number; originalQuantity: number } =
       await req.json();
 
+    console.log(data);
+
     await db.transaction(async (tx) => {
       await tx.insert(orderTable).values({
-        id: crypto.randomUUID(),
+        id: data.id,
         firstName: data.customerInfo.firstName,
         baladia: data.customerInfo.baladia,
         lastName: data.customerInfo.familyName,
@@ -36,11 +36,9 @@ export async function POST(req: Request) {
         );
     });
 
-    // const order = await Order.create(
-    //     data
-    // );
-
     // await orderToGoogleSheet(order)
+
+    revalidatePath(`/products/${data.productId}`);
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (error) {

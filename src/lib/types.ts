@@ -41,8 +41,8 @@ export const checkoutFormSchema = z.object({
   city: z.string(),
 });
 
-
 export type OrderType = {
+  id: string;
   customerInfo: z.infer<typeof checkoutFormSchema>;
   productId: string;
   price: number;
