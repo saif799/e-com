@@ -16,7 +16,7 @@ export default function ProductCard({ imageUrl }: ProductImageProps) {
           alt={`Product image `}
           width={500}
           height={500}
-          className="object-fit h-full w-full flex-shrink-0"
+          className="object-cover h-full w-full flex-shrink-0"
         />
       </div>
       <div className="pl-1">

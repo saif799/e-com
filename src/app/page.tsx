@@ -1,34 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import { MainCarousel } from "@/components/mainCarousel";
+import ProductCard from "@/components/productCard";
 import { ProductTestForm } from "@/components/ProductTestForm";
+import { Button } from "@/components/ui/button";
 import { useCart } from "@/hooks/useCart";
-
 export default function HomePage() {
   const { cartProducts, handleAddProduct } = useCart();
 
   return (
     <main>
-      <div className="h-screen flex-col items-start justify-center md:items-center lg:flex">
-        <div className="hidden h-[40vh] w-full pr-6 md:block md:h-[90vh] md:pr-20">
-          <img
-            src="/FULL LEBRON JAMES.svg"
-            alt="logo"
-            className="h-full w-full"
-            width={100}
-            height={100}
-          />
+      <div className="flex flex-col items-center justify-center gap-8">
+        <div className="h-[70vh]">
+          <MainCarousel />
         </div>
-        <div className="h-[60vh] w-full pt-6 md:hidden lg:pt-0">
-          <img
-            src="/shoe.svg"
-            alt="logo"
-            className="h-full w-full object-contain"
-            width={677}
-            height={534}
-          />
+        <Button variant={"ghost"} className="mx-auto px-8 py-6 hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)] transition ease-in hover:bg-white">
+          View Product
+        </Button>
+        <h3>Listings</h3>
+        <div className="flex w-full px-8">
+          <ProductCard imageUrl="/Shoe.jpg"/>
         </div>
       </div>
-      <div>
+
+      {/* <div>
         {cartProducts.map((e) => (
           <div key={e.productId}> {e.productName}</div>
         ))}
@@ -46,7 +41,7 @@ export default function HomePage() {
         {" "}
         add into carte here{" "}
       </button>
-      <ProductTestForm />
+      <ProductTestForm /> */}
     </main>
   );
 }

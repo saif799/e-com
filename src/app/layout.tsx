@@ -8,9 +8,13 @@ import {
   SignedOut,
   UserButton,
 } from "@clerk/nextjs";
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import { DM_Mono } from 'next/font/google'
 
+const dmMono = DM_Mono({
+  subsets : ["latin"] ,
+  weight : ["300" , "400" , "500"]
+})
 export const metadata: Metadata = {
   title: "shoes selling store",
   description: "shoes selling store",
@@ -22,7 +26,7 @@ export default function RootLayout({
 }: { children: React.ReactNode }) {
   return (
       <ClerkProvider>
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${dmMono.className}`}>
 
       <body className="h-screen">
         <Navbar />
