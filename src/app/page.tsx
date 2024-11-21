@@ -14,11 +14,14 @@ export default function HomePage() {
         <div className="h-[70vh]">
           <MainCarousel />
         </div>
-        <Button variant={"ghost"} className="mx-auto px-8 py-6 hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)] transition ease-in hover:bg-white">
+        <Button variant={"ghost"} className="mx-auto px-8 font-light text-md py-6 hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)] transition ease-in hover:bg-white">
           View Product
         </Button>
-        <h3>Listings</h3>
-        <div className="flex w-full px-8">
+        <h3 className="text-left w-full pl-16 font-medium text-xl ">Listings</h3>
+        <div className="flex w-full px-8 gap-8">
+          <ProductCard imageUrl="/Shoe.jpg"/>
+          <ProductCard imageUrl="/Shoe.jpg"/>
+          <ProductCard imageUrl="/Shoe.jpg"/>
           <ProductCard imageUrl="/Shoe.jpg"/>
         </div>
       </div>
