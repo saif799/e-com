@@ -2,7 +2,7 @@ import Image from "next/image";
 import ProductCard from "@/components/productCard";
 import ImageSlide from "@/components/imageSlide";
 import { GetProduct } from "@/actions/getProduct";
-import { OrderData } from "@/components/OrderData";
+import { OrderData, OrderProductType } from "@/components/OrderData";
 
 const colorOptions = [
   "/image 5.svg",
@@ -22,16 +22,22 @@ const productImages: string[] = [
 
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
-  const product = await GetProduct(productId);
+  const products = await GetProduct(productId);
 
-
-  if (!product) return;
-  const sizes = product
-    .map((p) => ({
-      size: p.product_sizes!.size,
-      quantity: p.product_sizes!.stock,
-    }))
-    .sort((a, b) => a.size - b.size);
+  // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+  if (!products || !products[0]?.products) return;
+  const product: OrderProductType = {
+    name: products[0].products.name,
+    price: products[0].products.price,
+    id: productId,
+    sizes: products
+      .map((p) => ({
+        size: p.product_sizes!.size,
+        quantity: p.product_sizes!.stock,
+      }))
+      .sort((a, b) => a.size - b.size),
+  };
+  console.log(product.sizes);
 
   return (
     <div className="flex flex-col items-center gap-8 pt-20 lg:flex-row">
@@ -39,10 +45,10 @@ export default async function Component({ params: { productId } }: Props) {
         <div className="px-4">
           <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
           <h1 className="mb-3 text-xl font-medium">
-            {product[0]!.products.name}” - Lakers Purple
+            {products[0].products.name}” - Lakers Purple
           </h1>
           <h2 className="mb-5 text-xl font-semibold text-purple-900">
-            {product[0]?.products.price} DA
+            {products[0]?.products.price} DA
           </h2>
         </div>
         <ImageSlide productImages={productImages} />
@@ -69,11 +75,7 @@ export default async function Component({ params: { productId } }: Props) {
             ))}
           </div>
         </div>
-        <OrderData
-          productId={productId}
-          sizes={sizes}
-          productPrice={product[0]!.products.price}
-        />
+        <OrderData Product={product} />
         <h3 className="px-3 pb-5 text-lg font-semibold md:text-2xl">
           Similar Products
         </h3>

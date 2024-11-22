@@ -1,9 +1,13 @@
+"use client";
 import Link from "next/link";
-import { ShoppingBag, Heart, Hexagon, Search } from "lucide-react";
-import { Input } from "./ui/input";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { ShoppingBag, Heart, Hexagon } from "lucide-react";
+import { useCartState } from "@/lib/useCarte";
+import { Button } from "./ui/button";
+// import { Input } from "./ui/input";
+// import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 
 const Navbar = () => {
+  const { Open } = useCartState();
   return (
     <nav className="fixed left-0 right-0 top-0 z-10 bg-white shadow-sm">
       <div className="mx-auto px-2 sm:px-6 lg:px-8">
@@ -31,8 +35,11 @@ const Navbar = () => {
             >
               <Heart className="h-7 w-7" strokeWidth={1.5} />
             </Link>
+
+            {/* TODO : ik this is so ass come here later and fix it and make it a button */}
             <Link
-              href="/contact"
+              onClick={() => Open()}
+              href="#"
               className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
             >
               <ShoppingBag className="h-7 w-7" strokeWidth={1.5} />

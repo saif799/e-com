@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 "use client";
 import { createContext, useContext, useEffect } from "react";
 /* eslint-disable @typescript-eslint/no-unused-vars */
@@ -25,10 +26,12 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
 
   useEffect(() => {
     const cartItems: string | null = localStorage.getItem("cart_Products");
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const cartOrders: string | null = localStorage.getItem("orders");
     const cProducts: CartProductType[] = cartItems ? JSON.parse(cartItems) : [];
+    const cOrders: CartOrderType[] = cartOrders ? JSON.parse(cartOrders) : [];
 
     setCartProducts(cProducts);
+    setCartOrders(cOrders);
   }, []);
 
   function handleAddProduct(product: CartProductType) {
