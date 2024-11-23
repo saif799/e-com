@@ -1,6 +1,5 @@
 import * as React from "react";
-import Autoplay from "embla-carousel-autoplay"
-
+import Autoplay from "embla-carousel-autoplay";
 
 import {
   Carousel,
@@ -13,22 +12,29 @@ import {
 export function MainCarousel() {
   return (
     <Carousel
-      className="px-20 w-full "
+      className="w-full md:px-8"
       plugins={[
         Autoplay({
           delay: 5000,
         }),
       ]}
       opts={{
-        loop : true,
-        align : "center"
+        loop: true,
+        align: "center",
       }}
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
-            <div className="p-1 m-auto">
-              <img src="/Shoe.jpg" alt="" className="m-auto h-[70vh]"/>
+            <div className="m-auto flex h-[78vh] items-center justify-center p-1 md:h-[70vh]">
+              <picture>
+                <source srcSet="/shoe.jpg" media="(min-width: 768px)" />
+                <img
+                  src="/shoe-mobile.jpg"
+                  alt=""
+                  className="m-auto object-fill"
+                />
+              </picture>
             </div>
           </CarouselItem>
         ))}
