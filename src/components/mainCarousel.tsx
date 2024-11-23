@@ -25,8 +25,8 @@ export function MainCarousel() {
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
-            <div className="m-auto flex h-[78vh] items-center justify-center p-1 md:h-[70vh]">
+          <CarouselItem key={index} className="flex-col items-center">
+            <div className="m-auto flex h-[60vh] items-center justify-center p-1 md:h-[70vh]">
               <picture>
                 <source srcSet="/shoe.jpg" media="(min-width: 768px)" />
                 <img
@@ -36,8 +36,12 @@ export function MainCarousel() {
                 />
               </picture>
             </div>
+            <div className="md:hidden w-full mx-auto">
+              <p className="text-center">Lebron Nxxt Gen</p>
+            </div>
           </CarouselItem>
         ))}
+        
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />

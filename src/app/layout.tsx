@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { CartContextProvider } from "@/hooks/useCart";
 import "@/styles/globals.css";
@@ -9,12 +10,12 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { type Metadata } from "next";
-import { DM_Mono } from 'next/font/google'
+import { DM_Mono } from "next/font/google";
 
 const dmMono = DM_Mono({
-  subsets : ["latin"] ,
-  weight : ["300" , "400" , "500"]
-})
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+});
 export const metadata: Metadata = {
   title: "shoes selling store",
   description: "shoes selling store",
@@ -23,21 +24,20 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: { children: React.ReactNode }) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
-      <ClerkProvider>
-    <html lang="en" className={`${dmMono.className}`}>
-
-      <body className="h-screen">
-        <Navbar />
-        <div>
-
-        <CartContextProvider>
-        {children}
-        </CartContextProvider>
-        </div>
-      </body>
-    </html>
-      </ClerkProvider>
+    <ClerkProvider>
+      <html lang="en" className={`${dmMono.className}`}>
+        <body className="h-screen">
+          <Navbar />
+          <div>
+            <CartContextProvider>{children}</CartContextProvider>
+          </div>
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

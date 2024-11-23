@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import Footer from "@/components/Footer";
 import { MainCarousel } from "@/components/mainCarousel";
 import ProductCard from "@/components/productCard";
 import { ProductTestForm } from "@/components/ProductTestForm";
@@ -14,7 +15,7 @@ export default function HomePage() {
         <MainCarousel />
         <Button
           variant={"ghost"}
-          className="text-md mx-auto px-8 py-6 font-light transition ease-in hover:bg-white hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)]"
+          className="hidden md:block text-md mx-auto px-8 py-6 font-light transition ease-in hover:bg-white hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)]"
         >
           View Product
         </Button>
