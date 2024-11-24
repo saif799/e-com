@@ -10,8 +10,8 @@ type ProductImageProps = {
 
 export default function ProductCard({ imageUrl , productTitle, brand , price , category  }: ProductImageProps) {
   return (
-    <div className="w-full flex flex-col gap-5 pb-4">
-      <div className="border min-h-52 max-h-56 md:h-64 lg:h-[278px]  rounded-2xl overflow-hidden flex items-center justify-center">
+    <div className="w-full flex flex-col gap-5 py-4 hover:scale-105 rounded-2xl hover:bg-gray-50 transition-transform">
+      <div className="w-11/12 m-auto min-h-52 md:h-64 lg:h-[340px] bg-white rounded-2xl overflow-hidden flex items-center justify-center">
         <Image
           src={imageUrl}
           alt={`Product image `}

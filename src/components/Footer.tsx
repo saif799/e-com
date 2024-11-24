@@ -1,29 +1,46 @@
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-6 items-center justify-center bg-secondary-foreground py-8">
-      <img src="/logo-text-white.svg" alt="" />
-      <div className="flex justify-between w-full px-6">
-        <div className="flex flex-col">
-          <h5 className="text-white pb-4">Links</h5>
-          <a className="text-white font-thin text-sm pb-2 underline" href="/">
+    <footer className="flex flex-col items-center justify-center gap-8 bg-secondary-foreground py-8">
+      <img src="/logo-text-white.svg" alt="" className="lg:hidden" />
+      <div className="flex w-full px-6 md:px-44 lg:pt-10 justify-around">
+        <div className="hidden basis-1/2 flex-col gap-4 lg:inline-flex ">
+          <img src="/logo-text-white.svg" alt="" className="md:w-24" />
+          <p className="pb-2 text-sm font-thin text-gray-300 w-9/12">
+            Your go-to destination for original, high-quality shoes designed to
+            bring style, comfort, and durability to every step. Whether you&apos;re
+            looking for trendy sneakers or timeless classics, we&apos;ve got the
+            perfect pair for you.
+          </p>
+        </div>
+        <div className="flex flex-col basis-1/4">
+          <h5 className="py-2 text-white">Links</h5>
+          <a className="pb-2 pt-3 text-sm font-thin text-gray-300 underline" href="/">
             About us
           </a>
-          <a className="text-white font-thin text-sm pb-2 underline" href="/">
+          <a className="pb-2 text-sm font-thin text-gray-300 underline" href="/">
             Return Policy
           </a>
-          <a className="text-white font-thin text-sm pb-2 underline" href="/">
+          <a className="pb-2 text-sm font-thin text-gray-300 underline" href="/">
             Terms of use
           </a>
         </div>
-        <div className="border border-white"></div>
-        <div className="flex flex-col">
-          <h5 className="text-white pb-4" >Contact us</h5>
-          <a  className="text-white font-thin text-sm pb-2 underline" href="/">About us</a>
-          <a  className="text-white font-thin text-sm pb-2 underline" href="/">Return Policy</a>
-          <a  className="text-white font-thin text-sm pb-2 underline" href="/">Terms of use</a>
+        <div className="my-4 border border-white lg:hidden"></div>
+        <div className="flex flex-col basis-1/4">
+          <h5 className="py-2 text-white">Contact us</h5>
+          <a className="pb-2 pt-3 text-sm font-thin text-gray-300 underline" href="/">
+            About us
+          </a>
+          <a className="pb-2 text-sm font-thin text-gray-300 underline" href="/">
+            Return Policy
+          </a>
+          <a className="pb-2 text-sm font-thin text-gray-300 underline" href="/">
+            Terms of use
+          </a>
         </div>
       </div>
-      <p className="text-white text-sm font-thin">LegenWear © 2024 All rights reserved.</p>
+      <p className="text-sm font-thin text-gray-300">
+        LegenWear © 2024 All rights reserved.
+      </p>
     </footer>
   );
 };

@@ -11,11 +11,11 @@ export default function HomePage() {
 
   return (
     <main>
-      <div className="flex flex-col items-center justify-center gap-8">
+      <div className="flex flex-col items-center justify-center gap-8 pb-8">
         <MainCarousel />
         <Button
           variant={"ghost"}
-          className="hidden md:block text-md mx-auto px-8 py-6 font-light transition ease-in hover:bg-white hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)]"
+          className="hidden md:inline-flex text-md mx-auto px-8 py-6 font-light transition ease-in hover:bg-white hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)]"
         >
           View Product
         </Button>
