@@ -2,7 +2,13 @@
 // https://orm.drizzle.team/docs/sql-schema-declaration
 
 import { sql } from "drizzle-orm";
-import { check, index, int, sqliteTableCreator, text } from "drizzle-orm/sqlite-core";
+import {
+  check,
+  index,
+  int,
+  sqliteTableCreator,
+  text,
+} from "drizzle-orm/sqlite-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
@@ -24,7 +30,7 @@ export const productsTable = createTable(
     id: text("id").primaryKey(),
     name: text("name", { length: 256 }).notNull(),
     description: text("description", { length: 512 }),
-    showcaseImage: text("show_case", { length: 256 }),
+    showcaseImage: text("show_case", { length: 256 }).notNull(),
     price: int("price").notNull(),
     createdAt: int("created_at", { mode: "timestamp" })
       .default(sql`(unixepoch())`)
@@ -81,27 +87,43 @@ export const usersTable = createTable("users", {
 
 export const orderTable = createTable("orderTable", {
   id: text("id").primaryKey(),
-  ProductId: text("product_id")
-    .notNull()
-    .references(() => productsTable.id),
-  price: int("price").notNull(),
-  quantity: int("quantity").notNull(),
   status: text("status").default("pending"),
-  wilaya: text("wilaya").notNull(),
-  baladia: text("baladia").notNull(),
-  phoneNumber: text("phone_number").notNull(),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
   orderDate: int("order_date", { mode: "timestamp" })
     .default(sql`(unixepoch())`)
     .notNull(),
+    firstName: text("first_name").notNull(),
+    phoneNumber: text("phone_number").notNull(),
+    lastName: text("last_name").notNull(),
+    wilaya: text("wilaya").notNull(),
+    baladia: text("baladia").notNull(),
+  updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
+    () => new Date(),
+  ),
 });
+
+// export const ClientTable = createTable(
+//   "CLientTable",
+//   {
+//     id: text("id").primaryKey(),
+   
+//     createdAt: int("created_at", { mode: "timestamp" })
+//       .default(sql`(unixepoch())`)
+//       .notNull(),
+//     updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
+//       () => new Date(),
+//     ),
+//   },
+//   (client) => ({
+//     PhoneIndex: index("phoneIndex").on(client.phoneNumber),
+//   }),
+// );
 
 export const productsOrderedTable = createTable(
   "products_Ordered",
   {
     id: text("id").primaryKey(),
     quantity: int("quantity", { mode: "number" }).notNull(),
+    price: int("price").notNull(),
     orderId: text("order_id")
       .notNull()
       .references(() => orderTable.id),

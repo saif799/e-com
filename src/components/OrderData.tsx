@@ -3,6 +3,7 @@ import { useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 import SizeBlock from "./SizeBlock";
 import { Button } from "./ui/button";
+import { useCart } from "@/hooks/useCart";
 
 type sizesType = { size: number; quantity: number };
 
@@ -11,12 +12,14 @@ export type OrderProductType = {
   name: string;
   price: number;
   sizes: sizesType[];
+  image: string;
 };
 type OrderDataProps = {
   Product: OrderProductType;
 };
 export function OrderData({ Product }: OrderDataProps) {
   const [selectedPiece, setSelectedPiece] = useState<sizesType>();
+  const { handleAddProduct } = useCart();
 
   function selectPiece(piece: sizesType) {
     setSelectedPiece(piece);
@@ -42,7 +45,18 @@ export function OrderData({ Product }: OrderDataProps) {
       </div>
 
       <div className="flex flex-col gap-2 px-5 pb-5">
-        <Button className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl">
+        <Button
+          onClick={() =>
+            handleAddProduct({
+              productId: Product.id,
+              image: Product.image,
+              price: Product.price,
+              productName: Product.name,
+              quantity: 1,
+            })
+          }
+          className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
+        >
           Add to Bag
         </Button>
 

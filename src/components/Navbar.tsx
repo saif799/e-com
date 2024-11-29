@@ -1,15 +1,12 @@
 "use client";
 import Link from "next/link";
 import { ShoppingBag, Heart, Hexagon } from "lucide-react";
-import { useCartState } from "@/lib/useCarte";
-import { Button } from "./ui/button";
-// import { Input } from "./ui/input";
-// import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { useCartState } from "@/hooks/useCartState";
 
 const Navbar = () => {
   const { Open } = useCartState();
   return (
-    <nav className="fixed left-0 right-0 top-0 z-10 bg-white shadow-sm">
+    <nav className="sticky left-0 right-0 top-0 z-10 bg-white shadow-sm">
       <div className="mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex h-16 justify-between">
           <div className="flex">

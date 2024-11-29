@@ -32,11 +32,12 @@ import {
 import Image from "next/image";
 import { getWilayaNames } from "@/hooks/getWilayas";
 import { useState } from "react";
-import { checkoutFormSchema, type OrderType } from "@/lib/types";
+import { CartOrderType, checkoutFormSchema, type OrderType } from "@/lib/types";
 import { useCart } from "@/hooks/useCart";
 import { generateId } from "@/lib/generateId";
 import toast from "react-hot-toast";
 import { OrderProductType } from "./OrderData";
+import { addOrderAction } from "@/actions/addOrderAction";
 
 type CheckoutFormProps = {
   product: OrderProductType;
@@ -47,8 +48,8 @@ export default function CheckoutForm({
   product,
 }: CheckoutFormProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [quantity, setQuantity] = useState<number>(selectedPiece.quantity);
-  const { handleAddOrder, cartOrders } = useCart();
+  const [quantity, setQuantity] = useState<number>(1);
+  const { handleAddOrder } = useCart();
   const wilayas = getWilayaNames();
 
   const form = useForm<z.infer<typeof checkoutFormSchema>>({
@@ -62,8 +63,6 @@ export default function CheckoutForm({
       city: "",
     },
   });
-
-  console.log(selectedPiece);
 
   async function onSubmit(data: z.infer<typeof checkoutFormSchema>) {
     // TODO : make sure to notify the user (toast) when the request succeeds or fails
@@ -79,38 +78,64 @@ export default function CheckoutForm({
       originalQuantity: selectedPiece.quantity,
       size: selectedPiece.size,
     };
-    const res = await fetch("/api/order", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(order),
-    });
+    const orderTest: CartOrderType = {
+      id,
+      customerInfo: data,
+      // productId: product.id,
+      // price: product.price,
+      // quantity,
+      status: "pending",
+      deliveryPrice: 2,
+      products: [
+        {
+          image: product.image,
+          price: product.price,
+          productId: product.id,
+          productName: product.name,
+          quantity,
+          size: selectedPiece.size,
+        },
+      ],
+      // size: selectedPiece.size,
+    };
+    // const res = await fetch("/api/order", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(order),
+    // });
+
+    const { success } = await addOrderAction(orderTest);
 
     // TODO : compete the add to carte proccess and make sure it works
-    // TODO : try and improve this piece of crap and think more about the ordercarte price
-    if (res.status === 201 && res.ok)
+    // TODO : try and improve this piece of crap and think more about the ordercarte price (its no longer a piece of crap but still needs improvments)
+    if (success) {
       handleAddOrder({
         id,
         customerInfo: data,
         products: [
           {
-            price: product.price,
             productId: product.id,
-            quantity,
             productName: product.name,
+            price: product.price,
+            quantity,
+            image: product.image,
+            size: selectedPiece.size,
           },
         ],
         status: "pending",
         deliveryPrice: 0,
       });
-    toast.success("Ordered successfully!");
+      toast.success("Ordered successfully!");
+    } else {
+      toast.error("order Failed");
+    }
     try {
     } catch (err) {
       console.log("post request failed while creating the order :", err);
       toast.error("order Failed");
     }
-    return;
   }
 
   return (
@@ -127,6 +152,7 @@ export default function CheckoutForm({
         <SheetHeader>
           <SheetTitle className="pb-5">
             <h2>Checkout</h2>
+            <Button onClick={() => toast.success("some")}> success</Button>
             <p className="text-sm font-normal text-secondary">
               1 item : 24,000 DA
             </p>
@@ -142,14 +168,18 @@ export default function CheckoutForm({
               />
             </div>
             <div className="flex flex-col items-start gap-1">
-              <h3 className="font-medium text-black">
+              <h3 className="text-md font-medium text-black">
                 Lebron NXXT Gen 20” - Lakers
               </h3>
-              <p>ref : 105293</p>
-              <p>color : purple</p>
-              <p>size : {selectedPiece?.size}</p>
-              <p>qty : {quantity}</p>
-              <p>{product.price * quantity} DA</p>
+              <p className="text-sm text-secondary">ref : 105293</p>
+              <p className="text-sm text-secondary">color : purple</p>
+              <p className="text-sm text-secondary">
+                size : {selectedPiece?.size}
+              </p>
+              <p className="text-sm text-secondary">qty : {quantity}</p>
+              <p className="text-sm text-secondary">
+                {product.price * quantity} DA
+              </p>
             </div>
           </div>
           <Form {...form}>
@@ -294,7 +324,7 @@ export default function CheckoutForm({
                     >
                       -
                     </Button>
-                    <span>{quantity === 0 ? "0" : "quantt" + quantity}</span>
+                    <span>{quantity === 0 ? "0" : quantity}</span>
                     <Button
                       type="button"
                       variant={"outline"}
@@ -315,13 +345,6 @@ export default function CheckoutForm({
           </Form>{" "}
           <p className="pt-3 text-start text-black">
             * Delivery time might vary from 3 to 7 days
-            {cartOrders.length}
-            {cartOrders.map((order) => (
-              <div key={order.id}>
-                {order.products[0]?.productName} {order.id}
-                {" glfdg"}
-              </div>
-            ))}
           </p>
         </SheetHeader>
       </SheetContent>

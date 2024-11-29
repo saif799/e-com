@@ -3,9 +3,14 @@ import Navbar from "@/components/Navbar";
 import { CartContextProvider } from "@/hooks/useCart";
 import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
+import toast, { Toaster } from 'react-hot-toast';
+import { DM_Mono } from "next/font/google";
 
+const dmMono = DM_Mono({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+});
 export const metadata: Metadata = {
   title: "shoes selling store",
   description: "shoes selling store",
@@ -19,13 +24,16 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" className={`${GeistSans.variable}`}>
+      <html lang="en" className={`${dmMono.className}`}>
         <body className="h-screen">
           <Navbar />
-          <CartContextProvider>
-            <CartSheet />
-            {children}
-          </CartContextProvider>
+          <div>
+            <CartContextProvider>
+              <CartSheet />
+              {children}
+              <Toaster/>
+            </CartContextProvider>
+          </div>
         </body>
       </html>
     </ClerkProvider>

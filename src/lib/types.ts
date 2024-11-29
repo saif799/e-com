@@ -14,6 +14,8 @@ export type CartProductType = {
   productName: string;
   price: number;
   quantity: number;
+  image: string;
+  size: number;
 };
 
 export type CartOrderType = {

@@ -1,6 +1,12 @@
+import { generateId } from "@/lib/generateId";
 import type { OrderType } from "@/lib/types";
 import { db } from "@/server/db";
-import { orderTable, productSizesTable } from "@/server/db/schema";
+import {
+  ClientTable,
+  orderTable,
+  productSizesTable,
+  productsOrderedTable,
+} from "@/server/db/schema";
 import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
@@ -11,19 +17,28 @@ export async function POST(req: Request) {
     const data: OrderType & { size: number; originalQuantity: number } =
       await req.json();
 
-    console.log(data);
-
+    const clientId = generateId();
     await db.transaction(async (tx) => {
-      await tx.insert(orderTable).values({
-        id: data.id,
+      await tx.insert(ClientTable).values({
+        id: clientId,
         firstName: data.customerInfo.firstName,
         baladia: data.customerInfo.baladia,
         lastName: data.customerInfo.familyName,
         phoneNumber: data.customerInfo.phone,
+        wilaya: data.customerInfo.wilaya,
+      });
+
+      await tx.insert(orderTable).values({
+        id: data.id,
+        clientId,
+      });
+
+      await tx.insert(productsOrderedTable).values({
         quantity: data.quantity,
         price: data.price,
         ProductId: data.productId,
-        wilaya: data.customerInfo.wilaya,
+        orderId: data.id,
+        
       });
       await tx
         .update(productSizesTable)

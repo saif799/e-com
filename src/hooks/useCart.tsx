@@ -2,8 +2,9 @@
 "use client";
 import { createContext, useContext, useEffect } from "react";
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import type { CartOrderType, CartProductType } from "@/lib/types";
+import type { CartOrderType, CartProductType, OrderType } from "@/lib/types";
 import { useState } from "react";
+import { generateId } from "@/lib/generateId";
 
 export type CartContextType = {
   cartProducts: CartProductType[];
@@ -43,6 +44,25 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
   }
 
   function handleAddOrder(order: CartOrderType) {
+    // const id = generateId();
+    // const orders: OrderType & { size: number; originalQuantity: number } = {
+    //   id,
+    //   customerInfo: order.customerInfo,
+    //   productId: order.id,
+    //   price: product.price,
+    //   quantity,
+    //   status: "pending",
+    //   originalQuantity: selectedPiece.quantity,
+    //   size: selectedPiece.size,
+    // };
+    // const res = await fetch("/api/order", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(order),
+    // });
+
     setCartOrders((prev) => {
       let updatedCart;
       if (prev) {

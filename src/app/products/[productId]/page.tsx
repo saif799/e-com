@@ -2,7 +2,7 @@ import Image from "next/image";
 import ProductCard from "@/components/productCard";
 import ImageSlide from "@/components/imageSlide";
 import { GetProduct } from "@/actions/getProduct";
-import { OrderData, OrderProductType } from "@/components/OrderData";
+import { OrderData, type OrderProductType } from "@/components/OrderData";
 
 const colorOptions = [
   "/image 5.svg",
@@ -27,9 +27,10 @@ export default async function Component({ params: { productId } }: Props) {
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   if (!products || !products[0]?.products) return;
   const product: OrderProductType = {
+    id: productId,
     name: products[0].products.name,
     price: products[0].products.price,
-    id: productId,
+    image: products[0].products.showcaseImage,
     sizes: products
       .map((p) => ({
         size: p.product_sizes!.size,
@@ -37,7 +38,6 @@ export default async function Component({ params: { productId } }: Props) {
       }))
       .sort((a, b) => a.size - b.size),
   };
-  console.log(product.sizes);
 
   return (
     <div className="flex flex-col items-center gap-8 pt-20 lg:flex-row">
