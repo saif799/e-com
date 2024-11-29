@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import Footer from "@/components/Footer";
 import { MainCarousel } from "@/components/mainCarousel";
 import ProductCard from "@/components/productCard";
 import { Button } from "@/components/ui/button";
@@ -7,19 +8,58 @@ export default function HomePage() {
 
   return (
     <main>
-      <div className="flex flex-col items-center justify-center gap-8">
-        <div className="h-[70vh]">
-          <MainCarousel />
-        </div>
-        <Button variant={"ghost"} className="mx-auto px-8 font-light text-md py-6 hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)] transition ease-in hover:bg-white">
+      <div className="flex flex-col items-center justify-center gap-8 pb-8">
+        <MainCarousel />
+        <Button
+          variant={"ghost"}
+          className="hidden md:inline-flex text-md mx-auto px-8 py-6 font-light transition ease-in hover:bg-white hover:drop-shadow-[0_0px_45px_rgba(0,0,0,0.16)]"
+        >
           View Product
         </Button>
-        <h3 className="text-left w-full pl-16 font-medium text-xl ">Listings</h3>
-        <div className="flex w-full px-8 gap-8">
-          <ProductCard imageUrl="/Shoe.jpg"/>
-          <ProductCard imageUrl="/Shoe.jpg"/>
-          <ProductCard imageUrl="/Shoe.jpg"/>
-          <ProductCard imageUrl="/Shoe.jpg"/>
+        <h3 className="w-full pl-6 md:pl-8 lg:pl-12 text-left text-xl font-medium">Listings</h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-4 w-full px-3 lg:px-8 pb-10">
+          <ProductCard
+            imageUrl="/Shoe.jpg"
+            productTitle="Lebron NXXT Gen"
+            brand="NIKE"
+            category="Men's Shoes"
+            price="25,000 DA"
+          />
+          <ProductCard
+            imageUrl="/Shoe.jpg"
+            productTitle="Lebron NXXT Gen"
+            brand="NIKE"
+            category="Men's Shoes"
+            price="25,000 DA"
+          />
+          <ProductCard
+            imageUrl="/Shoe.jpg"
+            productTitle="Lebron NXXT Gen"
+            brand="NIKE"
+            category="Men's Shoes"
+            price="25,000 DA"
+          />
+          <ProductCard
+            imageUrl="/Shoe.jpg"
+            productTitle="Lebron NXXT Gen"
+            brand="NIKE"
+            category="Men's Shoes"
+            price="25,000 DA"
+          />
+          <ProductCard
+            imageUrl="/Shoe.jpg"
+            productTitle="Lebron NXXT Gen"
+            brand="NIKE"
+            category="Men's Shoes"
+            price="25,000 DA"
+          />
+          <ProductCard
+            imageUrl="/Shoe.jpg"
+            productTitle="Lebron NXXT Gen"
+            brand="NIKE"
+            category="Men's Shoes"
+            price="25,000 DA"
+          />
         </div>
       </div>
 

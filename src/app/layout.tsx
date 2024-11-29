@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import CartSheet from "@/components/CartSheet";
 import Navbar from "@/components/Navbar";
 import { CartContextProvider } from "@/hooks/useCart";
@@ -5,7 +6,7 @@ import "@/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { type Metadata } from "next";
 import toast, { Toaster } from 'react-hot-toast';
-import { DM_Mono } from "next/font/google";
+import { DM_Mono } from 'next/font/google'
 
 const dmMono = DM_Mono({
   subsets: ["latin"],
@@ -23,19 +24,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={`${dmMono.className}`}>
-        <body className="h-screen">
-          <Navbar />
-          <div>
-            <CartContextProvider>
-              <CartSheet />
+      <ClerkProvider>
+    <html lang="en" className={`${dmMono.className}`}>
+
+      <body className="h-screen">
+        <Navbar />
+        <div>
+
+        <CartContextProvider>
+        <CartSheet />
               {children}
               <Toaster/>
-            </CartContextProvider>
-          </div>
-        </body>
-      </html>
-    </ClerkProvider>
+        </CartContextProvider>
+        </div>
+        <Footer />
+      </body>
+    </html>
+      </ClerkProvider>
   );
 }

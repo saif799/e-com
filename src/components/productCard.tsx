@@ -2,15 +2,16 @@ import Image from "next/image";
 
 type ProductImageProps = {
   imageUrl: string;
-  imageTitle?: string;
+  productTitle?: string;
+  brand?: string ; 
   price?: string;
   category?: string;
 };
 
-export default function ProductCard({ imageUrl }: ProductImageProps) {
+export default function ProductCard({ imageUrl , productTitle, brand , price , category  }: ProductImageProps) {
   return (
-    <div className="min-w-40 md:min-w-52 basis-1/4 flex flex-col gap-5 pb-4">
-      <div className="border h-[45vh] rounded-2xl overflow-hidden flex items-center justify-center">
+    <div className="w-full flex flex-col gap-5 py-4 hover:scale-105 rounded-2xl hover:bg-gray-50 transition-transform">
+      <div className="w-11/12 m-auto min-h-52 md:h-64 lg:h-[340px] bg-white rounded-2xl overflow-hidden flex items-center justify-center">
         <Image
           src={imageUrl}
           alt={`Product image `}
@@ -20,9 +21,9 @@ export default function ProductCard({ imageUrl }: ProductImageProps) {
         />
       </div>
       <div className="pl-3 flex flex-col gap-2">
-        <h2 className="font-medium md:text-md">Lebron NXXT Gen</h2>
-        <p className="text-secondary md:text-md">Nike | Man’s shoes</p>
-        <p className="text-purple-900 md:text-md font-medium">25,000 DA</p>
+        <h2 className="font-medium md:text-md">{productTitle}</h2>
+        <p className="text-secondary md:text-md">{brand} | {category}</p>
+        <p className="text-purple-900 md:text-md font-medium">{price}</p>
       </div>
     </div>
   );
