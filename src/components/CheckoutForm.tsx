@@ -16,7 +16,6 @@ import {
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -32,11 +31,11 @@ import {
 import Image from "next/image";
 import { getWilayaNames } from "@/hooks/getWilayas";
 import { useState } from "react";
-import { CartOrderType, checkoutFormSchema, type OrderType } from "@/lib/types";
+import { type CartOrderType, checkoutFormSchema } from "@/lib/types";
 import { useCart } from "@/hooks/useCart";
 import { generateId } from "@/lib/generateId";
 import toast from "react-hot-toast";
-import { OrderProductType } from "./OrderData";
+import type { OrderProductType } from "./OrderData";
 import { addOrderAction } from "@/actions/addOrderAction";
 
 type CheckoutFormProps = {
@@ -68,22 +67,11 @@ export default function CheckoutForm({
     // TODO : make sure to notify the user (toast) when the request succeeds or fails
     setIsLoading(true);
     const id = generateId();
-    const order: OrderType & { size: number; originalQuantity: number } = {
+
+    const order: CartOrderType = {
       id,
       customerInfo: data,
-      productId: product.id,
-      price: product.price,
-      quantity,
-      status: "pending",
-      originalQuantity: selectedPiece.quantity,
-      size: selectedPiece.size,
-    };
-    const orderTest: CartOrderType = {
-      id,
-      customerInfo: data,
-      // productId: product.id,
-      // price: product.price,
-      // quantity,
+
       status: "pending",
       deliveryPrice: 2,
       products: [
@@ -106,7 +94,7 @@ export default function CheckoutForm({
     //   body: JSON.stringify(order),
     // });
 
-    const { success } = await addOrderAction(orderTest);
+    const { success } = await addOrderAction(order);
 
     // TODO : compete the add to carte proccess and make sure it works
     // TODO : try and improve this piece of crap and think more about the ordercarte price (its no longer a piece of crap but still needs improvments)
@@ -139,215 +127,200 @@ export default function CheckoutForm({
   }
 
   return (
-    <Sheet>
-      <SheetTrigger
-        disabled={!selectedPiece}
-        className="w-full rounded-2xl border py-2 text-lg font-semibold md:py-8 md:text-xl"
-      >
-        {" "}
-        Order Now
-      </SheetTrigger>
-
-      <SheetContent side="bottom" className="max-h-[90%] overflow-scroll">
-        <SheetHeader>
-          <SheetTitle className="pb-5">
-            <h2>Checkout</h2>
-            <Button onClick={() => toast.success("some")}> success</Button>
-            <p className="text-sm font-normal text-secondary">
-              1 item : 24,000 DA
+    <SheetContent side="bottom" className="max-h-[90%] overflow-scroll">
+      <SheetHeader>
+        <SheetTitle className="pb-5">
+          <h2>Checkout</h2>
+          <p className="text-sm font-normal text-secondary">
+            1 item : 24,000 DA
+          </p>
+        </SheetTitle>
+        <div className="flex gap-2 pb-4">
+          <div>
+            <Image
+              src="/image 5.svg"
+              alt="checkout product image"
+              width={500}
+              height={500}
+              className="object-fit h-full max-h-24 w-full flex-shrink-0"
+            />
+          </div>
+          <div className="flex flex-col items-start gap-1">
+            <h3 className="text-md font-medium text-black">
+              Lebron NXXT Gen 20” - Lakers
+            </h3>
+            <p className="text-sm text-secondary">ref : 105293</p>
+            <p className="text-sm text-secondary">color : purple</p>
+            <p className="text-sm text-secondary">
+              size : {selectedPiece.size}
             </p>
-          </SheetTitle>
-          <div className="flex gap-2 pb-4">
-            <div>
-              <Image
-                src="/image 5.svg"
-                alt="checkout product image"
-                width={500}
-                height={500}
-                className="object-fit h-full max-h-24 w-full flex-shrink-0"
+            <p className="text-sm text-secondary">qty : {quantity}</p>
+            <p className="text-sm text-secondary">
+              {product.price * quantity} DA
+            </p>
+          </div>
+        </div>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+            <h2 className="text-start text-black">Delivery Info</h2>
+            <div className="flex gap-3">
+              <div className="basis-1/2">
+                <FormField
+                  control={form.control}
+                  name="firstName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="firstName" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+
+              <div className="basis-1/2">
+                <FormField
+                  control={form.control}
+                  name="familyName"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="FamilyName" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
+            <div className="flex justify-between gap-3">
+              <div className="basis-1/2">
+                <FormField
+                  control={form.control}
+                  name="wilaya"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Select
+                          defaultValue={field.value}
+                          onValueChange={field.onChange}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="wilaya" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            {wilayas.map((w, i) => (
+                              <SelectItem key={w} value={w}>
+                                {i + 1}. {w}
+                              </SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="basis-1/2">
+                <FormField
+                  control={form.control}
+                  name="baladia"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Select
+                          defaultValue={field.value}
+                          onValueChange={field.onChange}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="baladia" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="light">Light</SelectItem>
+                            <SelectItem value="dark">Dark</SelectItem>
+                            <SelectItem value="system">System</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
+            <div className="w-full">
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="phone number" type="tel" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
               />
             </div>
-            <div className="flex flex-col items-start gap-1">
-              <h3 className="text-md font-medium text-black">
-                Lebron NXXT Gen 20” - Lakers
-              </h3>
-              <p className="text-sm text-secondary">ref : 105293</p>
-              <p className="text-sm text-secondary">color : purple</p>
-              <p className="text-sm text-secondary">
-                size : {selectedPiece?.size}
-              </p>
-              <p className="text-sm text-secondary">qty : {quantity}</p>
-              <p className="text-sm text-secondary">
-                {product.price * quantity} DA
-              </p>
+            <div className="w-full">
+              <FormField
+                control={form.control}
+                name="city"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input
+                        placeholder="city"
+                        // className="w-full"
+                        type="tel"
+                        {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
-          </div>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-              <h2 className="text-start text-black">Delivery Info</h2>
-              <div className="flex gap-3">
-                <div className="basis-1/2">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input placeholder="firstName" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
 
-                <div className="basis-1/2">
-                  <FormField
-                    control={form.control}
-                    name="familyName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input placeholder="FamilyName" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+            <div className="item-center flex justify-around gap-3">
+              <div className="flex flex-wrap items-center gap-4">
+                {/* {cartCounter && (
+                  <div className="text-muted-foreground">Quantity </div>
+                )} */}
+                <div className="flex items-center gap-4 text-base">
+                  <Button
+                    type="button"
+                    variant={"outline"}
+                    onClick={() => setQuantity(quantity - 1)}
+                    disabled={quantity <= 1}
+                  >
+                    -
+                  </Button>
+                  <span>{quantity === 0 ? "0" : quantity}</span>
+                  <Button
+                    type="button"
+                    variant={"outline"}
+                    disabled={
+                      selectedPiece && quantity >= selectedPiece.quantity
+                    }
+                    onClick={() => setQuantity(quantity + 1)}
+                  >
+                    +
+                  </Button>
                 </div>
               </div>
-              <div className="flex justify-between gap-3">
-                <div className="basis-1/2">
-                  <FormField
-                    control={form.control}
-                    name="wilaya"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Select
-                            defaultValue={field.value}
-                            onValueChange={field.onChange}
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="wilaya" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              {wilayas.map((w, i) => (
-                                <SelectItem key={w} value={w}>
-                                  {i + 1}. {w}
-                                </SelectItem>
-                              ))}
-                            </SelectContent>
-                          </Select>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="basis-1/2">
-                  <FormField
-                    control={form.control}
-                    name="baladia"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Select
-                            defaultValue={field.value}
-                            onValueChange={field.onChange}
-                          >
-                            <SelectTrigger>
-                              <SelectValue placeholder="baladia" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="light">Light</SelectItem>
-                              <SelectItem value="dark">Dark</SelectItem>
-                              <SelectItem value="system">System</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-              </div>
-              <div className="w-full">
-                <FormField
-                  control={form.control}
-                  name="phone"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="phone number"
-                          type="tel"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-              <div className="w-full">
-                <FormField
-                  control={form.control}
-                  name="city"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input
-                          placeholder="city"
-                          // className="w-full"
-                          type="tel"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="item-center flex justify-around gap-3">
-                <div className="flex flex-wrap items-center gap-4">
-                  {/* {cartCounter && (
-                      <div className="text-muted-foreground">Quantity </div>
-                    )} */}
-                  <div className="flex items-center gap-4 text-base">
-                    <Button
-                      type="button"
-                      variant={"outline"}
-                      onClick={() => setQuantity(quantity - 1)}
-                      disabled={quantity <= 1}
-                    >
-                      -
-                    </Button>
-                    <span>{quantity === 0 ? "0" : quantity}</span>
-                    <Button
-                      type="button"
-                      variant={"outline"}
-                      disabled={
-                        selectedPiece && quantity >= selectedPiece.quantity
-                      }
-                      onClick={() => setQuantity(quantity + 1)}
-                    >
-                      +
-                    </Button>
-                  </div>
-                </div>
-                <Button type="submit" className="flex-1">
-                  Confirm Order
-                </Button>
-              </div>
-            </form>
-          </Form>{" "}
-          <p className="pt-3 text-start text-black">
-            * Delivery time might vary from 3 to 7 days
-          </p>
-        </SheetHeader>
-      </SheetContent>
-    </Sheet>
+              <Button type="submit" className="flex-1">
+                Confirm Order
+              </Button>
+            </div>
+          </form>
+        </Form>{" "}
+        <p className="pt-3 text-start text-black">
+          * Delivery time might vary from 3 to 7 days
+        </p>
+      </SheetHeader>
+    </SheetContent>
   );
 }

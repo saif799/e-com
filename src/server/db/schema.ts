@@ -35,9 +35,13 @@ export const productsTable = createTable(
     createdAt: int("created_at", { mode: "timestamp" })
       .default(sql`(unixepoch())`)
       .notNull(),
+      categoryId: text("category_id")
+      .notNull()
+      .references(() => categoriesTable.id, {
+        onDelete: "cascade",
+      }),
     updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-      () => new Date(),
-    ),
+      () => new Date()),
   },
   (product) => ({
     ProductNameIndex: index("ProductName_idx").on(product.name),

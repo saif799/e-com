@@ -16,7 +16,7 @@ export type CartContextType = {
   handleProductDecrease: (product: CartProductType) => void;
   handleProductIncrease: (product: CartProductType) => void;
   handleRemoveOrders: (orderId: string) => void;
-  handleRemoveProduct: (product: CartProductType) => void;
+  handleRemoveProduct: (product: string) => void;
 };
 
 export const CartContext = createContext<CartContextType | null>(null);
@@ -76,11 +76,9 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
     });
   }
 
-  function handleRemoveProduct(product: CartProductType) {
+  function handleRemoveProduct(productId: string) {
     if (cartProducts) {
-      const updatedCart = cartProducts.filter(
-        (p) => p.productId !== product.productId,
-      );
+      const updatedCart = cartProducts.filter((p) => p.productId !== productId);
       setCartProducts(updatedCart);
       localStorage.setItem("cart_Products", JSON.stringify(updatedCart));
     }

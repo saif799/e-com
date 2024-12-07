@@ -4,6 +4,9 @@ import CheckoutForm from "./CheckoutForm";
 import SizeBlock from "./SizeBlock";
 import { Button } from "./ui/button";
 import { useCart } from "@/hooks/useCart";
+import toast from "react-hot-toast";
+import { Sheet, SheetTrigger } from "./ui/sheet";
+import { cn } from "@/lib/utils";
 
 type sizesType = { size: number; quantity: number };
 
@@ -18,11 +21,13 @@ type OrderDataProps = {
   Product: OrderProductType;
 };
 export function OrderData({ Product }: OrderDataProps) {
-  const [selectedPiece, setSelectedPiece] = useState<sizesType>();
+  const [selectedPiece, setSelectedPiece] = useState<sizesType | null>(null);
   const { handleAddProduct } = useCart();
 
   function selectPiece(piece: sizesType) {
-    setSelectedPiece(piece);
+    if (selectedPiece && selectedPiece.size === piece.size)
+      setSelectedPiece(null);
+    else setSelectedPiece(piece);
   }
   return (
     <>
@@ -46,30 +51,37 @@ export function OrderData({ Product }: OrderDataProps) {
 
       <div className="flex flex-col gap-2 px-5 pb-5">
         <Button
-          onClick={() =>
-            handleAddProduct({
-              productId: Product.id,
-              image: Product.image,
-              price: Product.price,
-              productName: Product.name,
-              quantity: 1,
-            })
-          }
+          onClick={() => {
+            if (selectedPiece)
+              handleAddProduct({
+                productId: Product.id,
+                image: Product.image,
+                price: Product.price,
+                productName: Product.name,
+                quantity: 1,
+                size: selectedPiece.size,
+              });
+            else toast.error("Please select a size");
+          }}
           className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
         >
           Add to Bag
         </Button>
 
-        {selectedPiece ? (
-          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-        ) : (
-          <Button
-            variant={"outline"}
-            className="w-full rounded-2xl border py-5 text-lg font-semibold md:py-8 md:text-xl"
+        <Sheet>
+          <SheetTrigger
+            disabled={!selectedPiece}
+            className={cn(
+              "w-full rounded-2xl border py-2 text-lg font-semibold md:py-8 md:text-xl",
+              !selectedPiece && "text-secondary",
+            )}
           >
-            Order now{" "}
-          </Button>
-        )}
+            Order Now
+          </SheetTrigger>
+          {selectedPiece ? (
+            <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+          ) : null}
+        </Sheet>
       </div>
     </>
   );

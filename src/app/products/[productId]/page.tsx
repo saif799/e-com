@@ -1,23 +1,23 @@
 import Image from "next/image";
 import ProductCard from "@/components/productCard";
 import ImageSlide from "@/components/imageSlide";
-import { GetProduct } from "@/actions/getProduct";
+import { GetProduct, GetSimilarProducts } from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
 
 const colorOptions = [
-  "/image 5.svg",
-  "/image 5.svg",
-  "/image 5.svg",
-  "/image 5.svg",
-  "/image 5.svg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
 ];
 
 const productImages: string[] = [
-  "/image 5.svg",
-  "/image 5.svg",
-  "/image 5.svg",
-  "/image 5.svg",
-  "/image 5.svg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
+  "/Shoe.jpg",
 ];
 
 type Props = { params: { productId: string } };
@@ -26,6 +26,8 @@ export default async function Component({ params: { productId } }: Props) {
 
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   if (!products || !products[0]?.products) return;
+  const similarProducts=await GetSimilarProducts(products[0].products.categoryId,productId)
+
   const product: OrderProductType = {
     id: productId,
     name: products[0].products.name,
@@ -40,7 +42,7 @@ export default async function Component({ params: { productId } }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-8 pt-20 lg:flex-row">
+    <div className="flex flex-col items-center gap-8 pt-10 lg:flex-row">
       <div className="w-full lg:w-3/4">
         <div className="px-4">
           <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
@@ -66,7 +68,7 @@ export default async function Component({ params: { productId } }: Props) {
                   alt={`Color ${index + 1}`}
                   width={200}
                   height={200}
-                  className="h-20 w-20 object-cover md:h-36 md:w-36"
+                  className="h-20 w-20 object-contain md:h-36 md:w-36"
                 />
                 <h3 className="px-1 text-center text-sm font-extralight md:text-lg">
                   Lakers Purple{" "}
@@ -79,9 +81,17 @@ export default async function Component({ params: { productId } }: Props) {
         <h3 className="px-3 pb-5 text-lg font-semibold md:text-2xl">
           Similar Products
         </h3>
-        <div className="flex gap-3 overflow-scroll pb-3">
-          {productImages.map((p, i) => (
-            <ProductCard key={i} imageUrl={p} />
+        <div className="flex gap-1 overflow-scroll pb-3">
+          {similarProducts!.map((p, i) => (
+            <ProductCard
+              key={i}
+              href={p.id}
+              imageUrl={p.showcaseImage}
+              productTitle="Lebron NXXT Gen"
+              brand="NIKE"
+              category="Men's Shoes"
+              price="25,000 DA"
+            />
           ))}
         </div>
       </div>
