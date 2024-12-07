@@ -6,7 +6,7 @@ type ProductImageProps = {
   productTitle?: string;
   href:string
   brand?: string ; 
-  price?: string;
+  price?: number;
   category?: string;
 };
 
@@ -25,7 +25,7 @@ export default function ProductCard({href, imageUrl , productTitle, brand , pric
       <div className="pl-3 flex flex-col gap-2">
         <h2 className="font-medium md:text-md">{productTitle}</h2>
         <p className="text-secondary md:text-md">{brand} | {category}</p>
-        <p className="text-purple-900 md:text-md font-medium">{price}</p>
+        <p className="text-purple-900 md:text-md font-medium">{price} DA</p>
       </div>
     </Link>
   );

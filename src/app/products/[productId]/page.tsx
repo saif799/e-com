@@ -90,7 +90,7 @@ export default async function Component({ params: { productId } }: Props) {
               productTitle="Lebron NXXT Gen"
               brand="NIKE"
               category="Men's Shoes"
-              price="25,000 DA"
+              price={p.price}
             />
           ))}
         </div>

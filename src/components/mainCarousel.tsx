@@ -1,6 +1,6 @@
-import * as React from "react";
-import Autoplay from "embla-carousel-autoplay";
 
+"use client"
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
@@ -41,7 +41,6 @@ export function MainCarousel() {
             </div>
           </CarouselItem>
         ))}
-        
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />

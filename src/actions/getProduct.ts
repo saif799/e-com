@@ -2,6 +2,7 @@
 
 import { db } from "@/server/db";
 import {
+  categoriesTable,
   ImagesTable,
   productSizesTable,
   productsTable,
@@ -37,3 +38,18 @@ export async function GetSimilarProducts(categoryId:string,notEqualProductId:str
     return;
   }
 }
+
+
+export async function GetShowCaseProducts() {
+  try {
+    const products = await db
+      .select()     
+      .from(productsTable) .innerJoin(categoriesTable, eq(categoriesTable.id, productsTable.categoryId)).orderBy(productsTable.createdAt)
+    return products;
+  } catch (err) {
+    console.log("error selecting a product ", err);
+    throw new Error("failed to fetch the prodcuts")
+  }
+}
+
+
