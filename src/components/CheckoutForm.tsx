@@ -63,6 +63,8 @@ export default function CheckoutForm({
     },
   });
 
+  const { watch } = form;
+
   async function onSubmit(data: z.infer<typeof checkoutFormSchema>) {
     // TODO : make sure to notify the user (toast) when the request succeeds or fails
     setIsLoading(true);
@@ -84,6 +86,7 @@ export default function CheckoutForm({
           size: selectedPiece.size,
         },
       ],
+
       // size: selectedPiece.size,
     };
     // const res = await fetch("/api/order", {
@@ -95,7 +98,6 @@ export default function CheckoutForm({
     // });
 
     const { success } = await addOrderAction(order);
-
     // TODO : compete the add to carte proccess and make sure it works
     // TODO : try and improve this piece of crap and think more about the ordercarte price (its no longer a piece of crap but still needs improvments)
     if (success) {
@@ -210,9 +212,9 @@ export default function CheckoutForm({
                             <SelectValue placeholder="wilaya" />
                           </SelectTrigger>
                           <SelectContent>
-                            {wilayas.map((w, i) => (
-                              <SelectItem key={w} value={w}>
-                                {i + 1}. {w}
+                            {wilayas.map((w) => (
+                              <SelectItem key={w.wilayaId} value={w.wilayaName}>
+                                {w.wilayaId}. {w.wilayaName}
                               </SelectItem>
                             ))}
                           </SelectContent>
@@ -238,9 +240,13 @@ export default function CheckoutForm({
                             <SelectValue placeholder="baladia" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="light">Light</SelectItem>
-                            <SelectItem value="dark">Dark</SelectItem>
-                            <SelectItem value="system">System</SelectItem>
+                            {wilayas
+                              .find((w) => w.wilayaName === watch("wilaya"))
+                              ?.communes.map((c) => (
+                                <SelectItem key={c.name} value={c.name}>
+                                  {c.name}
+                                </SelectItem>
+                              ))}
                           </SelectContent>
                         </Select>
                       </FormControl>

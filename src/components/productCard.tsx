@@ -12,7 +12,7 @@ type ProductImageProps = {
 
 export default function ProductCard({href, imageUrl , productTitle, brand , price , category  }: ProductImageProps) {
   return (
-    <Link href={href} className="w-full flex flex-col gap-5 py-4 hover:scale-105 rounded-2xl hover:bg-gray-50 transition-transform min-w-44">
+    <Link href={`/products/${href}`} className="w-full flex flex-col gap-5 py-4 hover:scale-105 rounded-2xl hover:bg-gray-50 transition-transform min-w-44">
       <div className="w-11/12 m-auto min-h-52 md:h-64 lg:h-[340px] bg-white rounded-2xl overflow-hidden flex items-center justify-center">
         <Image
           src={imageUrl}

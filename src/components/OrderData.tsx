@@ -53,14 +53,16 @@ export function OrderData({ Product }: OrderDataProps) {
         <Button
           onClick={() => {
             if (selectedPiece)
-              handleAddProduct({
-                productId: Product.id,
-                image: Product.image,
-                price: Product.price,
-                productName: Product.name,
-                quantity: 1,
-                size: selectedPiece.size,
-              });
+             { handleAddProduct({
+              productId: Product.id,
+              image: Product.image,
+              price: Product.price,
+              productName: Product.name,
+              quantity: 1,
+              size: selectedPiece.size,
+            });
+          
+          toast.success("add to the bag successfully")}
             else toast.error("Please select a size");
           }}
           className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
