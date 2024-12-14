@@ -50,6 +50,9 @@ export function OrderData({ Product }: OrderDataProps) {
       </div>
 
       <div className="flex flex-col gap-2 px-5 pb-5">
+        {/* {selectedPiece ? (
+          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+        ) : null} */}
         <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
           <Button
             disabled={!selectedPiece}

@@ -152,15 +152,15 @@ export default function CheckoutForm({
             </h3>
             {/* <p className="text-sm text-secondary">ref : 105293</p> */}
             {/* <p className="text-sm text-secondary">color : purple</p> */}
-            <div className="flex w-full justify-around">
-              <p className="text-sm text-secondary">
-                size : {selectedPiece.size}
-              </p>
-              <p className="text-sm text-secondary">qty : {quantity}</p>
-            </div>
+            {/* <div className="flex w-full justify-around"> */}
+            <p className="text-sm text-secondary">
+              size : {selectedPiece.size}
+            </p>
+            <p className="text-sm text-secondary">qty : {quantity}</p>
+            {/* </div> */}
 
-            <p className="w-full py-1 text-end text-sm text-secondary text-yellow-600">
-              {product.price * quantity} DA
+            <p className="text-sm text-secondary text-yellow-600">
+              price: {product.price * quantity} DA
             </p>
           </div>
         </div>
