@@ -39,9 +39,8 @@ export async function addOrderAction(order: CartOrderType): Promise<{
       await tx.insert(orderTable).values({
         id: orderId,
         status: "pending",
-        firstName: order.customerInfo.firstName,
+        fullName: order.customerInfo.fullName,
         baladia: order.customerInfo.baladia,
-        lastName: order.customerInfo.familyName,
         phoneNumber: order.customerInfo.phone,
         wilaya: order.customerInfo.wilaya,
       });

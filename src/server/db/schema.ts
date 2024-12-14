@@ -1,54 +1,45 @@
-// Example model schema from the Drizzle docs
-// https://orm.drizzle.team/docs/sql-schema-declaration
-
+// import { sql } from "drizzle-orm";
 import { sql } from "drizzle-orm";
 import {
   check,
   index,
-  int,
-  sqliteTableCreator,
   text,
-} from "drizzle-orm/sqlite-core";
+  timestamp,
+  integer,
+  pgTable,
+} from "drizzle-orm/pg-core";
 
-/**
- * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same
- * database instance for multiple projects.
- *
- * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
- */
-export const createTable = sqliteTableCreator((name) => `${name}`);
+// For PostgreSQL, we don't need the table creator helper
+// as pgTable handles this for us
 
-export const categoriesTable = createTable("categories", {
+export const categoriesTable = pgTable("categories", {
   id: text("id").primaryKey(),
-  name: text("name", { length: 256 }).notNull(),
-  description: text("description", { length: 512 }),
+  name: text("name").notNull(),
+  description: text("description"),
 });
 
-export const productsTable = createTable(
+export const productsTable = pgTable(
   "products",
   {
     id: text("id").primaryKey(),
-    name: text("name", { length: 256 }).notNull(),
-    description: text("description", { length: 512 }),
-    showcaseImage: text("show_case", { length: 256 }).notNull(),
-    price: int("price").notNull(),
-    createdAt: int("created_at", { mode: "timestamp" })
-      .default(sql`(unixepoch())`)
-      .notNull(),
-      categoryId: text("category_id")
+    name: text("name").notNull(),
+    description: text("description"),
+    showcaseImage: text("show_case").notNull(),
+    price: integer("price").notNull(),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    categoryId: text("category_id")
       .notNull()
       .references(() => categoriesTable.id, {
         onDelete: "cascade",
       }),
-    updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-      () => new Date()),
+    updatedAt: timestamp("updated_at").defaultNow(),
   },
   (product) => ({
     ProductNameIndex: index("ProductName_idx").on(product.name),
   }),
 );
 
-export const productSizesTable = createTable(
+export const productSizesTable = pgTable(
   "product_sizes",
   {
     id: text("id").primaryKey(),
@@ -57,77 +48,46 @@ export const productSizesTable = createTable(
       .references(() => productsTable.id, {
         onDelete: "cascade",
       }),
-    size: int("size").notNull(),
-    stock: int("stock").notNull().default(0),
-    createdAt: int("created_at", { mode: "timestamp" })
-      .default(sql`(unixepoch())`)
-      .notNull(),
-    updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-      () => new Date(),
-    ),
+    size: integer("size").notNull(),
+    stock: integer("stock").notNull().default(0),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow(),
   },
   (product) => ({
     productIndex: index("product_idx").on(product.productId),
-    checkConstraint: check("age_check1", sql`${product.stock} > 0`),
+    checkConstraint: check("stock_check", sql`stock > 0`),
   }),
 );
-// src/server/db/schema.ts
-// ... existing code ...
 
-export const usersTable = createTable("users", {
+export const usersTable = pgTable("users", {
   id: text("id").primaryKey(),
-  externalId: text("externalId", { length: 256 }).notNull().unique(),
-  firstName: text("firstName", { length: 256 }).notNull(),
-  lastName: text("lastName", { length: 256 }),
-  email: text("email", { length: 256 }).unique(),
-  phoneNumber: text("phone_number", { length: 1024 }),
-  createdAt: int("created_at", { mode: "timestamp" })
-    .default(sql`(unixepoch())`)
-    .notNull(),
-  updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-    () => new Date(),
-  ),
+  externalId: text("external_id").notNull().unique(),
+  firstName: text("first_name").notNull(),
+  lastName: text("last_name"),
+  email: text("email").unique(),
+  phoneNumber: text("phone_number"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-export const orderTable = createTable("orderTable", {
+export const orderTable = pgTable("orders", {
+  // Changed from orderTable to orders for conventional naming
   id: text("id").primaryKey(),
   status: text("status").default("pending"),
-  orderDate: int("order_date", { mode: "timestamp" })
-    .default(sql`(unixepoch())`)
-    .notNull(),
-    firstName: text("first_name").notNull(),
-    phoneNumber: text("phone_number").notNull(),
-    lastName: text("last_name").notNull(),
-    wilaya: text("wilaya").notNull(),
-    baladia: text("baladia").notNull(),
-  updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-    () => new Date(),
-  ),
+  orderDate: timestamp("order_date").defaultNow().notNull(),
+  fullName: text("full_name").notNull(),
+  phoneNumber: text("phone_number").notNull(),
+  wilaya: text("wilaya").notNull(),
+  baladia: text("baladia").notNull(),
+  updatedAt: timestamp("updated_at").defaultNow(),
 });
 
-// export const ClientTable = createTable(
-//   "CLientTable",
-//   {
-//     id: text("id").primaryKey(),
-   
-//     createdAt: int("created_at", { mode: "timestamp" })
-//       .default(sql`(unixepoch())`)
-//       .notNull(),
-//     updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-//       () => new Date(),
-//     ),
-//   },
-//   (client) => ({
-//     PhoneIndex: index("phoneIndex").on(client.phoneNumber),
-//   }),
-// );
-
-export const productsOrderedTable = createTable(
-  "products_Ordered",
+export const productsOrderedTable = pgTable(
+  "products_ordered", // Changed from products_Ordered to products_ordered for conventional naming
   {
     id: text("id").primaryKey(),
-    quantity: int("quantity", { mode: "number" }).notNull(),
-    price: int("price").notNull(),
+    quantity: integer("quantity").notNull(),
+    price: integer("price").notNull(),
     orderId: text("order_id")
       .notNull()
       .references(() => orderTable.id),
@@ -141,7 +101,7 @@ export const productsOrderedTable = createTable(
   }),
 );
 
-export const ImagesTable = createTable(
+export const ImagesTable = pgTable(
   "images",
   {
     id: text("id").primaryKey(),
@@ -150,12 +110,8 @@ export const ImagesTable = createTable(
       .references(() => productsTable.id, {
         onDelete: "cascade",
       }),
-    createdAt: int("created_at", { mode: "timestamp" })
-      .default(sql`(unixepoch())`)
-      .notNull(),
-    updatedAt: int("updated_at", { mode: "timestamp" }).$onUpdate(
-      () => new Date(),
-    ),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+    updatedAt: timestamp("updated_at").defaultNow(),
   },
   (product) => ({
     productIndex: index("imageProduct_idx").on(product.productId),

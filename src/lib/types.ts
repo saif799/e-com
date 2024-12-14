@@ -1,8 +1,7 @@
 import { z } from "zod";
 
 export type customerType = {
-  firstName: string;
-  familyName: string;
+  fullName: string;
   phone: string;
   wilaya: string;
   baladia: string;
@@ -29,8 +28,7 @@ export type CartOrderType = {
 const phoneRegex = /^(05|06|07)\d{8}$/;
 
 export const checkoutFormSchema = z.object({
-  firstName: z.string(),
-  familyName: z.string(),
+  fullName: z.string(),
   phone: z.string().refine((val) => phoneRegex.test(val), {
     message: "must start with 05, 06, or 07 and contain 10 digits.",
   }),

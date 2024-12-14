@@ -5,8 +5,7 @@ import SizeBlock from "./SizeBlock";
 import { Button } from "./ui/button";
 import { useCart } from "@/hooks/useCart";
 import toast from "react-hot-toast";
-import { Sheet, SheetTrigger } from "./ui/sheet";
-import { cn } from "@/lib/utils";
+import { Sheet } from "./ui/sheet";
 
 type sizesType = { size: number; quantity: number };
 
@@ -22,6 +21,7 @@ type OrderDataProps = {
 };
 export function OrderData({ Product }: OrderDataProps) {
   const [selectedPiece, setSelectedPiece] = useState<sizesType | null>(null);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { handleAddProduct } = useCart();
 
   function selectPiece(piece: sizesType) {
@@ -50,40 +50,38 @@ export function OrderData({ Product }: OrderDataProps) {
       </div>
 
       <div className="flex flex-col gap-2 px-5 pb-5">
+        <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
+          <Button
+            disabled={!selectedPiece}
+            className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
+            onClick={() => setIsOpen(true)}
+          >
+            Order now
+          </Button>
+          {selectedPiece ? (
+            <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+          ) : null}
+        </Sheet>
         <Button
+          variant="outline"
           onClick={() => {
-            if (selectedPiece)
-             { handleAddProduct({
-              productId: Product.id,
-              image: Product.image,
-              price: Product.price,
-              productName: Product.name,
-              quantity: 1,
-              size: selectedPiece.size,
-            });
-          
-          toast.success("add to the bag successfully")}
-            else toast.error("Please select a size");
+            if (selectedPiece) {
+              handleAddProduct({
+                productId: Product.id,
+                image: Product.image,
+                price: Product.price,
+                productName: Product.name,
+                quantity: 1,
+                size: selectedPiece.size,
+              });
+
+              toast.success("add to the bag successfully");
+            } else toast.error("Please select a size");
           }}
           className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
         >
           Add to Bag
         </Button>
-
-        <Sheet>
-          <SheetTrigger
-            disabled={!selectedPiece}
-            className={cn(
-              "w-full rounded-2xl border py-2 text-lg font-semibold md:py-8 md:text-xl",
-              !selectedPiece && "text-secondary",
-            )}
-          >
-            Order Now
-          </SheetTrigger>
-          {selectedPiece ? (
-            <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-          ) : null}
-        </Sheet>
       </div>
     </>
   );

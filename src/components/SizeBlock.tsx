@@ -19,7 +19,7 @@ export default function SizeBlock({
       variant={"outline"}
       className={cn(
         "flex h-16 w-16 items-center justify-center rounded-md text-lg md:h-20 md:w-20 md:text-xl",
-        isSelected && "bg-black text-white",
+        isSelected && "border-0 bg-black text-white",
       )}
       onClick={() => selectPiece(piece)}
     >

@@ -54,8 +54,7 @@ export default function CheckoutForm({
   const form = useForm<z.infer<typeof checkoutFormSchema>>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
-      firstName: "",
-      familyName: "",
+      fullName: "",
       phone: "",
       wilaya: "",
       baladia: "",
@@ -137,7 +136,7 @@ export default function CheckoutForm({
             1 item : 24,000 DA
           </p>
         </SheetTitle>
-        <div className="flex gap-2 pb-4">
+        <div className="flex gap-2 pb-3">
           <div>
             <Image
               src="/image 5.svg"
@@ -151,13 +150,16 @@ export default function CheckoutForm({
             <h3 className="text-md font-medium text-black">
               Lebron NXXT Gen 20” - Lakers
             </h3>
-            <p className="text-sm text-secondary">ref : 105293</p>
-            <p className="text-sm text-secondary">color : purple</p>
-            <p className="text-sm text-secondary">
-              size : {selectedPiece.size}
-            </p>
-            <p className="text-sm text-secondary">qty : {quantity}</p>
-            <p className="text-sm text-secondary">
+            {/* <p className="text-sm text-secondary">ref : 105293</p> */}
+            {/* <p className="text-sm text-secondary">color : purple</p> */}
+            <div className="flex w-full justify-around">
+              <p className="text-sm text-secondary">
+                size : {selectedPiece.size}
+              </p>
+              <p className="text-sm text-secondary">qty : {quantity}</p>
+            </div>
+
+            <p className="w-full py-1 text-end text-sm text-secondary text-yellow-600">
               {product.price * quantity} DA
             </p>
           </div>
@@ -166,29 +168,14 @@ export default function CheckoutForm({
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
             <h2 className="text-start text-black">Delivery Info</h2>
             <div className="flex gap-3">
-              <div className="basis-1/2">
+              <div className="grow">
                 <FormField
                   control={form.control}
-                  name="firstName"
+                  name="fullName"
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input placeholder="firstName" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
-
-              <div className="basis-1/2">
-                <FormField
-                  control={form.control}
-                  name="familyName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input placeholder="FamilyName" {...field} />
+                        <Input placeholder="full Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

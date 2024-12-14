@@ -26,12 +26,20 @@ export async function GetProduct(productId: string) {
     return;
   }
 }
-export async function GetSimilarProducts(categoryId:string,notEqualProductId:string) {
+export async function GetSimilarProducts(
+  categoryId: string,
+  notEqualProductId: string,
+) {
   try {
     const products = await db
       .select()
       .from(productsTable)
-      .where(and(eq(productsTable.categoryId,categoryId),ne(productsTable.id,notEqualProductId)));
+      .where(
+        and(
+          eq(productsTable.categoryId, categoryId),
+          ne(productsTable.id, notEqualProductId),
+        ),
+      );
     return products;
   } catch (err) {
     console.log("error selecting a product ", err);
@@ -39,17 +47,19 @@ export async function GetSimilarProducts(categoryId:string,notEqualProductId:str
   }
 }
 
-
 export async function GetShowCaseProducts() {
   try {
     const products = await db
-      .select()     
-      .from(productsTable) .innerJoin(categoriesTable, eq(categoriesTable.id, productsTable.categoryId)).orderBy(productsTable.createdAt)
+      .select()
+      .from(productsTable)
+      .innerJoin(
+        categoriesTable,
+        eq(categoriesTable.id, productsTable.categoryId),
+      )
+      .orderBy(productsTable.createdAt);
     return products;
   } catch (err) {
     console.log("error selecting a product ", err);
-    throw new Error("failed to fetch the prodcuts")
+    throw new Error("failed to fetch the prodcuts");
   }
 }
-
-

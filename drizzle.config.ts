@@ -1,12 +1,11 @@
-import { type Config } from "drizzle-kit";
+import 'dotenv/config';
+import { defineConfig } from 'drizzle-kit';
 
-import { env } from "@/env";
-
-export default {
-  schema: "./src/server/db/schema.ts",
-  dialect: "sqlite",
+export default defineConfig({
+  out: './drizzle',
+  schema: './src/server/db/schema.ts',
+  dialect: 'postgresql',
   dbCredentials: {
-    url: env.DATABASE_URL,
+    url: process.env.DATABASE_URL!,
   },
-  tablesFilter: ["ecom-site_*"],
-} satisfies Config;
+});
