@@ -65,7 +65,6 @@ export default function CheckoutForm({
   const { watch } = form;
 
   async function onSubmit(data: z.infer<typeof checkoutFormSchema>) {
-    // TODO : make sure to notify the user (toast) when the request succeeds or fails
     setIsLoading(true);
     const id = generateId();
 
@@ -86,18 +85,10 @@ export default function CheckoutForm({
         },
       ],
 
-      // size: selectedPiece.size,
     };
-    // const res = await fetch("/api/order", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(order),
-    // });
+   
 
     const { success } = await addOrderAction(order);
-    // TODO : compete the add to carte proccess and make sure it works
     // TODO : try and improve this piece of crap and think more about the ordercarte price (its no longer a piece of crap but still needs improvments)
     if (success) {
       handleAddOrder({
