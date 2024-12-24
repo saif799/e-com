@@ -9,7 +9,7 @@ import {
 import { useCart } from "@/hooks/useCart";
 import { useCartState } from "@/hooks/useCartState";
 import { Button } from "./ui/button";
-import { Card } from "./ui/card";
+// import { Card } from "./ui/card";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import { DM_Mono } from "next/font/google";
@@ -20,15 +20,15 @@ const dmMono = DM_Mono({
 });
 export default function CartSheet() {
   const { isOpen, Open } = useCartState();
-  const { cartProducts, handleClearCart, handleRemoveProduct } = useCart();
+  const { cartProducts, handleClearCart } = useCart();
 
   return (
-    <Sheet open={isOpen} onOpenChange={() => Open()}>
+    <Sheet open={isOpen} onOpenChange={() => Open()} >
       <SheetContent className={`${dmMono.className} p-2`}>
         <SheetHeader>
           <SheetTitle className="text-center">
             {/* TODO make sure u handle every state in here */}
-            <p className="font-medium text-md pr-2 pt-1 ">
+            <p className="text-md pr-2 pt-1 font-medium">
               {" "}
               {cartProducts
                 ? cartProducts.length + " Products"

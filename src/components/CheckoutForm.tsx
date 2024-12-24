@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { type z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -50,7 +50,7 @@ export default function CheckoutForm({
       phone: "",
       wilaya: "",
       baladia: "",
-      city: "",
+      livraison: "",
     },
   });
 
@@ -119,10 +119,13 @@ export default function CheckoutForm({
 
   return (
     <div className="mx-auto w-full max-w-2xl">
-      <h2 className="pb-2 text-center font-medium">Checkout</h2>
+      <h2 className="pb-2 text-center font-medium md:text-lg">Checkout</h2>
       <div className="space-y-6">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-3 md:text-lg"
+          >
             <h2 className="text-start text-black">Order Info</h2>
 
             <div className="grow">
@@ -191,7 +194,7 @@ export default function CheckoutForm({
                                 <SelectItem key={c.name} value={c.name}>
                                   {c.name}
                                 </SelectItem>
-                              ))}
+                              )) ?? <p>Select a wilaya</p>}
                           </SelectContent>
                         </Select>
                       </FormControl>
@@ -202,31 +205,54 @@ export default function CheckoutForm({
               </div>
             </div>
 
-            <FormField
-              control={form.control}
-              name="phone"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input placeholder="Phone number" type="tel" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="city"
-              render={({ field }) => (
-                <FormItem>
-                  <FormControl>
-                    <Input placeholder="City" type="text" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <div className="flex justify-between gap-3">
+              <div className="basis-1/2">
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input
+                          placeholder="Phone number"
+                          type="tel"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+              <div className="basis-1/2">
+                <FormField
+                  control={form.control}
+                  name="livraison"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Select
+                          value={field.value}
+                          onValueChange={field.onChange}
+                        >
+                          <SelectTrigger>
+                            <SelectValue placeholder="livraison" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="a domicile">
+                              {" "}
+                              a domicile
+                            </SelectItem>
+                            <SelectItem value="bereau"> bereau</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
+            </div>
 
             <div className="flex items-center justify-between gap-4">
               <p>Quantity:</p>
@@ -253,49 +279,51 @@ export default function CheckoutForm({
               </div>
             </div>
 
-            <h3 className="pb-3 font-medium">Order Summary</h3>
-            {selectedPiece ? (
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="relative h-24 w-24">
-                    <Image
-                      src={product.image}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                    />
+            <div className="">
+              <h3 className="pb-3 font-medium">Order Summary</h3>
+              {selectedPiece ? (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="relative h-24 w-24 rounded-sm">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                      <h3 className="font-medium">{product.name}</h3>
+                      <p className="text-sm text-secondary">
+                        Size: {selectedPiece.size}
+                      </p>
+                      <p className="text-sm text-secondary">
+                        Quantity: {quantity}
+                      </p>
+                      <p className="font-medium">
+                        {product.price} DA × {quantity}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex flex-col gap-1">
-                    <h3 className="font-medium">{product.name}</h3>
-                    <p className="text-sm text-secondary">
-                      Size: {selectedPiece.size}
-                    </p>
-                    <p className="text-sm text-secondary">
-                      Quantity: {quantity}
-                    </p>
-                    <p className="font-medium">
-                      {product.price} DA × {quantity}
-                    </p>
-                  </div>
-                </div>
 
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="flex justify-between">
-                    <p>Delivery</p>
-                    <p>{deliveryPrice} DA</p>
-                  </div>
-                  <div className="my-4 border-t border-black" />
-                  <div className="flex justify-between font-medium">
-                    <p>Total</p>
-                    <p>{totalPrice} DA</p>
+                  <div className="border-t border-gray-200 pt-4">
+                    <div className="flex justify-between">
+                      <p>Delivery</p>
+                      <p>{deliveryPrice} DA</p>
+                    </div>
+                    <div className="my-4 border-t border-black" />
+                    <div className="flex justify-between font-medium">
+                      <p>Total</p>
+                      <p>{totalPrice} DA</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              <p className="py-5 text-center font-medium text-red-400">
-                Please select a size
-              </p>
-            )}
+              ) : (
+                <p className="py-5 text-center font-medium text-red-400">
+                  Please select a size
+                </p>
+              )}
+            </div>
 
             <p className="text-xs text-gray-600">
               * Delivery time might vary from 3 to 7 days
@@ -303,7 +331,7 @@ export default function CheckoutForm({
 
             <Button
               type="submit"
-              className="w-full py-6 text-sm"
+              className="text-md w-full rounded-md py-6 font-medium md:py-8 md:text-xl"
               disabled={!selectedPiece || isLoading}
             >
               {isLoading ? "Processing..." : "Order Now"}

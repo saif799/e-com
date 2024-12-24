@@ -50,20 +50,9 @@ export function OrderData({ Product }: OrderDataProps) {
       </div>
 
       <div className="flex flex-col gap-2 px-5 pb-5">
-        {/* {selectedPiece ? (
-          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-        ) : null} */}
-        <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
-          {/* <Button
-            disabled={!selectedPiece}
-            className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
-            onClick={() => setIsOpen(true)}
-          >
-            Order now
-          </Button> */}
-          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-        </Sheet>
-        <Button
+        <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+
+        {/* <Button
           variant="outline"
           onClick={() => {
             if (selectedPiece) {
@@ -82,7 +71,7 @@ export function OrderData({ Product }: OrderDataProps) {
           className="text-md w-full rounded-md py-6 font-medium md:py-8 md:text-xl"
         >
           Add to Cart
-        </Button>
+        </Button> */}
       </div>
     </>
   );

@@ -36,6 +36,8 @@ export async function addOrderAction(order: CartOrderType): Promise<{
     await db.transaction(async (tx) => {
       const orderId = order.id;
 
+
+      // important : make sure to update this query to include livraison place and update the db schema too
       await tx.insert(orderTable).values({
         id: orderId,
         status: "pending",

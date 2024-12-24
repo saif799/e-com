@@ -45,65 +45,44 @@ export default async function Component({ params: { productId } }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-8 pt-5 lg:flex-row lg:px-28">
+    <div className="flex flex-col items-center gap-8 pt-5 lg:flex-row lg:items-start lg:justify-center lg:gap-0 lg:px-28">
       {/* <div className="w-full lg:w-3/4 xl:w-2/3"> */}
-      <div className="px-4">
+      <div className="w-fit px-4">
         <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
-        <h1 className="mb-3 text-lg font-medium">
+        <h1 className="mb-3 text-lg font-medium lg:text-xl">
           {products[0].products.name}
         </h1>
-        <h2 className="text-lg font-medium text-purple-900">
+        <h2 className="text-lg font-medium text-purple-900 lg:text-xl">
           {products[0]?.products.price} DA
         </h2>
         <ImageSlide productImages={productImages} />
       </div>
-
-      {/* </div> */}
-      <div className="flex flex-col gap-1 px-3 py-1 md:w-2/3">
-        <h3 className="text-md font-medium md:text-xl"> Description</h3>
-        <p className="pt-5 text-sm font-light md:text-base">
-          {products[0].products.description}
-        </p>
-      </div>
-      <div className="w-full md:w-2/3">
-        {/* <div className="mb-6">
-          <h3 className="mb-2 px-2 font-extralight text-gray-500 md:text-xl md:font-normal">
-            Available colors
+      <div className="w-fit">
+        <div className="flex flex-col gap-1 px-3 py-1 md:w-2/3">
+          <h3 className="text-md font-medium md:text-xl"> Description</h3>
+          <p className="pt-5 text-sm font-light md:text-base">
+            {products[0].products.description}
+          </p>
+        </div>
+        <div className="w-full md:w-2/3">
+          <OrderData Product={product} />
+          <h3 className="text-md px-3 pt-3 font-medium md:text-2xl">
+            Similar Products
           </h3>
-          <div className="grid grid-cols-4 gap-2 md:grid-cols-5 md:gap-4">
-            {colorOptions.map((color, index) => (
-              <div key={index} className="overflow-hidden">
-                <Image
-                  src={color}
-                  alt={`Color ${index + 1}`}
-                  width={200}
-                  height={200}
-                  className="h-20 w-20 object-contain md:h-36 md:w-36"
-                />
-                <h3 className="px-1 text-center text-sm font-extralight md:text-lg">
-                  Lakers Purple{" "}
-                </h3>
-              </div>
+          <div className="flex gap-1 overflow-scroll px-2 pb-8">
+            {similarProducts!.map((p, i) => (
+              <ProductCard
+                key={i}
+                href={p.id}
+                imageUrl={p.showcaseImage}
+                productTitle="Lebron NXXT Gen"
+                brand="NIKE"
+                category="Men's Shoes"
+                price={p.price}
+                className="basis-2/3"
+              />
             ))}
           </div>
-        </div> */}
-        <OrderData Product={product} />
-        <h3 className="text-md px-3 pt-3 font-medium md:text-2xl">
-          Similar Products
-        </h3>
-        <div className="flex gap-1 overflow-scroll px-2 pb-8">
-          {similarProducts!.map((p, i) => (
-            <ProductCard
-              key={i}
-              href={p.id}
-              imageUrl={p.showcaseImage}
-              productTitle="Lebron NXXT Gen"
-              brand="NIKE"
-              category="Men's Shoes"
-              price={p.price}
-              className="basis-2/3"
-            />
-          ))}
         </div>
       </div>
     </div>
