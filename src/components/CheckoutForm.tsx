@@ -3,7 +3,6 @@
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -12,14 +11,6 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
 import {
   Select,
@@ -40,8 +31,9 @@ import { addOrderAction } from "@/actions/addOrderAction";
 
 type CheckoutFormProps = {
   product: OrderProductType;
-  selectedPiece: { size: number; quantity: number };
+  selectedPiece: { size: number; quantity: number } | null;
 };
+
 export default function CheckoutForm({
   selectedPiece,
   product,
@@ -64,116 +56,90 @@ export default function CheckoutForm({
 
   const { watch } = form;
 
+  const deliveryPrice = 400; // Fixed delivery price
+  const totalPrice = selectedPiece
+    ? product.price * quantity + deliveryPrice
+    : 0;
+
   async function onSubmit(data: z.infer<typeof checkoutFormSchema>) {
+    if (!selectedPiece) return;
+
     setIsLoading(true);
-    const id = generateId();
-
-    const order: CartOrderType = {
-      id,
-      customerInfo: data,
-
-      status: "pending",
-      deliveryPrice: 2,
-      products: [
-        {
-          image: product.image,
-          price: product.price,
-          productId: product.id,
-          productName: product.name,
-          quantity,
-          size: selectedPiece.size,
-        },
-      ],
-
-    };
-   
-
-    const { success } = await addOrderAction(order);
-    // TODO : try and improve this piece of crap and think more about the ordercarte price (its no longer a piece of crap but still needs improvments)
-    if (success) {
-      handleAddOrder({
+    try {
+      const id = generateId();
+      const order: CartOrderType = {
         id,
         customerInfo: data,
+        status: "pending",
+        deliveryPrice,
         products: [
           {
+            image: product.image,
+            price: product.price,
             productId: product.id,
             productName: product.name,
-            price: product.price,
             quantity,
-            image: product.image,
             size: selectedPiece.size,
           },
         ],
-        status: "pending",
-        deliveryPrice: 0,
-      });
-      toast.success("Ordered successfully!");
-    } else {
-      toast.error("order Failed");
-    }
-    try {
+      };
+
+      const { success } = await addOrderAction(order);
+
+      if (success) {
+        handleAddOrder({
+          id,
+          customerInfo: data,
+          products: [
+            {
+              productId: product.id,
+              productName: product.name,
+              price: product.price,
+              quantity,
+              image: product.image,
+              size: selectedPiece.size,
+            },
+          ],
+          status: "pending",
+          deliveryPrice,
+        });
+        toast.success("Ordered successfully!");
+        form.reset(); // Reset form after successful submission
+        setQuantity(1); // Reset quantity
+      } else {
+        toast.error("Order failed");
+      }
     } catch (err) {
-      console.log("post request failed while creating the order :", err);
-      toast.error("order Failed");
+      console.error("Post request failed while creating the order:", err);
+      toast.error("Order failed");
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
-    <SheetContent side="bottom" className="max-h-[90%] overflow-scroll">
-      <SheetHeader>
-        <SheetTitle className="pb-5">
-          <h2>Checkout</h2>
-          <p className="text-sm font-normal text-secondary">
-            1 item : 24,000 DA
-          </p>
-        </SheetTitle>
-        <div className="flex gap-2 pb-3">
-          <div>
-            <Image
-              src="/image 5.svg"
-              alt="checkout product image"
-              width={500}
-              height={500}
-              className="object-fit h-full max-h-24 w-full flex-shrink-0"
-            />
-          </div>
-          <div className="flex flex-col items-start gap-1">
-            <h3 className="text-sm text-left font-medium text-black">
-              Lebron NXXT Gen 20” - Lakers
-            </h3>
-            {/* <p className="text-sm text-secondary">ref : 105293</p> */}
-            {/* <p className="text-sm text-secondary">color : purple</p> */}
-            {/* <div className="flex w-full justify-around"> */}
-            <p className="text-sm text-secondary">
-              size : {selectedPiece.size}
-            </p>
-            <p className="text-sm text-secondary">qty : {quantity}</p>
-            {/* </div> */}
-
-            <p className="text-sm text-secondary text-yellow-600">
-              price: {product.price * quantity} DA
-            </p>
-          </div>
-        </div>
+    <div className="mx-auto w-full max-w-2xl">
+      <h2 className="pb-2 text-center font-medium">Checkout</h2>
+      <div className="space-y-6">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-            <h2 className="text-start text-black">Delivery Info</h2>
-            <div className="flex gap-3">
-              <div className="grow">
-                <FormField
-                  control={form.control}
-                  name="fullName"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormControl>
-                        <Input placeholder="full Name" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-              </div>
+            <h2 className="text-start text-black">Order Info</h2>
+
+            <div className="grow">
+              <FormField
+                control={form.control}
+                name="fullName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input placeholder="Full Name" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </div>
+
             <div className="flex justify-between gap-3">
               <div className="basis-1/2">
                 <FormField
@@ -183,11 +149,11 @@ export default function CheckoutForm({
                     <FormItem>
                       <FormControl>
                         <Select
-                          defaultValue={field.value}
+                          value={field.value}
                           onValueChange={field.onChange}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="wilaya" />
+                            <SelectValue placeholder="Wilaya" />
                           </SelectTrigger>
                           <SelectContent>
                             {wilayas.map((w) => (
@@ -203,6 +169,7 @@ export default function CheckoutForm({
                   )}
                 />
               </div>
+
               <div className="basis-1/2">
                 <FormField
                   control={form.control}
@@ -211,11 +178,11 @@ export default function CheckoutForm({
                     <FormItem>
                       <FormControl>
                         <Select
-                          defaultValue={field.value}
+                          value={field.value}
                           onValueChange={field.onChange}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="baladia" />
+                            <SelectValue placeholder="Baladia" />
                           </SelectTrigger>
                           <SelectContent>
                             {wilayas
@@ -234,77 +201,116 @@ export default function CheckoutForm({
                 />
               </div>
             </div>
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="phone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input placeholder="phone number" type="tel" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </div>
-            <div className="w-full">
-              <FormField
-                control={form.control}
-                name="city"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormControl>
-                      <Input
-                        placeholder="city"
-                        // className="w-full"
-                        type="tel"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="Phone number" type="tel" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="city"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <Input placeholder="City" type="text" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <div className="flex items-center justify-between gap-4">
+              <p>Quantity:</p>
+              <div className="flex items-center gap-4">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                  disabled={quantity <= 1 || !selectedPiece}
+                >
+                  -
+                </Button>
+                <span>{selectedPiece ? quantity : "0"}</span>
+                <Button
+                  type="button"
+                  variant="outline"
+                  disabled={
+                    !selectedPiece || quantity >= selectedPiece.quantity
+                  }
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                >
+                  +
+                </Button>
+              </div>
             </div>
 
-            <div className="item-center flex justify-around gap-3">
-              <div className="flex flex-wrap items-center gap-4">
-                {/* {cartCounter && (
-                  <div className="text-muted-foreground">Quantity </div>
-                )} */}
-                <div className="flex items-center gap-4 text-base">
-                  <Button
-                    type="button"
-                    variant={"outline"}
-                    onClick={() => setQuantity(quantity - 1)}
-                    disabled={quantity <= 1}
-                  >
-                    -
-                  </Button>
-                  <span>{quantity === 0 ? "0" : quantity}</span>
-                  <Button
-                    type="button"
-                    variant={"outline"}
-                    disabled={
-                      selectedPiece && quantity >= selectedPiece.quantity
-                    }
-                    onClick={() => setQuantity(quantity + 1)}
-                  >
-                    +
-                  </Button>
+            <h3 className="pb-3 font-medium">Order Summary</h3>
+            {selectedPiece ? (
+              <div className="space-y-4">
+                <div className="flex items-center gap-4">
+                  <div className="relative h-24 w-24">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <h3 className="font-medium">{product.name}</h3>
+                    <p className="text-sm text-secondary">
+                      Size: {selectedPiece.size}
+                    </p>
+                    <p className="text-sm text-secondary">
+                      Quantity: {quantity}
+                    </p>
+                    <p className="font-medium">
+                      {product.price} DA × {quantity}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-200 pt-4">
+                  <div className="flex justify-between">
+                    <p>Delivery</p>
+                    <p>{deliveryPrice} DA</p>
+                  </div>
+                  <div className="my-4 border-t border-black" />
+                  <div className="flex justify-between font-medium">
+                    <p>Total</p>
+                    <p>{totalPrice} DA</p>
+                  </div>
                 </div>
               </div>
-              <Button type="submit" className="flex-1 text-sm">
-                Confirm Order
-              </Button>
-            </div>
+            ) : (
+              <p className="py-5 text-center font-medium text-red-400">
+                Please select a size
+              </p>
+            )}
+
+            <p className="text-xs text-gray-600">
+              * Delivery time might vary from 3 to 7 days
+            </p>
+
+            <Button
+              type="submit"
+              className="w-full py-6 text-sm"
+              disabled={!selectedPiece || isLoading}
+            >
+              {isLoading ? "Processing..." : "Order Now"}
+            </Button>
           </form>
-        </Form>{" "}
-        <p className="pt-3 text-start text-xs text-black">
-          * Delivery time might vary from 3 to 7 days
-        </p>
-      </SheetHeader>
-    </SheetContent>
+        </Form>
+      </div>
+    </div>
   );
 }

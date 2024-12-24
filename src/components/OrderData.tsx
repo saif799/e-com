@@ -32,11 +32,11 @@ export function OrderData({ Product }: OrderDataProps) {
   return (
     <>
       <div>
-        <div className="flex justify-between items-center px-3">
+        <div className="flex items-center justify-between px-3">
           <h3 className="text-md font-medium md:text-xl">Select Size</h3>
-          <p className="text-secondary text-sm md:text-md">Size guide</p>
+          <p className="md:text-md text-sm text-secondary">Size guide</p>
         </div>
-        <div className="grid grid-cols-5 justify-items-center gap-1 py-5 px-4 md:grid-cols-8 md:gap-3">
+        <div className="grid grid-cols-5 justify-items-center gap-1 px-4 py-5 md:grid-cols-8 md:gap-3">
           {Product.sizes.map((s) => (
             <SizeBlock
               selectPiece={selectPiece}
@@ -54,13 +54,15 @@ export function OrderData({ Product }: OrderDataProps) {
           <CheckoutForm selectedPiece={selectedPiece} product={Product} />
         ) : null} */}
         <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
-          <Button
+          {/* <Button
             disabled={!selectedPiece}
             className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
             onClick={() => setIsOpen(true)}
           >
             Order now
-          </Button>
+          </Button> */}
+          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+
           {selectedPiece ? (
             <CheckoutForm selectedPiece={selectedPiece} product={Product} />
           ) : null}
@@ -78,10 +80,10 @@ export function OrderData({ Product }: OrderDataProps) {
                 size: selectedPiece.size,
               });
 
-              toast.success("add to the bag successfully");
+              toast.success("Product added successfully");
             } else toast.error("Please select a size");
           }}
-          className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
+          className="text-md w-full rounded-md py-6 font-medium md:py-8 md:text-xl"
         >
           Add to Cart
         </Button>

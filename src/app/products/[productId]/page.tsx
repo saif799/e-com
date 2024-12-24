@@ -54,13 +54,16 @@ export default async function Component({ params: { productId } }: Props) {
         </h1>
         <h2 className="text-lg font-medium text-purple-900">
           {products[0]?.products.price} DA
-        </h2><ImageSlide productImages={productImages} />
+        </h2>
+        <ImageSlide productImages={productImages} />
       </div>
-      
+
       {/* </div> */}
       <div className="flex flex-col gap-1 px-3 py-1 md:w-2/3">
-        <h3 className="text-md md:text-xl font-medium"> Description</h3>
-        <p className="text-sm md:text-base font-light pt-5">{products[0].products.description}</p>
+        <h3 className="text-md font-medium md:text-xl"> Description</h3>
+        <p className="pt-5 text-sm font-light md:text-base">
+          {products[0].products.description}
+        </p>
       </div>
       <div className="w-full md:w-2/3">
         {/* <div className="mb-6">
@@ -85,10 +88,10 @@ export default async function Component({ params: { productId } }: Props) {
           </div>
         </div> */}
         <OrderData Product={product} />
-        <h3 className="px-3 text-md font-medium pt-3 md:text-2xl">
+        <h3 className="text-md px-3 pt-3 font-medium md:text-2xl">
           Similar Products
         </h3>
-        <div className="flex gap-1 overflow-scroll pb-8 px-2">
+        <div className="flex gap-1 overflow-scroll px-2 pb-8">
           {similarProducts!.map((p, i) => (
             <ProductCard
               key={i}
