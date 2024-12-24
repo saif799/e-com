@@ -62,10 +62,6 @@ export function OrderData({ Product }: OrderDataProps) {
             Order now
           </Button> */}
           <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-
-          {selectedPiece ? (
-            <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-          ) : null}
         </Sheet>
         <Button
           variant="outline"
