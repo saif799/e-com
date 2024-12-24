@@ -16,10 +16,9 @@ export default function SizeBlock({
 }: SizeBlockProps) {
   return (
     <Button
-      variant={"outline"}
       className={cn(
-        "flex h-16 w-16 items-center justify-center rounded-md text-lg md:h-20 md:w-20 md:text-xl",
-        isSelected && "border-0 bg-black text-white",
+        "text-md flex size-[3.2rem] items-center justify-center rounded-sm border bg-white text-primary shadow-none md:size-14 md:text-xl",
+        isSelected && "border-0 bg-primary text-white",
       )}
       onClick={() => selectPiece(piece)}
     >

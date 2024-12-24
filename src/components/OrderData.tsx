@@ -31,12 +31,12 @@ export function OrderData({ Product }: OrderDataProps) {
   }
   return (
     <>
-      <div className="pb-5">
-        <div className="flex justify-between px-3 pb-2">
-          <h3 className="text-lg font-medium md:text-2xl">Select Size</h3>
-          <p className="text-secondary md:text-lg">Size guide</p>
+      <div>
+        <div className="flex justify-between items-center px-3">
+          <h3 className="text-md font-medium md:text-xl">Select Size</h3>
+          <p className="text-secondary text-sm md:text-md">Size guide</p>
         </div>
-        <div className="grid grid-cols-5 justify-items-center gap-1 px-2 md:grid-cols-8 md:gap-3">
+        <div className="grid grid-cols-5 justify-items-center gap-1 py-5 px-4 md:grid-cols-8 md:gap-3">
           {Product.sizes.map((s) => (
             <SizeBlock
               selectPiece={selectPiece}
@@ -56,7 +56,7 @@ export function OrderData({ Product }: OrderDataProps) {
         <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
           <Button
             disabled={!selectedPiece}
-            className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
+            className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
             onClick={() => setIsOpen(true)}
           >
             Order now
@@ -81,9 +81,9 @@ export function OrderData({ Product }: OrderDataProps) {
               toast.success("add to the bag successfully");
             } else toast.error("Please select a size");
           }}
-          className="w-full rounded-2xl py-6 text-lg font-semibold md:py-8 md:text-xl"
+          className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
         >
-          Add to Bag
+          Add to Cart
         </Button>
       </div>
     </>

@@ -45,24 +45,24 @@ export default async function Component({ params: { productId } }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-8 pt-10 lg:flex-row lg:px-28">
+    <div className="flex flex-col items-center gap-8 pt-5 lg:flex-row lg:px-28">
       {/* <div className="w-full lg:w-3/4 xl:w-2/3"> */}
       <div className="px-4">
         <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
-        <h1 className="mb-3 text-xl font-medium">
+        <h1 className="mb-3 text-lg font-medium">
           {products[0].products.name}
         </h1>
-        <h2 className="mb-5 text-xl font-semibold text-purple-900">
+        <h2 className="text-lg font-medium text-purple-900">
           {products[0]?.products.price} DA
-        </h2>
+        </h2><ImageSlide productImages={productImages} />
       </div>
-      <ImageSlide productImages={productImages} />
+      
       {/* </div> */}
-      <div className="flex flex-col gap-1 px-3 py-1">
-        <h3 className="text-lg font-medium"> Description</h3>
-        <p className="">{products[0].products.description}</p>
+      <div className="flex flex-col gap-1 px-3 py-1 md:w-2/3">
+        <h3 className="text-md md:text-xl font-medium"> Description</h3>
+        <p className="text-sm md:text-base font-light pt-5">{products[0].products.description}</p>
       </div>
-      <div className="w-full md:w-10/12">
+      <div className="w-full md:w-2/3">
         {/* <div className="mb-6">
           <h3 className="mb-2 px-2 font-extralight text-gray-500 md:text-xl md:font-normal">
             Available colors
@@ -85,10 +85,10 @@ export default async function Component({ params: { productId } }: Props) {
           </div>
         </div> */}
         <OrderData Product={product} />
-        <h3 className="px-3 pb-5 text-lg font-semibold md:text-2xl">
+        <h3 className="px-3 text-md font-medium pt-3 md:text-2xl">
           Similar Products
         </h3>
-        <div className="flex gap-1 overflow-scroll pb-3">
+        <div className="flex gap-1 overflow-scroll pb-8 px-2">
           {similarProducts!.map((p, i) => (
             <ProductCard
               key={i}
@@ -98,6 +98,7 @@ export default async function Component({ params: { productId } }: Props) {
               brand="NIKE"
               category="Men's Shoes"
               price={p.price}
+              className="basis-2/3"
             />
           ))}
         </div>

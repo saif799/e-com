@@ -138,7 +138,7 @@ export default function CheckoutForm({
             />
           </div>
           <div className="flex flex-col items-start gap-1">
-            <h3 className="text-md font-medium text-black">
+            <h3 className="text-sm text-left font-medium text-black">
               Lebron NXXT Gen 20” - Lakers
             </h3>
             {/* <p className="text-sm text-secondary">ref : 105293</p> */}
@@ -295,13 +295,13 @@ export default function CheckoutForm({
                   </Button>
                 </div>
               </div>
-              <Button type="submit" className="flex-1">
+              <Button type="submit" className="flex-1 text-sm">
                 Confirm Order
               </Button>
             </div>
           </form>
         </Form>{" "}
-        <p className="pt-3 text-start text-black">
+        <p className="pt-3 text-start text-xs text-black">
           * Delivery time might vary from 3 to 7 days
         </p>
       </SheetHeader>
