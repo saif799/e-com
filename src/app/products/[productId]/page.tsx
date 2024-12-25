@@ -45,27 +45,44 @@ export default async function Component({ params: { productId } }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-8 pt-5 lg:flex-row lg:px-28">
+    <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
       {/* <div className="w-full lg:w-3/4 xl:w-2/3"> */}
-      <div className="px-4">
-        <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
-        <h1 className="mb-3 text-lg font-medium">
-          {products[0].products.name}
-        </h1>
-        <h2 className="text-lg font-medium text-purple-900">
-          {products[0]?.products.price} DA
-        </h2>
-        <ImageSlide productImages={productImages} />
+      <div className="max-w-[100vw] lg:w-[60%]">
+        <div className=" lg:sticky lg:top-20">
+          <div className="px-4">
+            <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
+
+            <div className="lg:hidden">
+              <h1 className="mb-3 text-lg font-medium">
+                {products[0].products.name}
+              </h1>
+              <h2 className="text-lg font-medium text-purple-900">
+                {products[0]?.products.price} DA
+              </h2>
+            </div>
+
+            <ImageSlide productImages={productImages} />
+          </div>
+        </div>
       </div>
 
       {/* </div> */}
-      <div className="flex flex-col gap-1 px-3 py-1 md:w-2/3">
-        <h3 className="text-md font-medium md:text-xl"> Description</h3>
-        <p className="pt-5 text-sm font-light md:text-base">
+      <div className="flex w-screen flex-col gap-1 px-3 py-1 md:w-2/3 lg:w-1/3">
+        <div className="hidden pt-12 lg:inline-block">
+          <h2 className="hidden">{/* {products[0]?.products.brand} DA */}</h2>
+          <h1 className="mb-3 text-2xl font-medium">
+            {products[0].products.name}
+          </h1>
+          <h2 className="text-xl font-medium text-purple-900">
+            {products[0]?.products.price} DA
+          </h2>
+        </div>
+        <p className="pt-5 text-sm lg:text-base font-light md:text-base">
           {products[0].products.description}
         </p>
+        <OrderData Product={product} />
       </div>
-      <div className="w-full md:w-2/3">
+      <div className="w-full">
         {/* <div className="mb-6">
           <h3 className="mb-2 px-2 font-extralight text-gray-500 md:text-xl md:font-normal">
             Available colors
@@ -87,11 +104,10 @@ export default async function Component({ params: { productId } }: Props) {
             ))}
           </div>
         </div> */}
-        <OrderData Product={product} />
         <h3 className="text-md px-3 pt-3 font-medium md:text-2xl">
           Similar Products
         </h3>
-        <div className="flex gap-1 overflow-scroll px-2 pb-8">
+        <div className="flex flex-grow gap-1 overflow-scroll px-2 pb-8">
           {similarProducts!.map((p, i) => (
             <ProductCard
               key={i}
@@ -101,7 +117,7 @@ export default async function Component({ params: { productId } }: Props) {
               brand="NIKE"
               category="Men's Shoes"
               price={p.price}
-              className="basis-2/3"
+              className="basis-2/3 lg:basis-1/4"
             />
           ))}
         </div>

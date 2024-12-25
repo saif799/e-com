@@ -27,7 +27,7 @@ export default function ImageSlide({ productImages }: ImageSlideProps) {
     }
 
     setCount(api.scrollSnapList().length);
-    
+
     // Set initial slide
     setCurrent(api.selectedScrollSnap());
 
@@ -46,49 +46,50 @@ export default function ImageSlide({ productImages }: ImageSlideProps) {
   };
 
   return (
-    <>
-      <div className="relative aspect-square w-full overflow-hidden md:w-2/3">
-        <Carousel
-          setApi={setApi}
-          className="w-full md:px-8"
-          opts={{
-            loop: true,
-            align: "center",
-          }}
-        >
-          <CarouselContent>
-            {productImages.map((img, index) => (
-              <CarouselItem key={index} className="flex-col items-center">
-                <div className="m-auto flex items-center justify-center p-1 md:h-[70vh]">
-                  <img
-                    src={img}
-                    alt={`Product image ${index + 1}`}
-                    className="w-full aspect-square max-w-96 object-contain md:max-h-[75vh] md:max-w-4xl"
-                  />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-      </div>
-      <div className="flex justify-center gap-2 rounded-full pt-3">
+    <div className="md:flex md:flex-col md:items-center lg:flex-row-reverse lg:items-start lg:gap-3 lg:sticky lg:top-8">
+  <div className="aspect-square w-full overflow-hidden md:w-2/3 lg:w-full h-fit">
+    <Carousel
+      setApi={setApi}
+      className="w-full md:px-8 lg:px-0"
+      opts={{
+        loop: true,
+        align: "center",
+      }}
+    >
+      <CarouselContent>
         {productImages.map((img, index) => (
-          <button
-            className={cn(
-              "size-16 rounded-sm bg-gray-300",
-              current === index && "border-[1.5px] border-black"
-            )}
-            key={index}
-            onClick={() => handleThumbnailClick(index)}
-          >
-            <img 
-              src={img} 
-              alt={`Product thumbnail ${index + 1}`}
-              className="w-full h-full object-cover rounded-sm"
-            />
-          </button>
+          <CarouselItem key={index} className="flex-col items-center">
+            <div className="m-auto flex items-center justify-center p-1 md:w-full rounded-lg">
+              <img
+                src={img}
+                alt={`Product image ${index + 1}`}
+                className="aspect-square w-full object-contain md:max-h-[75vh] md:max-w-4xl"
+              />
+            </div>
+          </CarouselItem>
         ))}
-      </div>
-    </>
+      </CarouselContent>
+    </Carousel>
+  </div>
+  <div className="flex justify-center gap-2 rounded-full pt-6 lg:flex-col">
+    {productImages.map((img, index) => (
+      <button
+        className={cn(
+          "size-16 rounded-sm lg:size-20 border",
+          current === index && "border-[1.5px] lg:border-2 border-black",
+        )}
+        key={index}
+        onMouseOver={() => handleThumbnailClick(index)}
+      >
+        <img
+          src={img}
+          alt={`Product thumbnail ${index + 1}`}
+          className="h-full w-full rounded-sm object-contain"
+        />
+      </button>
+    ))}
+  </div>
+</div>
+
   );
 }
