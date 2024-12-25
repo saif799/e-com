@@ -5,7 +5,7 @@ export type customerType = {
   phone: string;
   wilaya: string;
   baladia: string;
-  city: string;
+  livraison: string;
 };
 
 export type CartProductType = {
@@ -38,7 +38,7 @@ export const checkoutFormSchema = z.object({
   baladia: z.string().min(2, {
     message: "Please select a baladia.",
   }),
-  city: z.string(),
+  livraison: z.string(),
 });
 
 export type OrderType = {

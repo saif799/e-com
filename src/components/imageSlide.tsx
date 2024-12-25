@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -27,6 +28,7 @@ export default function ImageSlide({ productImages }: ImageSlideProps) {
     }
 
     setCount(api.scrollSnapList().length);
+
 
     // Set initial slide
     setCurrent(api.selectedScrollSnap());
@@ -93,3 +95,4 @@ export default function ImageSlide({ productImages }: ImageSlideProps) {
 
   );
 }
+

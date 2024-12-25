@@ -82,7 +82,7 @@ export function OrderData({ Product }: OrderDataProps) {
           className="text-md w-full rounded-md py-6 font-medium md:text-lg"
         >
           Add to Cart
-        </Button>
+        </Button> 
       </div>
     </>
   );
