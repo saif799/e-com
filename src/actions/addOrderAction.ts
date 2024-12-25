@@ -36,7 +36,6 @@ export async function addOrderAction(order: CartOrderType): Promise<{
     await db.transaction(async (tx) => {
       const orderId = order.id;
 
-
       // important : make sure to update this query to include livraison place and update the db schema too
       await tx.insert(orderTable).values({
         id: orderId,
@@ -45,6 +44,7 @@ export async function addOrderAction(order: CartOrderType): Promise<{
         baladia: order.customerInfo.baladia,
         phoneNumber: order.customerInfo.phone,
         wilaya: order.customerInfo.wilaya,
+        livraison: order.customerInfo.livraison,
       });
 
       const productsOrdered = order.products.map((product) => ({
@@ -57,6 +57,7 @@ export async function addOrderAction(order: CartOrderType): Promise<{
 
       await tx.insert(productsOrderedTable).values(productsOrdered);
 
+      //will generate a query to update all the ids in the array u provided
       const { finalSql, ids } = generateUpdateCases(order.products);
       await tx
         .update(productSizesTable)
@@ -66,7 +67,7 @@ export async function addOrderAction(order: CartOrderType): Promise<{
 
     return { success: true };
   } catch (error) {
-    console.log("not working homie", error);
+    console.log("not working homie in the add order action", error);
 
     return { success: false };
   }

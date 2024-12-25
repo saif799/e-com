@@ -79,6 +79,7 @@ export const orderTable = pgTable("orders", {
   phoneNumber: text("phone_number").notNull(),
   wilaya: text("wilaya").notNull(),
   baladia: text("baladia").notNull(),
+  livraison: text("livraison").default("bereau"),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
 
