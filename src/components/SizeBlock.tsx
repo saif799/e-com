@@ -19,7 +19,7 @@ export default function SizeBlock({
       disabled={disabled}
       className={cn(
         "text-md flex size-[3.2rem] items-center justify-center rounded-sm border bg-white text-primary shadow-none hover:bg-gray-100 md:size-14 md:text-xl",
-        isSelected && "border-0 bg-primary text-white",
+        isSelected && "border-0 bg-primary text-white hover:bg-primary/90",
       )}
       onClick={() => selectPiece(piece)}
     >

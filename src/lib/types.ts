@@ -28,7 +28,7 @@ export type CartOrderType = {
 const phoneRegex = /^(05|06|07)\d{8}$/;
 
 export const checkoutFormSchema = z.object({
-  fullName: z.string(),
+  fullName: z.string({ required_error: "please fill your full Name" }),
   phone: z.string().refine((val) => phoneRegex.test(val), {
     message: "must start with 05, 06, or 07 and contain 10 digits.",
   }),

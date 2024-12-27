@@ -3,7 +3,6 @@ import ImageSlide from "@/components/imageSlide";
 import { GetProduct, GetSimilarProducts } from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
 
-
 const productImages: string[] = [
   "/Shoe.jpg",
   "/Shoe.jpg",
@@ -40,7 +39,7 @@ export default async function Component({ params: { productId } }: Props) {
     <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
       {/* <div className="w-full lg:w-3/4 xl:w-2/3"> */}
       <div className="max-w-[100vw] lg:w-[60%]">
-        <div className=" lg:sticky lg:top-20">
+        <div className="lg:sticky lg:top-20">
           <div className="px-4">
             <p className="mb-3 font-normal text-zinc-500"> Men &gt; shoes </p>
 
@@ -69,7 +68,7 @@ export default async function Component({ params: { productId } }: Props) {
             {products[0]?.products.price} DA
           </h2>
         </div>
-        <p className="pt-5 text-sm lg:text-base font-light md:text-base">
+        <p className="pt-5 text-sm font-light md:text-base lg:text-base">
           {products[0].products.description}
         </p>
         <OrderData Product={product} />
