@@ -9,7 +9,6 @@ import {
 import { useCart } from "@/hooks/useCart";
 import { useCartState } from "@/hooks/useCartState";
 import { Button } from "./ui/button";
-// import { Card } from "./ui/card";
 import Image from "next/image";
 import { Trash2 } from "lucide-react";
 import { DM_Mono } from "next/font/google";
