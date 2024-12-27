@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="sticky left-0 right-0 top-0 z-10 bg-white shadow-sm">
       <div className="mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="flex h-16 justify-between items-center">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex">
             <Link href="/" className="flex flex-shrink-0 items-center">
               <span className="text-xl font-bold">
@@ -25,7 +25,11 @@ const Navbar = () => {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-400" />
           </div> */}
 
-          <img className="h-3 hidden" src="/LEGENWEAR.svg" alt="legenwear text" />
+          <img
+            className="hidden h-3"
+            src="/LEGENWEAR.svg"
+            alt="legenwear text"
+          />
 
           <div className="flex items-center justify-between">
             <Link
@@ -36,13 +40,13 @@ const Navbar = () => {
             </Link>
 
             {/* TODO : ik this is so ass come here later and fix it and make it a button */}
-            <Link
+            {/* <Link
               onClick={() => Open()}
               href="#"
               className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
             >
               <ShoppingBag className="h-7 w-7" strokeWidth={1.5} />
-            </Link>
+            </Link> */}
             {/* <SignedOut>
               <SignInButton />
             </SignedOut>

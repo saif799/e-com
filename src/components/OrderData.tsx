@@ -47,17 +47,15 @@ export function OrderData({ Product }: OrderDataProps) {
         {/* {selectedPiece ? (
           <CheckoutForm selectedPiece={selectedPiece} product={Product} />
         ) : null} */}
-        <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
-          {/* <Button
+        {/* <Button
             disabled={!selectedPiece}
             className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
             onClick={() => setIsOpen(true)}
           >
             Order now
           </Button> */}
-          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-        </Sheet>
-        <Button
+        <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+        {/* <Button
           variant="outline"
           onClick={() => {
             if (selectedPiece) {
@@ -76,7 +74,7 @@ export function OrderData({ Product }: OrderDataProps) {
           className="text-md w-full rounded-md py-6 font-medium md:text-lg"
         >
           Add to Cart
-        </Button> 
+        </Button> */}
       </div>
     </>
   );

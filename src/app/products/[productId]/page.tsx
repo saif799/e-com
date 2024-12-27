@@ -96,7 +96,7 @@ export default async function Component({ params: { productId } }: Props) {
             ))}
           </div>
         </div> */}
-        <h3 className="text-md px-3 pt-3 font-medium md:text-2xl">
+        <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
           Similar Products
         </h3>
         <div className="flex flex-grow gap-1 overflow-scroll px-2 pb-8">
