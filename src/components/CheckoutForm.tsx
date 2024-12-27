@@ -331,7 +331,7 @@ export default function CheckoutForm({
 
             <Button
               type="submit"
-              className="text-md w-full rounded-md py-6 font-medium md:py-8 md:text-xl"
+              className="text-md w-full rounded-md py-6 font-medium md:text-lg"
               disabled={!selectedPiece || isLoading}
             >
               {isLoading ? "Processing..." : "Order Now"}

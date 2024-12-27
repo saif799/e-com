@@ -26,11 +26,11 @@ export function OrderData({ Product }: OrderDataProps) {
   return (
     <>
       <div>
-        <div className="flex items-center justify-between px-3">
+        <div className="flex items-center justify-between pt-5">
           <h3 className="text-md font-medium md:text-xl">Select Size</h3>
           <p className="md:text-md text-sm text-secondary">Size guide</p>
         </div>
-        <div className="grid grid-cols-5 justify-items-center gap-1 px-4 py-5 md:grid-cols-8 md:gap-3">
+        <div className="grid grid-cols-5 justify-items-center gap-1 py-5 md:grid-cols-8 md:gap-3">
           {Product.sizes.map((s) => (
             <SizeBlock
               selectPiece={selectPiece}
@@ -43,10 +43,21 @@ export function OrderData({ Product }: OrderDataProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 px-5 pb-5">
-        <CheckoutForm selectedPiece={selectedPiece} product={Product} />
-
-        {/* <Button
+      <div className="flex flex-col gap-2 pb-5">
+        {/* {selectedPiece ? (
+          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+        ) : null} */}
+        <Sheet open={isOpen} onOpenChange={() => setIsOpen((prev) => !prev)}>
+          {/* <Button
+            disabled={!selectedPiece}
+            className="w-full rounded-md py-6 text-md font-medium md:py-8 md:text-xl"
+            onClick={() => setIsOpen(true)}
+          >
+            Order now
+          </Button> */}
+          <CheckoutForm selectedPiece={selectedPiece} product={Product} />
+        </Sheet>
+        <Button
           variant="outline"
           onClick={() => {
             if (selectedPiece) {
@@ -62,10 +73,10 @@ export function OrderData({ Product }: OrderDataProps) {
               toast.success("Product added successfully");
             } else toast.error("Please select a size");
           }}
-          className="text-md w-full rounded-md py-6 font-medium md:py-8 md:text-xl"
+          className="text-md w-full rounded-md py-6 font-medium md:text-lg"
         >
           Add to Cart
-        </Button> */}
+        </Button> 
       </div>
     </>
   );
