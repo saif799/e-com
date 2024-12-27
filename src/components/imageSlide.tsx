@@ -1,16 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 type ImageSlideProps = {
   productImages: Array<string>;

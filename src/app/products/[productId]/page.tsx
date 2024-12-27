@@ -1,16 +1,8 @@
-import Image from "next/image";
 import ProductCard from "@/components/productCard";
 import ImageSlide from "@/components/imageSlide";
 import { GetProduct, GetSimilarProducts } from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
 
-const colorOptions = [
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-];
 
 const productImages: string[] = [
   "/Shoe.jpg",
@@ -60,7 +52,7 @@ export default async function Component({ params: { productId } }: Props) {
       <div className="w-fit">
         <div className="flex flex-col gap-1 px-3 py-1 md:w-2/3">
           <h3 className="text-md font-medium md:text-xl"> Description</h3>
-          <p className="pt-5 text-sm font-light md:text-base">
+          <p className="pt-2 text-sm font-light md:text-base">
             {products[0].products.description}
           </p>
         </div>

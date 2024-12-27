@@ -2,10 +2,6 @@
 import { useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 import SizeBlock from "./SizeBlock";
-import { Button } from "./ui/button";
-import { useCart } from "@/hooks/useCart";
-import toast from "react-hot-toast";
-import { Sheet } from "./ui/sheet";
 
 type sizesType = { size: number; quantity: number };
 
@@ -21,8 +17,6 @@ type OrderDataProps = {
 };
 export function OrderData({ Product }: OrderDataProps) {
   const [selectedPiece, setSelectedPiece] = useState<sizesType | null>(null);
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { handleAddProduct } = useCart();
 
   function selectPiece(piece: sizesType) {
     if (selectedPiece && selectedPiece.size === piece.size)

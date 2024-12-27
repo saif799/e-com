@@ -16,6 +16,7 @@ export default function SizeBlock({
 }: SizeBlockProps) {
   return (
     <Button
+    disabled={disabled}
       className={cn(
         "text-md flex size-[3.2rem] items-center justify-center rounded-sm border bg-white text-primary shadow-none md:size-14 md:text-xl",
         isSelected && "border-0 bg-primary text-white",

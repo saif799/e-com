@@ -23,7 +23,7 @@ export default function CartSheet() {
   const { cartProducts, handleClearCart } = useCart();
 
   return (
-    <Sheet open={isOpen} onOpenChange={() => Open()} >
+    <Sheet open={isOpen} suonOpenChange={Open}>
       <SheetContent className={`${dmMono.className} p-2`}>
         <SheetHeader>
           <SheetTitle className="text-center">

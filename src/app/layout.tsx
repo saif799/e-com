@@ -3,15 +3,13 @@ import CartSheet from "@/components/CartSheet";
 import Navbar from "@/components/Navbar";
 import { CartContextProvider } from "@/hooks/useCart";
 import "@/styles/globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import { type Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { DM_Mono } from "next/font/google";
 
 // TODO work on the pics and their state in the products page (there for the product in the db needs a related producs or something similar )
 
-
-// todos add the brand thingy - show the most buyed products work more on the category feature and fucking host that bitch (we will probably need to switch to postgress or some other provider since sqlite doesnt work on a serverless env) and work on the repsonsivness of the product page 
+// todos add the brand thingy - show the most buyed products work more on the category feature and fucking host that bitch (we will probably need to switch to postgress or some other provider since sqlite doesnt work on a serverless env) and work on the repsonsivness of the product page
 const dmMono = DM_Mono({
   subsets: ["latin"],
   weight: ["300", "400", "500"],
@@ -28,20 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" className={`${dmMono.className}`}>
-        <body className={`${dmMono.className} h-screen`}>
-          <Navbar />
-          <div>
-            <CartContextProvider>
-              <CartSheet />
-              {children}
-              <Toaster />
-            </CartContextProvider>
-          </div>
-          <Footer />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className={`${dmMono.className}`}>
+      <body className={`${dmMono.className} h-screen`}>
+        <Navbar />
+        <div>
+          <CartContextProvider>
+            <CartSheet />
+            {children}
+            <Toaster />
+          </CartContextProvider>
+        </div>
+        <Footer />
+      </body>
+    </html>
   );
 }

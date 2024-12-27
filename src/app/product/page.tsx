@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -76,9 +76,9 @@ export default function Component() {
   // }, []);
 
   return (
-    <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 p-4 md:flex-row pt-20">
-      <div className="flex w-full md:w-2/3 items-center gap-10" >
-        <div className="flex flex-col space-x-2 overflow-x-auto pb-2 max-h-[600px]">
+    <div className="mx-auto flex max-w-6xl flex-col items-center gap-8 p-4 pt-20 md:flex-row">
+      <div className="flex w-full items-center gap-10 md:w-2/3">
+        <div className="flex max-h-[600px] flex-col space-x-2 overflow-x-auto pb-2">
           {productImages.map((img, index) => (
             <button
               key={index}
