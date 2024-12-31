@@ -39,7 +39,7 @@ export function OrderData({ Product }: OrderDataProps) {
               isSelected={s.size === selectedPiece?.size}
               disabled={s.quantity === 0}
             />
-          ))}
+          )) ?? <p>stock is out</p>}
         </div>
       </div>
 
