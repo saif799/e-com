@@ -33,11 +33,10 @@ export async function addOrderAction(order: CartOrderType): Promise<{
   success: boolean;
 }> {
   try {
-    await db.transaction(async (tx) => {
       const orderId = order.id;
 
       // important : make sure to update this query to include livraison place and update the db schema too
-      await tx.insert(orderTable).values({
+      await db.insert(orderTable).values({
         id: orderId,
         status: "pending",
         fullName: order.customerInfo.fullName,
@@ -55,15 +54,14 @@ export async function addOrderAction(order: CartOrderType): Promise<{
         productId: product.productId,
       }));
 
-      await tx.insert(productsOrderedTable).values(productsOrdered);
+      await db.insert(productsOrderedTable).values(productsOrdered);
 
       //will generate a query to update all the ids in the array u provided
       const { finalSql, ids } = generateUpdateCases(order.products);
-      await tx
+      await db
         .update(productSizesTable)
         .set({ stock: finalSql })
         .where(inArray(productSizesTable.productId, ids));
-    });
 
     return { success: true };
   } catch (error) {
