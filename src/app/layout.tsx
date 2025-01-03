@@ -6,6 +6,7 @@ import "@/styles/globals.css";
 import { type Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { DM_Mono } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // TODO work on the pics and their state in the products page (there for the product in the db needs a related producs or something similar )
 
@@ -28,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${dmMono.className}`}>
       <body className={`${dmMono.className} h-screen`}>
+        <GoogleAnalytics gaId="G-G4PF455X69" />
         <Navbar />
         <div>
           <CartContextProvider>

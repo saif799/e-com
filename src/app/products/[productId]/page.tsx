@@ -46,7 +46,6 @@ export default async function Component({ params: { productId } }: Props) {
       .sort((a, b) => a.size - b.size),
   };
 
-
   return (
     <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
       {/* <div className="w-full lg:w-3/4 xl:w-2/3"> */}
@@ -116,7 +115,7 @@ export default async function Component({ params: { productId } }: Props) {
               key={i}
               href={p.id}
               imageUrl={p.showCase}
-              productTitle="Lebron NXXT Gen"
+              productTitle={p.name}
               brand="NIKE"
               category="Men's Shoes"
               price={p.price}
