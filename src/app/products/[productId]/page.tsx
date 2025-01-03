@@ -22,18 +22,31 @@ export default async function Component({ params: { productId } }: Props) {
     productId,
   );
 
+  const pImages = products[0].images
+    ? products
+        .map((p) => p.images!.imageUrl)
+        .filter(
+          (item, index, self) => index === self.findIndex((t) => t === item),
+        )
+    : productImages;
   const product: OrderProductType = {
     id: productId,
     name: products[0].products.name,
     price: products[0].products.price,
-    image: products[0].products.showcaseImage,
+    image: products[0].products.showCase,
     sizes: products
       .map((p) => ({
         size: p.product_sizes!.size,
         quantity: p.product_sizes!.stock,
       }))
+      .filter(
+        (item, index, self) =>
+          index === self.findIndex((t) => t.size === item.size),
+      )
       .sort((a, b) => a.size - b.size),
   };
+
+  console.log(product.sizes);
 
   return (
     <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
@@ -52,7 +65,7 @@ export default async function Component({ params: { productId } }: Props) {
               </h2>
             </div>
 
-            <ImageSlide productImages={productImages} />
+            <ImageSlide productImages={pImages ?? productImages} />
           </div>
         </div>
       </div>
@@ -103,7 +116,7 @@ export default async function Component({ params: { productId } }: Props) {
             <ProductCard
               key={i}
               href={p.id}
-              imageUrl={p.showcaseImage}
+              imageUrl={p.showCase}
               productTitle="Lebron NXXT Gen"
               brand="NIKE"
               category="Men's Shoes"
