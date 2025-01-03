@@ -46,7 +46,6 @@ export default async function Component({ params: { productId } }: Props) {
       .sort((a, b) => a.size - b.size),
   };
 
-  console.log(product.sizes);
 
   return (
     <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
