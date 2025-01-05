@@ -29,8 +29,7 @@ export default async function HomePage() {
               href={p.products.id}
               imageUrl={p.products.showCase}
               productTitle={p.products.name}
-              brand="NIKE"
-              category={p.categories.name}
+              brand={"NIKE"}
               price={p.products.price}
             />
           ))}

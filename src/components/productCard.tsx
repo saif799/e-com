@@ -18,7 +18,6 @@ export default function ProductCard({
   productTitle,
   brand,
   price,
-  category,
   className,
 }: ProductImageProps) {
   return (
@@ -41,7 +40,7 @@ export default function ProductCard({
       <div className="flex flex-col gap-2 pl-3">
         <h2 className="md:text-md text-wrap font-medium">{productTitle}</h2>
         <p className="md:text-md text-secondary">
-          {brand} | {category}
+          {brand}
         </p>
         <p className="md:text-md font-medium text-purple-900">{price} DA</p>
       </div>
