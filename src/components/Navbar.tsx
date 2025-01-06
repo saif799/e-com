@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-import { ShoppingBag, Heart, Hexagon } from "lucide-react";
+import { ShoppingBag, Heart } from "lucide-react";
 import { useCartState } from "@/hooks/useCartState";
+import Image from "next/image";
 
 const Navbar = () => {
   const { Open } = useCartState();
@@ -12,7 +13,13 @@ const Navbar = () => {
           <div className="flex">
             <Link href="/" className="flex flex-shrink-0 items-center">
               <span className="text-xl font-bold">
-                <img className="size-8" src="/logo-text-less.svg" alt="Logo" />
+                <Image
+                  width={1000}
+                  height={1000}
+                  className="size-8"
+                  src="/logo-text-less.svg"
+                  alt="Logo"
+                />
               </span>
             </Link>
           </div>
@@ -25,34 +32,30 @@ const Navbar = () => {
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 transform text-gray-400" />
           </div> */}
 
-          <img
+          <Image
+            width={1000}
+            height={1000}
             className="hidden h-3"
             src="/LEGENWEAR.svg"
-            alt="legenwear text"
+            alt="legenwear"
           />
 
           <div className="flex items-center justify-between">
-            <Link
+            {/* <Link
               href="/about"
               className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
             >
               <Heart className="h-7 w-7" strokeWidth={1.5} />
-            </Link>
+            </Link> */}
 
             {/* TODO : ik this is so ass come here later and fix it and make it a button */}
-            {/* <Link
+            <Link
               onClick={() => Open()}
               href="#"
               className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
             >
               <ShoppingBag className="h-7 w-7" strokeWidth={1.5} />
-            </Link> */}
-            {/* <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn> */}
+            </Link>
           </div>
         </div>
       </div>
