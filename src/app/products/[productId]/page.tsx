@@ -18,7 +18,7 @@ export default async function Component({ params: { productId } }: Props) {
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   if (!products || !products[0]?.products) return;
   const similarProducts = await GetSimilarProducts(
-    products[0].products.categoryId,
+    products[0].products.modelId,
     productId,
   );
 
@@ -113,12 +113,11 @@ export default async function Component({ params: { productId } }: Props) {
           {similarProducts!.map((p, i) => (
             <ProductCard
               key={i}
-              href={p.id}
-              imageUrl={p.showCase}
-              productTitle={p.name}
-              brand="NIKE"
-              category="Men's Shoes"
-              price={p.price}
+              href={p.products.id}
+              imageUrl={p.products.showCase}
+              productTitle={p.products.name}
+              brand={p.shoe_models.brand}
+              price={p.products.price}
               className="basis-2/3 lg:basis-1/4"
             />
           ))}

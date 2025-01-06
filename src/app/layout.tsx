@@ -28,6 +28,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmMono.className}`}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+      </head>
       <body className={`${dmMono.className} h-screen`}>
         <GoogleAnalytics gaId="G-G4PF455X69" />
         <Navbar />

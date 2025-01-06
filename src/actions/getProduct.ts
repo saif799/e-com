@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/server/db";
-import { categories, images, productSizes, products } from "@/server/db/schema";
+import { shoeModels, images, productSizes, products } from "@/server/db/schema";
 import { and, eq, ne } from "drizzle-orm";
 
 export async function GetProduct(productId: string) {
@@ -19,16 +19,17 @@ export async function GetProduct(productId: string) {
   }
 }
 export async function GetSimilarProducts(
-  categoryId: string,
+  modelId: string,
   notEqualProductId: string,
 ) {
   try {
     const yourProducts = await db
       .select()
       .from(products)
+      .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
       .where(
         and(
-          eq(products.categoryId, categoryId),
+          eq(products.modelId, modelId),
           ne(products.id, notEqualProductId),
         ),
       );
@@ -44,7 +45,7 @@ export async function GetShowCaseProducts() {
     const yourProducts = await db
       .select()
       .from(products)
-      .innerJoin(categories, eq(categories.id, products.categoryId))
+      .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
       .orderBy(products.createdAt);
     return yourProducts;
   } catch (err) {

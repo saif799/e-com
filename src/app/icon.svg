@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="802" height="802"><svg width="802" height="802" viewBox="0 0 802 802" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0L401 157.637L802 0V802L401.354 639.404L0 802V0Z" fill="#1E1E1E"></path>
+<mask id="SvgjsMask1270" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="802" height="802">
+<path d="M0 0L401 157.637L802 0V802L401.354 639.404L0 802V0Z" fill="#2E2E2E"></path>
+</mask>
+<g mask="url(#mask0_3_100)">
+<path d="M294.463 365.266L572.622 462.435V-103.46V-110.812L579.531 -113.327L707.409 -159.867L721.5 -164.995V-150V662V677.189L707.291 671.823L287.291 513.225L280.5 510.66V503.402V375.178V360.388L294.463 365.266Z" fill="white" stroke="#1E1E1E" stroke-width="21"></path>
+</g>
+<mask id="SvgjsMask1269" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="802" height="802">
+<path d="M0 0L401 157.637L802 0V802L401.354 639.404L0 802V0Z" fill="#2E2E2E"></path>
+</mask>
+<g mask="url(#mask1_3_100)">
+<path d="M499.128 341.192L254.878 426.516V-103.46V-128.668L231.19 -137.289L103.312 -183.829L55 -201.412V-150V662V714.075L103.718 695.679L523.718 537.08L547 528.289V503.402V375.178V324.469L499.128 341.192Z" fill="white" stroke="#1E1E1E" stroke-width="72"></path>
+</g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</style></svg>
