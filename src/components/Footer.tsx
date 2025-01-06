@@ -1,64 +1,60 @@
+import Image from "next/image";
+import Link from "next/link";
+
 const Footer = () => {
   return (
-    <footer className="flex flex-col items-center justify-center gap-8 bg-secondary-foreground py-8">
-      <img src="/logo-text-white.svg" alt="" className="lg:hidden" />
-      <div className="flex w-full justify-around px-6 md:px-44 lg:pt-10">
-        <div className="hidden basis-1/2 flex-col gap-4 lg:inline-flex">
-          <img src="/logo-text-white.svg" alt="" className="md:w-24" />
-          <p className="w-9/12 pb-2 text-sm font-thin text-gray-300">
-            Your go-to destination for original, high-quality shoes designed to
-            bring style, comfort, and durability to every step. Whether
-            you&apos;re looking for trendy sneakers or timeless classics,
-            we&apos;ve got the perfect pair for you.
-          </p>
+    <footer className="flex flex-col items-center justify-center gap-8 bg-secondary-foreground py-12">
+      <div className="flex flex-col items-center gap-6">
+        <Image
+          width={100}
+          height={100}
+          src="/logo-dark-bg.svg"
+          alt=""
+          className="aspect-auto w-40 object-cover lg:w-44"
+        />
+        <p className="w-4/5 text-center text-sm font-thin text-gray-300">
+          Your go-to destination for original, high-quality shoes designed to
+          bring style, comfort, and durability to every step. Whether
+          you&apos;re looking for trendy sneakers or timeless classics,
+          we&apos;ve got the perfect pair for you.
+        </p>
+        <p className="text-center text-lg font-thin text-white">follow us on</p>
+        <div className="flex gap-8">
+          <Link  href={"https://www.tiktok.com/@legenwear.dz"}>
+            <Image
+              width={100}
+              height={100}
+              src="/tiktok-icon.svg"
+              alt=""
+              color="white"
+              className="aspect-auto w-6 object-cover lg:w-8"
+            />
+          </Link>
+          <Link href={"https://www.instagram.com/legenwear.dz/"}>
+            <Image
+              width={100}
+              height={100}
+              src="/instagram-icon.svg"
+              alt=""
+              color="white"
+              className="aspect-auto w-6 object-cover lg:w-8"
+            />
+          </Link>
+          <Link href={"https://www.facebook.com/profile.php?id=61569910111728"}>
+            <Image
+              width={100}
+              height={100}
+              src="/facebook-icon.svg"
+              alt=""
+              color="white"
+              className="aspect-auto w-6 object-cover lg:w-8"
+            />
+          </Link>
         </div>
-        <div className="flex flex-col md:basis-1/4">
-          <h5 className="py-2 text-white">Links</h5>
-          <a
-            className="pb-2 pt-3 text-sm font-thin text-gray-300 underline"
-            href="/"
-          >
-            About us
-          </a>
-          <a
-            className="pb-2 text-sm font-thin text-gray-300 underline"
-            href="/"
-          >
-            Return Policy
-          </a>
-          <a
-            className="pb-2 text-sm font-thin text-gray-300 underline"
-            href="/"
-          >
-            Terms of use
-          </a>
-        </div>
-        <div className="my-4 border border-white lg:hidden"></div>
-        <div className="flex basis-1/4 flex-col">
-          <h5 className="py-2 text-white">Contact us</h5>
-          <a
-            className="pb-2 pt-3 text-sm font-thin text-gray-300 underline"
-            href="/"
-          >
-            About us
-          </a>
-          <a
-            className="pb-2 text-sm font-thin text-gray-300 underline"
-            href="/"
-          >
-            Return Policy
-          </a>
-          <a
-            className="pb-2 text-sm font-thin text-gray-300 underline"
-            href="/"
-          >
-            Terms of use
-          </a>
-        </div>
+        <p className="text-sm font-thin text-gray-300">
+          LegenWear © 2024 All rights reserved.
+        </p>
       </div>
-      <p className="text-sm font-thin text-gray-300">
-        LegenWear © 2024 All rights reserved.
-      </p>
     </footer>
   );
 };
