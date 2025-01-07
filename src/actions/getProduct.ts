@@ -1,5 +1,3 @@
-"use server";
-
 import { db } from "@/server/db";
 import { shoeModels, images, productSizes, products } from "@/server/db/schema";
 import { and, eq, ne } from "drizzle-orm";
@@ -28,10 +26,7 @@ export async function GetSimilarProducts(
       .from(products)
       .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
       .where(
-        and(
-          eq(products.modelId, modelId),
-          ne(products.id, notEqualProductId),
-        ),
+        and(eq(products.modelId, modelId), ne(products.id, notEqualProductId)),
       );
     return yourProducts;
   } catch (err) {

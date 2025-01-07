@@ -7,7 +7,6 @@ import {
   unique,
   integer,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
 
 export const images = pgTable(
   "images",
@@ -72,7 +71,9 @@ export const products = pgTable(
   {
     id: text("id").primaryKey().notNull(),
     name: text("name").notNull(),
-	modelId : text("model_id").notNull().references(()=> shoeModels.id),
+    modelId: text("model_id")
+      .notNull()
+      .references(() => shoeModels.id),
     description: text("description"),
     showCase: text("show_case").notNull(),
     price: integer("price").notNull(),
@@ -87,12 +88,11 @@ export const products = pgTable(
         "btree",
         table.name.asc().nullsLast(),
       ),
-      
     };
   },
 );
 
-// removed categ field 
+// removed categ field
 
 // categoryId: text("category_id").notNull(),
 
@@ -103,12 +103,12 @@ export const products = pgTable(
 //   }).onDelete("cascade"),
 
 export const shoeModels = pgTable("shoe_models", {
-	id: text("id").primaryKey().notNull(),
-	modelName : text("model_name").notNull(),
-	brand : text("brand").notNull(),
-	mobileImage : text("mobile_image"),
-	desktopImage : text("desktop_image"),
-  });
+  id: text("id").primaryKey().notNull(),
+  modelName: text("model_name").notNull(),
+  brand: text("brand").notNull(),
+  mobileImage: text("mobile_image").notNull(),
+  desktopImage: text("desktop_image").notNull(),
+});
 
 export const orders = pgTable("orders", {
   id: text("id").primaryKey().notNull(),

@@ -35,7 +35,7 @@ export default function CartSheet() {
             </p>
           </SheetTitle>
         </SheetHeader>
-        <div className="flex h-[88vh] flex-col justify-between pb-3 pt-6">
+        <div className="flex h-full flex-col justify-between pb-10 pt-6">
           <div>
             {/* TODO:UI work on the UI of this card  */}
             {cartProducts?.map((product) => (
