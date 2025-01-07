@@ -38,11 +38,13 @@ export default function ProductCard({
         />
       </div>
       <div className="flex flex-col gap-2 pl-3">
-        <h2 className="md:text-md text-wrap font-medium">{productTitle}</h2>
-        <p className="md:text-md text-secondary">
-          {brand}
+        <h2 className="md:text-md text-wrap font-medium md:text-xl">
+          {productTitle}
+        </h2>
+        <p className="text-sm text-secondary md:text-xl">{brand}</p>
+        <p className="text-md font-medium text-purple-900 md:text-xl">
+          {price} DA
         </p>
-        <p className="md:text-md font-medium text-purple-900">{price} DA</p>
       </div>
     </Link>
   );

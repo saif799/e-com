@@ -7,9 +7,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { type shoeModels } from "@/server/db/schema";
+import { type InferSelectModel } from "drizzle-orm";
 import Image from "next/image";
+import Link from "next/link";
 
-export function MainCarousel() {
+type mainCarouselProps = { models: Array<InferSelectModel<typeof shoeModels>> };
+export function MainCarousel({ models }: mainCarouselProps) {
   return (
     <Carousel
       className="w-full md:px-8"
@@ -24,27 +28,30 @@ export function MainCarousel() {
       }}
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index} className="flex-col items-center">
-            <div className="m-auto flex min-h-[70vh] items-center justify-center p-1 md:h-[70vh]">
+        {models.map((model) => (
+          <CarouselItem key={model.id} className="flex-col items-center">
+            <Link
+              href={`models/${model.id}`}
+              className="m-auto flex min-h-[70vh] items-center justify-center p-1 md:h-[70vh]"
+            >
               <picture>
                 <source
-                  srcSet="/Shoe.jpg"
+                  srcSet={model.desktopImage}
                   media="(min-width: 768px)"
                   className="object-fill"
                 />
                 <Image
-                  width={1200}
-                  height={1200}
-                  src="/shoe-mobile.jpg"
+                  width={1000}
+                  height={1000}
+                  src={model.mobileImage}
                   alt=""
                   className="w-full max-w-96 object-fill md:max-h-[75vh] md:max-w-4xl"
                 />
               </picture>
-            </div>
+            </Link>
             <div className="mx-auto w-full md:hidden">
               <p className="py-4 text-center text-sm font-thin">
-                Lebron Nxxt Gen
+                {model.modelName}
               </p>
             </div>
           </CarouselItem>

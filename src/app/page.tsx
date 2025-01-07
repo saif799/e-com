@@ -2,15 +2,22 @@ import { GetShowCaseProducts } from "@/actions/getProduct";
 import { MainCarousel } from "@/components/mainCarousel";
 import ProductCard from "@/components/productCard";
 import { Button } from "@/components/ui/button";
+import { db } from "@/server/db";
+import { shoeModels } from "@/server/db/schema";
 
 export default async function HomePage() {
-  const products = await GetShowCaseProducts();
+  const [products, models] = await Promise.all([
+    GetShowCaseProducts(),
+    db.select().from(shoeModels),
+  ]);
   if (!products) return;
+
+  console.log(models);
 
   return (
     <main>
       <div className="flex flex-col items-center justify-center gap-8 pb-8">
-        <MainCarousel />
+        <MainCarousel models={models} />
 
         <Button
           variant={"ghost"}
