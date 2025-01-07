@@ -1,4 +1,3 @@
-// import { GetShowCaseProducts } from "@/actions/getProduct";
 import { GetShowCaseProducts } from "@/actions/getProduct";
 import { MainCarousel } from "@/components/mainCarousel";
 import ProductCard from "@/components/productCard";

@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -8,6 +7,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 export function MainCarousel() {
   return (
@@ -28,16 +28,24 @@ export function MainCarousel() {
           <CarouselItem key={index} className="flex-col items-center">
             <div className="m-auto flex min-h-[70vh] items-center justify-center p-1 md:h-[70vh]">
               <picture>
-                <source srcSet="/Shoe.jpg" media="(min-width: 768px)" className="object-fill" />
-                <img
+                <source
+                  srcSet="/Shoe.jpg"
+                  media="(min-width: 768px)"
+                  className="object-fill"
+                />
+                <Image
+                  width={1200}
+                  height={1200}
                   src="/shoe-mobile.jpg"
                   alt=""
-                  className="object-fill w-full max-w-96 md:max-w-4xl md:max-h-[75vh]"
+                  className="w-full max-w-96 object-fill md:max-h-[75vh] md:max-w-4xl"
                 />
               </picture>
             </div>
-            <div className="md:hidden w-full mx-auto">
-              <p className="text-center text-sm font-thin py-4">Lebron Nxxt Gen</p>
+            <div className="mx-auto w-full md:hidden">
+              <p className="py-4 text-center text-sm font-thin">
+                Lebron Nxxt Gen
+              </p>
             </div>
           </CarouselItem>
         ))}
