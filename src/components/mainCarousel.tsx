@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,

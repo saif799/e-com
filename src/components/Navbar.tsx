@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ShoppingBag, Heart } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { useCartState } from "@/hooks/useCartState";
 import Image from "next/image";
 
@@ -14,8 +14,8 @@ const Navbar = () => {
             <Link href="/" className="flex flex-shrink-0 items-center">
               <span className="text-xl font-bold">
                 <Image
-                  width={1000}
-                  height={1000}
+                  width={100}
+                  height={100}
                   className="size-8"
                   src="/logo-text-less.svg"
                   alt="Logo"
@@ -33,8 +33,8 @@ const Navbar = () => {
           </div> */}
 
           <Image
-            width={1000}
-            height={1000}
+            width={100}
+            height={100}
             className="hidden h-3"
             src="/LEGENWEAR.svg"
             alt="legenwear"
@@ -56,6 +56,12 @@ const Navbar = () => {
             >
               <ShoppingBag className="h-7 w-7" strokeWidth={1.5} />
             </Link>
+            {/* <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn> */}
           </div>
         </div>
       </div>

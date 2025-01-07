@@ -16,8 +16,8 @@ const dmMono = DM_Mono({
   weight: ["300", "400", "500"],
 });
 export const metadata: Metadata = {
-  title: "shoes selling store",
-  description: "shoes selling store",
+  title: "Legenwear dz",
+  description: "Legenwear dz is your go-to destination for original, high-quality sport shoes designed to bring style, comfort, performance and durability to every step. Whether you're looking for trendy sneakers or timeless classics, we've got the perfect pair for you.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
