@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { ShoppingBag, } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { useCartState } from "@/hooks/useCartState";
 import Image from "next/image";
 
@@ -37,7 +37,7 @@ const Navbar = () => {
             height={100}
             className="hidden h-3"
             src="/LEGENWEAR.svg"
-            alt="legenwear text"
+            alt="legenwear"
           />
 
           <div className="flex items-center justify-between">
