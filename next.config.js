@@ -7,11 +7,22 @@ await import("./src/env.js");
 /** @type {import("next").NextConfig} */
 const nextConfig = {
   images: {
+    
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [{ hostname: "utfs.io" }],
-  },
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'sneakerbardetroit.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn-images.farfetch-contents.com',
+        pathname: '/**',
+      },
+    ],  },
 };
 
 export default nextConfig;

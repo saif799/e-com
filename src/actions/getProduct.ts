@@ -2,7 +2,7 @@
 
 import { db } from "@/server/db";
 import { shoeModels, images, productSizes, products } from "@/server/db/schema";
-import { and, eq, ne } from "drizzle-orm";
+import { and, desc, eq, ne } from "drizzle-orm";
 
 export async function GetProduct(productId: string) {
   try {
@@ -46,7 +46,7 @@ export async function GetShowCaseProducts() {
       .select()
       .from(products)
       .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
-      .orderBy(products.createdAt);
+      .orderBy(desc(products.createdAt) )
     return yourProducts;
   } catch (err) {
     console.log("error selecting a product ", err);

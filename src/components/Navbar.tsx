@@ -3,15 +3,17 @@ import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { useCartState } from "@/hooks/useCartState";
 import Image from "next/image";
+// import { Button } from "./ui/button";
+// import { seedDatabase } from "@/server/db/seedProducts";
 
 const Navbar = () => {
   const { Open } = useCartState();
   return (
-    <nav className="sticky left-0 right-0 top-0 z-10 bg-white shadow-sm">
+    <nav className="sticky left-0 right-0 top-0 z-[100] bg-white shadow-sm">
       <div className="mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex">
-            <Link href="/" className="flex flex-shrink-0 items-center">
+            <Link href="/" className="flex flex-shrink-0 items-center pl-3">
               <span className="text-xl font-bold">
                 <Image
                   width={100}
@@ -23,6 +25,7 @@ const Navbar = () => {
               </span>
             </Link>
           </div>
+          {/* <Button onClick={()=> seedDatabase()}>Seed</Button> */}
           {/* <div className="relative flex items-center">
             <Input
               className="rounded-full bg-slate-50 pl-10 pr-4"
