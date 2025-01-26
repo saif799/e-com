@@ -13,9 +13,9 @@ const nextConfig = {
     remotePatterns: [
       { hostname: "utfs.io" },
       {
-        protocol: "https",
+        // protocol: "https",
         hostname: "sneakerbardetroit.com",
-        pathname: "/**",
+        // pathname: "/**",
       },
       {
         protocol: "https",

@@ -4,15 +4,18 @@ import ProductCard from "@/components/productCard";
 import { Button } from "@/components/ui/button";
 import { db } from "@/server/db";
 import { shoeModels } from "@/server/db/schema";
+import { eq } from "drizzle-orm";
 
 export default async function HomePage() {
   const [products, models] = await Promise.all([
     GetShowCaseProducts(),
-    db.select().from(shoeModels),
+    db.select().from(shoeModels).limit(100),
   ]);
   if (!products) return;
-
-  console.log(models);
+  try {
+  } catch (error) {
+    console.log(error);
+  }
 
   return (
     <main>

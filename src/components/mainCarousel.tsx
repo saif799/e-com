@@ -36,14 +36,20 @@ export function MainCarousel({ models }: mainCarouselProps) {
             >
               <picture>
                 <source
-                  srcSet={model.desktopImage}
+                  srcSet={
+                    model.desktopImage ??
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs9gUXKwt2KErC_jWWlkZkGabxpeGchT-fyw&s"
+                  }
                   media="(min-width: 768px)"
                   className="object-fill"
                 />
                 <Image
                   width={1000}
                   height={1000}
-                  src={model.mobileImage}
+                  src={
+                    model.mobileImage ??
+                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs9gUXKwt2KErC_jWWlkZkGabxpeGchT-fyw&s"
+                  }
                   alt=""
                   className="w-full max-w-96 object-fill md:max-h-[75vh] md:max-w-4xl"
                 />
