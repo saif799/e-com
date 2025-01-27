@@ -11,17 +11,10 @@ const nextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
-      { hostname: "utfs.io" },
-      {
-        // protocol: "https",
-        hostname: "sneakerbardetroit.com",
-        // pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: "cdn-images.farfetch-contents.com",
-        pathname: "/**",
-      },
+      { hostname: "utfs.io", pathname: "/**" },
+      { hostname: "sneakerbardetroit.com", pathname: "/**" },
+      { protocol: "https", hostname: "cdn-images.farfetch-contents.com", pathname: "/**" },
+      { hostname: "**", pathname: "/**" },
     ],
   },
 };

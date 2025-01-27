@@ -38,6 +38,7 @@ export default function CheckoutForm({
   selectedPiece,
   product,
 }: CheckoutFormProps) {
+  const { handleAddProduct } = useCart();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [quantity, setQuantity] = useState<number>(1);
   const { handleAddOrder } = useCart();
@@ -335,6 +336,25 @@ export default function CheckoutForm({
               disabled={!selectedPiece || isLoading}
             >
               {isLoading ? "Processing..." : "Order Now"}
+            </Button>
+            <Button
+              type="button"
+              className="text-md w-full rounded-md py-6 font-medium md:text-lg"
+              disabled={!selectedPiece || isLoading}
+              variant="outline"
+              onClick={() => {
+                handleAddProduct({
+                  image: product.image,
+                  price: product.price,
+                  productId: product.id,
+                  productName: product.name,
+                  quantity: selectedPiece!.quantity,
+                  size: selectedPiece!.size,
+                });
+                toast.success("Product Added successfully");
+              }}
+            >
+              Add to cart
             </Button>
           </form>
         </Form>

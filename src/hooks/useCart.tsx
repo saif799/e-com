@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect } from "react";
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import type { CartOrderType, CartProductType, OrderType } from "@/lib/types";
 import { useState } from "react";
-import { generateId } from "@/lib/generateId";
+import toast from "react-hot-toast";
 
 export type CartContextType = {
   cartProducts: CartProductType[];
@@ -39,30 +39,12 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
     setCartProducts((prev) => {
       const updatedCart = prev ? [...prev, product] : [product];
       localStorage.setItem("cart_Products", JSON.stringify(updatedCart));
+
       return updatedCart;
     });
   }
 
   function handleAddOrder(order: CartOrderType) {
-    // const id = generateId();
-    // const orders: OrderType & { size: number; originalQuantity: number } = {
-    //   id,
-    //   customerInfo: order.customerInfo,
-    //   productId: order.id,
-    //   price: product.price,
-    //   quantity,
-    //   status: "pending",
-    //   originalQuantity: selectedPiece.quantity,
-    //   size: selectedPiece.size,
-    // };
-    // const res = await fetch("/api/order", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(order),
-    // });
-
     setCartOrders((prev) => {
       let updatedCart;
       if (prev) {
@@ -72,6 +54,8 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
       }
 
       localStorage.setItem("orders", JSON.stringify(updatedCart));
+      toast.success("order added successfully");
+
       return updatedCart;
     });
   }
@@ -81,6 +65,7 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
       const updatedCart = cartProducts.filter((p) => p.productId !== productId);
       setCartProducts(updatedCart);
       localStorage.setItem("cart_Products", JSON.stringify(updatedCart));
+      toast.success("Product removed successfully");
     }
   }
 
@@ -119,11 +104,13 @@ export const CartContextProvider = (props: Record<string, unknown>) => {
   const handleClearCart = () => {
     setCartProducts([]);
     localStorage.setItem("cart_Products", JSON.stringify(null));
+    toast.success("carte cleared successfully");
   };
 
   const handleClearOrders = () => {
     setCartOrders([]);
     localStorage.setItem("orders", JSON.stringify(null));
+    toast.success("carte cleared successfully");
   };
 
   const methods: CartContextType = {

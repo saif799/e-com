@@ -7,6 +7,7 @@ import { type Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { DM_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import FacebookPixel from "@/lib/Providers/fbPixelProvider";
 
 // TODO work on the pics and their state in the products page (there for the product in the db needs a related producs or something similar )
 
@@ -17,7 +18,8 @@ const dmMono = DM_Mono({
 });
 export const metadata: Metadata = {
   title: "Legenwear dz",
-  description: "Legenwear dz is your go-to destination for original, high-quality sport shoes designed to bring style, comfort, performance and durability to every step. Whether you're looking for trendy sneakers or timeless classics, we've got the perfect pair for you.",
+  description:
+    "Legenwear dz is your go-to destination for original, high-quality sport shoes designed to bring style, comfort, performance and durability to every step. Whether you're looking for trendy sneakers or timeless classics, we've got the perfect pair for you.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
@@ -32,6 +34,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
       </head>
       <body className={`${dmMono.className} h-screen`}>
+        <FacebookPixel />
         <GoogleAnalytics gaId="G-G4PF455X69" />
         <Navbar />
         <div>
