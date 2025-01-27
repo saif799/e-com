@@ -56,7 +56,7 @@ export default async function Component({ params: { productId } }: Props) {
             </div>
 
             <ImageSlide
-              productImages={[products[0].products.showCase, ...pImages] ?? []}
+              productImages={[products[0].products.showCase, ...pImages]}
             />
           </div>
         </div>
