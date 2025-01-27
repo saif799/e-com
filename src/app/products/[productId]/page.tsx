@@ -3,14 +3,6 @@ import ImageSlide from "@/components/imageSlide";
 import { GetProduct, GetSimilarProducts } from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
 
-const productImages: string[] = [
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-  "/Shoe.jpg",
-];
-
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
   const products = await GetProduct(productId);
@@ -28,7 +20,7 @@ export default async function Component({ params: { productId } }: Props) {
         .filter(
           (item, index, self) => index === self.findIndex((t) => t === item),
         )
-    : productImages;
+    : [];
   const product: OrderProductType = {
     id: productId,
     name: products[0].products.name,
@@ -63,7 +55,9 @@ export default async function Component({ params: { productId } }: Props) {
               </h2>
             </div>
 
-            <ImageSlide productImages={pImages ?? productImages} />
+            <ImageSlide
+              productImages={[products[0].products.showCase, ...pImages] ?? []}
+            />
           </div>
         </div>
       </div>
