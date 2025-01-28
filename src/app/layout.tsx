@@ -34,7 +34,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
       </head>
       <body className={`${dmMono.className} h-screen`}>
-        <FacebookPixel />
         <GoogleAnalytics gaId="G-G4PF455X69" />
         <Navbar />
         <div>
@@ -42,6 +41,7 @@ export default function RootLayout({
             <CartSheet />
             {children}
             <Toaster />
+            <FacebookPixel />
           </CartContextProvider>
         </div>
         <Footer />
