@@ -136,7 +136,7 @@ export default function CheckoutForm({
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Full Name" {...field} />
+                      <Input className="h-14" placeholder="Full Name" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -156,7 +156,7 @@ export default function CheckoutForm({
                           value={field.value}
                           onValueChange={field.onChange}
                         >
-                          <SelectTrigger>
+                          <SelectTrigger className="h-14">
                             <SelectValue placeholder="Wilaya" />
                           </SelectTrigger>
                           <SelectContent>
@@ -185,7 +185,7 @@ export default function CheckoutForm({
                           value={field.value}
                           onValueChange={field.onChange}
                         >
-                          <SelectTrigger>
+                          <SelectTrigger className="h-14">
                             <SelectValue placeholder="Baladia" />
                           </SelectTrigger>
                           <SelectContent>
@@ -215,6 +215,7 @@ export default function CheckoutForm({
                     <FormItem>
                       <FormControl>
                         <Input
+                        className="h-14"
                           placeholder="Phone number"
                           type="tel"
                           {...field}
@@ -236,7 +237,8 @@ export default function CheckoutForm({
                           value={field.value}
                           onValueChange={field.onChange}
                         >
-                          <SelectTrigger>
+                          <SelectTrigger
+                          className="h-14">
                             <SelectValue placeholder="livraison" />
                           </SelectTrigger>
                           <SelectContent>
@@ -261,6 +263,7 @@ export default function CheckoutForm({
                 <Button
                   type="button"
                   variant="outline"
+                  className="size-12"
                   onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
                   disabled={quantity <= 1 || !selectedPiece}
                 >
@@ -270,6 +273,7 @@ export default function CheckoutForm({
                 <Button
                   type="button"
                   variant="outline"
+                  className="size-12"
                   disabled={
                     !selectedPiece || quantity >= selectedPiece.quantity
                   }

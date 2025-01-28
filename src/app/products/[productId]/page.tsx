@@ -2,6 +2,7 @@ import ProductCard from "@/components/productCard";
 import ImageSlide from "@/components/imageSlide";
 import { GetProduct, GetSimilarProducts } from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
@@ -103,7 +104,9 @@ export default async function Component({ params: { productId } }: Props) {
         <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
           Similar Products
         </h3>
-        <div className="flex flex-grow gap-1 overflow-scroll px-2 pb-8">
+        <ScrollArea className="w-full whitespace-nowrap rounded-md">
+
+        <div className="flex flex-grow gap-4 overflow-scroll px-2 pb-8">
           {similarProducts!.map((p, i) => (
             <ProductCard
               key={i}
@@ -116,6 +119,7 @@ export default async function Component({ params: { productId } }: Props) {
             />
           ))}
         </div>
+        </ScrollArea>
       </div>
     </div>
   );
