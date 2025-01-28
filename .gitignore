@@ -4,10 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
-products.json
-.products.json
+
 # testing
 /coverage
+
+#data
+products.json
 
 # database
 /prisma/db.sqlite
@@ -27,6 +29,7 @@ next-env.d.ts
 *.pem
 
 # debug
+debug.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

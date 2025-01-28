@@ -25,25 +25,25 @@ export default function ProductCard({
       href={`/products/${href}`}
       className={cn(
         className,
-        "flex min-w-44 flex-col gap-5 rounded-2xl py-4 transition-transform hover:scale-105 hover:bg-gray-50",
+        "flex min-w-44 flex-col gap-5 py-4 transition-transform hover:scale-105 ",
       )}
     >
-      <div className="m-auto flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap rounded-2xl bg-gray-white md:h-64 lg:h-[340px]">
+      <div className="mx-auto flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap  bg-gray-white md:size-[30vw] lg:size-[22vw]">
         <Image
           src={imageUrl}
           alt={`Product image `}
           width={500}
           height={500}
-          className="block w-full object-cover rounded-md"
+          className="block w-full object-cover "
         />
       </div>
-      <div className="flex flex-col gap-2 pl-3">
-        <h2 className="md:text-md text-wrap font-medium md:text-xl">
+      <div className="flex flex-col gap-0 pl-3 w-11/12">
+        <h2 className="md:text-lg text-wrap font-medium pb-1">
           {productTitle}
         </h2>
-        <p className="text-sm text-secondary md:text-xl">{brand}</p>
-        <p className="text-md font-medium text-purple-900 md:text-xl">
-          {price} DA
+        <p className="text-sm text-secondary md:text-lg">{brand}</p>
+        <p className="text-md font-medium text-purple-900 md:text-lg">
+          {price?.toLocaleString("en-US",{style : "decimal", useGrouping : true})} DA
         </p>
       </div>
     </Link>

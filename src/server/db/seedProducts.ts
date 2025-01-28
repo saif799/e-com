@@ -1,13 +1,17 @@
 "use server";
 
-import data from "products.json"; 
+import data from "products.json";
 import { insertProduct } from "./insertProduct";
 
 export async function seedDatabase() {
   try {
-    for (const product of data.lebrons) {
-      await insertProduct(product);
-      console.log(`Inserted product: ${product.name}`);
+    for (const model in data) {
+      if (Array.isArray(data[model])) {
+        for (const product of data[model]) {
+          await insertProduct(product); // Insert each product
+          console.log(`Inserted product: ${product.name}`);
+        }
+      }
     }
     console.log("All products inserted successfully!");
   } catch (error) {
@@ -16,5 +20,5 @@ export async function seedDatabase() {
 }
 
 seedDatabase().catch((error) => {
-    console.error("Seeding error:", error);
-  });
+  console.error("Seeding error:", error);
+});
