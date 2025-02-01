@@ -28,17 +28,17 @@ export default function ProductCard({
         "flex min-w-44 flex-col gap-5 py-4 transition-transform hover:scale-105 ",
       )}
     >
-      <div className="mx-auto flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap  bg-gray-white md:size-[30vw] lg:size-[22vw]">
+      <div className="m-auto flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap rounded-2xl bg-gray-white md:h-64 lg:h-[340px]">
         <Image
           src={imageUrl}
           alt={`Product image `}
           width={500}
           height={500}
-          className="block w-full object-cover "
+          className="block w-full object-cover rounded-md"
         />
       </div>
-      <div className="flex flex-col gap-0 pl-3 w-11/12">
-        <h2 className="md:text-lg text-wrap font-medium pb-1">
+      <div className="flex flex-col gap-2 pl-3">
+        <h2 className="md:text-md text-wrap font-medium md:text-xl">
           {productTitle}
         </h2>
         <p className="text-sm text-secondary md:text-lg">{brand}</p>

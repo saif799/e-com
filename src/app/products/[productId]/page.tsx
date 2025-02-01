@@ -1,6 +1,10 @@
 import ProductCard from "@/components/productCard";
 import ImageSlide from "@/components/imageSlide";
-import { GetProduct, GetSimilarProducts } from "@/actions/getProduct";
+import {
+  GetProduct,
+  GetSimilarProducts,
+  GetSimilarProductsSizes,
+} from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
@@ -10,10 +14,14 @@ export default async function Component({ params: { productId } }: Props) {
 
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   if (!products || !products[0]?.products) return;
-  const similarProducts = await GetSimilarProducts(
-    products[0].products.modelId,
-    productId,
-  );
+  const sizes = products
+    .map((p) => p.product_sizes!.size)
+    .filter((item, index, self) => index === self.findIndex((t) => t === item));
+
+  const [similarProducts, ProductsWithSimilarSizes] = await Promise.all([
+    GetSimilarProducts(products[0].products.modelId, productId),
+    GetSimilarProductsSizes(sizes, productId),
+  ]);
 
   const pImages = products[0].images
     ? products
@@ -29,7 +37,7 @@ export default async function Component({ params: { productId } }: Props) {
     image: products[0].products.showCase,
     sizes: products
       .map((p) => ({
-        size: p.product_sizes!.size,
+        size: Number(p.product_sizes!.size),
         quantity: p.product_sizes!.stock,
       }))
       .filter(
@@ -38,6 +46,7 @@ export default async function Component({ params: { productId } }: Props) {
       )
       .sort((a, b) => a.size - b.size),
   };
+  console.log(similarProducts ? true : false);
 
   return (
     <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
@@ -79,47 +88,51 @@ export default async function Component({ params: { productId } }: Props) {
         </p>
         <OrderData Product={product} />
       </div>
-      <div className="w-full">
-        {/* <div className="mb-6">
-          <h3 className="mb-2 px-2 font-extralight text-gray-500 md:text-xl md:font-normal">
-            Available colors
-          </h3>
-          <div className="grid grid-cols-4 gap-2 md:grid-cols-5 md:gap-4">
-            {colorOptions.map((color, index) => (
-              <div key={index} className="overflow-hidden">
-                <Image
-                  src={color}
-                  alt={`Color ${index + 1}`}
-                  width={200}
-                  height={200}
-                  className="h-20 w-20 object-contain md:h-36 md:w-36"
-                />
-                <h3 className="px-1 text-center text-sm font-extralight md:text-lg">
-                  Lakers Purple{" "}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div> */}
-        <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
-          Similar Products
-        </h3>
-        <ScrollArea className="w-full whitespace-nowrap rounded-md">
 
-        <div className="flex flex-grow gap-4 overflow-scroll px-2 pb-8">
-          {similarProducts!.map((p, i) => (
-            <ProductCard
-              key={i}
-              href={p.products.id}
-              imageUrl={p.products.showCase}
-              productTitle={p.products.name}
-              brand={p.shoe_models.brand}
-              price={p.products.price}
-              className="basis-2/3 lg:basis-1/4"
-            />
-          ))}
-        </div>
-        </ScrollArea>
+      <div className="w-full">
+        {ProductsWithSimilarSizes ? (
+          <>
+            {" "}
+            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
+              Similar sizes
+            </h3>
+            <div className="flex flex-grow gap-1 overflow-scroll px-2 pb-8">
+              {ProductsWithSimilarSizes.map((p, i) => (
+                <ProductCard
+                  key={i}
+                  href={p.id}
+                  imageUrl={p.showCase}
+                  productTitle={p.name}
+                  brand={"Nike"}
+                  price={p.price}
+                  className="basis-2/3 lg:basis-1/4"
+                />
+              ))}
+            </div>
+          </>
+        ) : null}
+      </div>
+      <div className="w-full">
+        {similarProducts?.length ? (
+          <>
+            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
+              Similar Products
+            </h3>
+            <div className="flex flex-grow gap-1 overflow-scroll px-2 pb-8">
+              {similarProducts.map((p, i) => (
+                <ProductCard
+                  key={i}
+                  href={p.products.id}
+                  imageUrl={p.products.showCase}
+                  productTitle={p.products.name}
+                  brand={p.shoe_models.brand}
+                  price={p.products.price}
+                  className="basis-2/3 lg:basis-1/4"
+                />
+              ))}
+            </div>
+          </>
+        ) : null}
       </div>
     </div>
   );

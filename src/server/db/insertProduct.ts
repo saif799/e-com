@@ -20,7 +20,7 @@ export type Product = {
 };
 
 export async function insertProduct(product: Product) {
-    try {
+  try {
     const productId = generateId();
 
     await db.insert(products).values({
@@ -43,12 +43,11 @@ export async function insertProduct(product: Product) {
     const mappedSizes = product.productSizes.map((size) => ({
       id: generateId(),
       productId: productId,
-      size: size.size,
+      size: size.size.toString(),
       stock: size.stock,
     }));
 
     await db.insert(productSizes).values(mappedSizes);
-
   } catch (error) {
     console.error("Failed to insert product:", error);
     throw error;
