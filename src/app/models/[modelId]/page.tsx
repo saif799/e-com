@@ -13,8 +13,8 @@ export default async function page({ params: { modelId } }: Props) {
     .where(eq(products.modelId, modelId));
   return (
     <div className="min-h-screen">
-      <h1 className="p-4 text-lg font-semibold md:px-10 md:text-2xl">
-        {shoes[0]?.shoe_models.modelName} available in:
+      <h1 className="px-4 text-lg text-center w-full font-light md:px-10 md:text-2xl pt-8">
+       All {shoes[0]?.shoe_models.modelName}
       </h1>
       <div className="grid w-full grid-cols-2 gap-3 px-3 pb-44 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4 lg:px-8">
         {shoes.map((shoe) => (

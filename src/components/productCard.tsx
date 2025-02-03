@@ -25,10 +25,10 @@ export default function ProductCard({
       href={`/products/${href}`}
       className={cn(
         className,
-        "flex min-w-44 flex-col gap-5 py-4 transition-transform hover:scale-105 ",
+        "flex min-w-44 flex-col gap-5 py-4 px-3 transition-transform hover:scale-105 ",
       )}
     >
-      <div className="mx-auto flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap  bg-gray-white md:size-[30vw] lg:size-[22vw]">
+      <div className="flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap  bg-gray-white md:size-[30vw] lg:size-[22vw]">
         <Image
           src={imageUrl}
           alt={`Product image `}
@@ -38,7 +38,7 @@ export default function ProductCard({
         />
       </div>
 
-      <div className="flex flex-col gap-2 pl-3">
+      <div className="flex flex-col gap-2">
         <h2 className="md:text-md text-wrap font-medium md:text-xl">
           {productTitle}
         </h2>
