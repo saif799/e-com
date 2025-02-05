@@ -1,26 +1,44 @@
 import { GetShowCaseProducts } from "@/actions/getProduct";
+import Listings from "@/components/Listings";
 import { MainCarousel } from "@/components/mainCarousel";
-import ProductCard from "@/components/productCard";
 import { Button } from "@/components/ui/button";
 import { db } from "@/server/db";
-import { shoeModels } from "@/server/db/schema";
-import { isNotNull } from "drizzle-orm";
+import { type products, type productSizes, shoeModels } from "@/server/db/schema";
+import type { InferSelectModel } from "drizzle-orm";
 
+export type formattedProductsType = {
+  products: InferSelectModel<typeof products>;
+  shoe_models: InferSelectModel<typeof shoeModels>;
+  product_sizes: InferSelectModel<typeof productSizes>[] | null;
+}
 export default async function HomePage() {
   const [products, models] = await Promise.all([
     GetShowCaseProducts(),
-    db.select().from(shoeModels).where(isNotNull(shoeModels.desktopImage)),
+    db.select().from(shoeModels),
   ]);
   if (!products) return;
   try {
   } catch (error) {
     console.log(error);
   }
+  let iterator = { index: 0, id: "" };
+  const formattedProducts : formattedProductsType[] = [];
+  products.forEach((p, index) => {
+    if (p.products.id !== iterator.id) {
+      iterator = { index: index, id: p.products.id };
+      formattedProducts.push({products : p.products,shoe_models: p.shoe_models, product_sizes: [p.product_sizes]});
+    }
+    else if(p.products.id === iterator.id) {
+      formattedProducts[iterator.index]?.product_sizes?.push(p.product_sizes);
+    }
+  });
 
   return (
     <main>
       <div className="flex flex-col items-center justify-center gap-8 pb-8">
-        <MainCarousel models={models} />
+        <MainCarousel models={models.filter((p)=>{
+          return (p.desktopImage) && (p.mobileImage);
+        })} />
 
         <Button
           variant={"ghost"}
@@ -28,21 +46,7 @@ export default async function HomePage() {
         >
           View Product
         </Button>
-        <h3 className="w-full pl-6 text-left text-xl font-medium md:pl-8 lg:pl-12">
-          Listings
-        </h3>
-        <div className="grid w-full grid-cols-2 gap-3 px-3 pb-10 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4 lg:px-8">
-          {products.map((p) => (
-            <ProductCard
-              key={p.products.id}
-              href={p.products.id}
-              imageUrl={p.products.showCase}
-              productTitle={p.products.name}
-              brand={"NIKE"}
-              price={p.products.price}
-            />
-          ))}
-        </div>
+        <Listings products={formattedProducts} models={models} />
       </div>
     </main>
   );
