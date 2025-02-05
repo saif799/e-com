@@ -13,7 +13,6 @@ import {
 import { Button } from "./ui/button";
 import { Filter, FilterIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
 
 export default function Listings({
   products,
@@ -24,9 +23,6 @@ export default function Listings({
 }) {
   const [listings, setListings] = useState<formattedProductsType[]>(products);
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
-  //   "models",
-  //   parseAsArrayOf(parseAsString),
-  // );
   const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
   const [priceLimit, setPriceLimit] = useState<{
     min: number;
