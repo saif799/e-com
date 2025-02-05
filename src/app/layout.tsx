@@ -8,7 +8,7 @@ import { Toaster } from "react-hot-toast";
 import { DM_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import FacebookPixel from "@/lib/Providers/fbPixelProvider";
-
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 // TODO work on the pics and their state in the products page (there for the product in the db needs a related producs or something similar )
 
 // todos add the brand thingy - show the most buyed products work more on the category feature and fucking host that bitch (we will probably need to switch to postgress or some other provider since sqlite doesnt work on a serverless env) and work on the repsonsivness of the product page
@@ -39,7 +39,7 @@ export default function RootLayout({
         <div>
           <CartContextProvider>
             <CartSheet />
-            {children}
+            <NuqsAdapter>{children}</NuqsAdapter>
             <Toaster />
             <FacebookPixel />
           </CartContextProvider>

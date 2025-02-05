@@ -3,6 +3,17 @@ import type { formattedProductsType } from "@/app/page";
 import ProductCard from "./productCard";
 import FilterTool from "./filterTool";
 import { useEffect, useState } from "react";
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTrigger,
+} from "./ui/drawer";
+import { Button } from "./ui/button";
+import { Filter, FilterIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { parseAsArrayOf, parseAsString, useQueryState } from "nuqs";
 
 export default function Listings({
   products,
@@ -11,14 +22,16 @@ export default function Listings({
   products: formattedProductsType[];
   models: formattedProductsType["shoe_models"][];
 }) {
-  // This state holds the currently displayed products after filtering.
   const [listings, setListings] = useState<formattedProductsType[]>(products);
-  // Store selected filter values in separate state variables.
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
+  //   "models",
+  //   parseAsArrayOf(parseAsString),
+  // );
   const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
-  const [priceLimit, setPriceLimit] = useState<{ min: number; max: number } | null>(
-    null
-  );
+  const [priceLimit, setPriceLimit] = useState<{
+    min: number;
+    max: number;
+  } | null>(null);
 
   const sizes: number[] = [];
   products.forEach((p) => {
@@ -48,15 +61,15 @@ export default function Listings({
 
     if (selectedModels.length > 0) {
       filtered = filtered.filter((l) =>
-        selectedModels.includes(l.shoe_models.modelName)
+        selectedModels.includes(l.shoe_models.modelName),
       );
     }
 
     if (selectedSizes.length > 0) {
       filtered = filtered.filter((l) =>
         l.product_sizes?.some((s) =>
-          selectedSizes.includes(parseFloat(s.size))
-        )
+          selectedSizes.includes(parseFloat(s.size)),
+        ),
       );
     }
 
@@ -64,26 +77,74 @@ export default function Listings({
       filtered = filtered.filter(
         (l) =>
           l.products.price >= priceLimit.min &&
-          l.products.price <= priceLimit.max
+          l.products.price <= priceLimit.max,
       );
     }
 
     setListings(filtered);
   }, [selectedModels, selectedSizes, priceLimit, products]);
 
+  function scrollToListings() {
+    const element = document.getElementById("listings");
+    if (element) {
+        const targetPosition = element.getBoundingClientRect().top + window.scrollY - 100;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
+  }
   return (
-    <div className="grid w-full lg:grid-cols-4">
-      <FilterTool
-        models={strModels}
-        sizes={sizes}
-        selectModelFilter={selectModelFilter}
-        selectSizesFilter={selectSizesFilter}
-        setPricelimit={updatePriceLimit}
-      />
-      <div className="w-full col-span-3">
-        <h3 className="w-full pl-6 text-left text-xl font-medium md:pl-8 lg:pl-12 lg:pb-4">
-          Listings ({listings.length})
-        </h3>
+    <div id="listings" className="grid w-full lg:grid-cols-4">
+      <div className="hidden flex-col lg:col-span-1 lg:ml-4 lg:mr-14 lg:inline-flex">
+        <FilterTool
+          models={strModels}
+          sizes={sizes}
+          selectModelFilter={selectModelFilter}
+          selectSizesFilter={selectSizesFilter}
+          setPricelimit={updatePriceLimit}
+        />
+      </div>
+      <div className="col-span-3 w-full">
+        <div className="flex w-full items-center justify-between px-4">
+          <h3 className="w-full text-left text-xl font-medium md:pl-8 lg:pb-4 lg:pl-12">
+            Listings ({listings.length})
+          </h3>
+          <Drawer>
+            <DrawerTrigger asChild className="lg:hidden">
+              <Button
+                onClick={() => scrollToListings()}
+                variant="outline"
+                className={cn(
+                  "",
+
+                  ((selectedModels && selectedModels.length > 0) ||
+                    selectedSizes.length > 0 ||
+                    priceLimit) &&
+                    "font-medium text-purple-900",
+                )}
+              >
+                Filter <FilterIcon className="size-4" />
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent className="max-h-[90vh]">
+              <DrawerHeader>
+                <div className="flex w-full items-center justify-between pb-4">
+                  <h3 className="w-full text-left text-xl font-medium">
+                    Filters
+                  </h3>
+                  <Filter className="size-6" color="#000" strokeWidth={2} />
+                </div>{" "}
+              </DrawerHeader>
+              <DrawerDescription>
+                <FilterTool
+                  models={strModels}
+                  sizes={sizes}
+                  selectModelFilter={selectModelFilter}
+                  selectSizesFilter={selectSizesFilter}
+                  setPricelimit={updatePriceLimit}
+                />
+              </DrawerDescription>
+            </DrawerContent>
+          </Drawer>
+        </div>
         <div className="grid w-full grid-cols-2 gap-3 px-3 pb-10 md:grid-cols-3 md:gap-4 lg:gap-4 lg:pr-8">
           {listings.map((p) => (
             <ProductCard
