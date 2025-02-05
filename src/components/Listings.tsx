@@ -21,10 +21,14 @@ export default function Listings({
   );
 
   const sizes: number[] = [];
-  for (let i = 36; i <= 48; i += 0.5) {
-    sizes.push(i);
-  }
-
+  products.forEach((p) => {
+    p.product_sizes!.forEach((s) => {
+      if (!sizes.includes(parseFloat(s.size))) {
+        sizes.push(parseFloat(s.size));
+      }
+    });
+  });
+  sizes.sort((a, b) => a - b);
   function selectModelFilter(modelsArr: string[]) {
     setSelectedModels(modelsArr);
   }
