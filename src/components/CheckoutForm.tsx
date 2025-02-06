@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 "use client";
 
 import { useForm } from "react-hook-form";
@@ -107,6 +108,12 @@ export default function CheckoutForm({
         toast.success("Ordered successfully!");
         form.reset(); // Reset form after successful submission
         setQuantity(1); // Reset quantity
+        window.fbq('track', 'Purchase', {
+          content_ids: order.products.map(product => product.productId), // List of product IDs
+          num_items: order.products.length,
+          value: order.products.reduce((total, product) => total + product.price * product.quantity, 0) + deliveryPrice, // Sum of product prices
+          currency: 'DZD',
+      });
       } else {
         toast.error("Order failed");
       }
