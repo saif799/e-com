@@ -6,6 +6,7 @@ import {
   GetSimilarProductsSizes,
 } from "@/actions/getProduct";
 import { OrderData, type OrderProductType } from "@/components/OrderData";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
@@ -45,7 +46,6 @@ export default async function Component({ params: { productId } }: Props) {
       )
       .sort((a, b) => a.size - b.size),
   };
-  console.log(similarProducts ? true : false);
 
   return (
     <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
@@ -88,14 +88,15 @@ export default async function Component({ params: { productId } }: Props) {
         <OrderData Product={product} />
       </div>
 
-      <div className="w-full">
+      <div className="w-full ">
         {ProductsWithSimilarSizes ? (
           <>
             {" "}
-            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
-              Similar sizes
+            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl pb-2">
+              Shoes with similar sizes
             </h3>
-            <div className="flex flex-grow gap-1 overflow-scroll px-2 pb-8">
+            <ScrollArea>
+            <div className="flex flex-grow gap-3 px-2 pb-4">
               {ProductsWithSimilarSizes.map((p, i) => (
                 <ProductCard
                   key={i}
@@ -108,16 +109,20 @@ export default async function Component({ params: { productId } }: Props) {
                 />
               ))}
             </div>
+            <ScrollBar orientation="horizontal" />
+
+            </ScrollArea>
           </>
         ) : null}
       </div>
-      <div className="w-full">
+      <div className="w-full pb-4">
         {similarProducts?.length ? (
           <>
-            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl">
+            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl pb-2">
               Similar Products
             </h3>
-            <div className="flex flex-grow gap-4 overflow-scroll px-2 pb-8">
+            <ScrollArea className="w-full whitespace-nowrap rounded-md">
+            <div className="flex w-full space-x-4 px-2 pb-4">
               {similarProducts.map((p, i) => (
                 <ProductCard
                   key={i}
@@ -130,6 +135,9 @@ export default async function Component({ params: { productId } }: Props) {
                 />
               ))}
             </div>
+            <ScrollBar orientation="horizontal" />
+
+            </ScrollArea>
           </>
         ) : null}
       </div>

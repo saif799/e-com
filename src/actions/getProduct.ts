@@ -65,6 +65,7 @@ export async function GetShowCaseProducts() {
       .select()
       .from(products)
       .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
+      .innerJoin(productSizes, eq(productSizes.productId, products.id))
       .orderBy(desc(products.createdAt));
     return yourProducts;
   } catch (err) {
