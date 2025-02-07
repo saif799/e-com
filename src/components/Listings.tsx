@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
 "use client";
 import type { formattedProductsType } from "@/app/page";
 import ProductCard from "./productCard";
@@ -13,6 +14,7 @@ import {
 import { Button } from "./ui/button";
 import { Filter, FilterIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useSearchParams } from "next/navigation";
 
 export default function Listings({
   products,
@@ -21,13 +23,19 @@ export default function Listings({
   products: formattedProductsType[];
   models: formattedProductsType["shoe_models"][];
 }) {
+  const searchParams = useSearchParams();
   const [listings, setListings] = useState<formattedProductsType[]>(products);
-  const [selectedModels, setSelectedModels] = useState<string[]>([]);
-  const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
-  const [priceLimit, setPriceLimit] = useState<{
-    min: number;
-    max: number;
-  } | null>(null);
+  const selectedModels = searchParams.get("models")?.split(",") ?? [];
+
+  const selectedSizes =
+    searchParams
+      .get("sizes")
+      ?.split(",")
+      .map((size) => parseFloat(size)) ?? [];
+  // const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
+
+  const minPrice = searchParams.get("minPrice");
+  const maxPrice = searchParams.get("maxPrice");
 
   const sizes: number[] = [];
   products.forEach((p) => {
@@ -38,19 +46,8 @@ export default function Listings({
     });
   });
   sizes.sort((a, b) => a - b);
-  function selectModelFilter(modelsArr: string[]) {
-    setSelectedModels(modelsArr);
-  }
 
   const strModels = models.map((m) => m.modelName);
-
-  function selectSizesFilter(sizesArr: number[]) {
-    setSelectedSizes(sizesArr);
-  }
-
-  function updatePriceLimit(limit: { min: number; max: number }) {
-    setPriceLimit(limit);
-  }
 
   useEffect(() => {
     let filtered = products;
@@ -69,34 +66,30 @@ export default function Listings({
       );
     }
 
-    if (priceLimit) {
+    if (maxPrice || minPrice) {
       filtered = filtered.filter(
         (l) =>
-          l.products.price >= priceLimit.min &&
-          l.products.price <= priceLimit.max,
+          l.products.price <= (maxPrice ? parseFloat(maxPrice) : Infinity) &&
+          l.products.price >= (minPrice ? parseFloat(minPrice) : 0),
       );
     }
 
     setListings(filtered);
-  }, [selectedModels, selectedSizes, priceLimit, products]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [products, searchParams]);
 
   function scrollToListings() {
     const element = document.getElementById("listings");
     if (element) {
-        const targetPosition = element.getBoundingClientRect().top + window.scrollY - 100;
-        window.scrollTo({ top: targetPosition, behavior: "smooth" });
+      const targetPosition =
+        element.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
     }
   }
   return (
     <div id="listings" className="grid w-full lg:grid-cols-4">
       <div className="hidden flex-col lg:col-span-1 lg:ml-4 lg:mr-14 lg:inline-flex">
-        <FilterTool
-          models={strModels}
-          sizes={sizes}
-          selectModelFilter={selectModelFilter}
-          selectSizesFilter={selectSizesFilter}
-          setPricelimit={updatePriceLimit}
-        />
+        <FilterTool models={strModels} sizes={sizes} />
       </div>
       <div className="col-span-3 w-full">
         <div className="flex w-full items-center justify-between px-4">
@@ -113,7 +106,8 @@ export default function Listings({
 
                   ((selectedModels && selectedModels.length > 0) ||
                     selectedSizes.length > 0 ||
-                    priceLimit) &&
+                    maxPrice ||
+                    minPrice) &&
                     "font-medium text-purple-900",
                 )}
               >
@@ -130,13 +124,7 @@ export default function Listings({
                 </div>{" "}
               </DrawerHeader>
               <DrawerDescription>
-                <FilterTool
-                  models={strModels}
-                  sizes={sizes}
-                  selectModelFilter={selectModelFilter}
-                  selectSizesFilter={selectSizesFilter}
-                  setPricelimit={updatePriceLimit}
-                />
+                <FilterTool models={strModels} sizes={sizes} />
               </DrawerDescription>
             </DrawerContent>
           </Drawer>

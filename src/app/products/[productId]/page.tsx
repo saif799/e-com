@@ -11,6 +11,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
   const products = await GetProduct(productId);
+  products?.forEach((p) => console.log(p.product_sizes));
 
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   if (!products || !products[0]?.products) return;
@@ -88,29 +89,28 @@ export default async function Component({ params: { productId } }: Props) {
         <OrderData Product={product} />
       </div>
 
-      <div className="w-full ">
+      <div className="w-full">
         {ProductsWithSimilarSizes ? (
           <>
             {" "}
-            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl pb-2">
+            <h3 className="text-md px-3 pb-2 pt-1 font-medium md:text-2xl">
               Shoes with similar sizes
             </h3>
             <ScrollArea>
-            <div className="flex flex-grow gap-3 px-2 pb-4">
-              {ProductsWithSimilarSizes.map((p, i) => (
-                <ProductCard
-                  key={i}
-                  href={p.id}
-                  imageUrl={p.showCase}
-                  productTitle={p.name}
-                  brand={"Nike"}
-                  price={p.price}
-                  className="basis-2/3 lg:basis-1/4"
-                />
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-
+              <div className="flex flex-grow gap-3 px-2 pb-4">
+                {ProductsWithSimilarSizes.map((p, i) => (
+                  <ProductCard
+                    key={i}
+                    href={p.id}
+                    imageUrl={p.showCase}
+                    productTitle={p.name}
+                    brand={"Nike"}
+                    price={p.price}
+                    className="basis-2/3 lg:basis-1/4"
+                  />
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
             </ScrollArea>
           </>
         ) : null}
@@ -118,25 +118,24 @@ export default async function Component({ params: { productId } }: Props) {
       <div className="w-full pb-4">
         {similarProducts?.length ? (
           <>
-            <h3 className="text-md px-3 pt-1 font-medium md:text-2xl pb-2">
+            <h3 className="text-md px-3 pb-2 pt-1 font-medium md:text-2xl">
               Similar Products
             </h3>
             <ScrollArea className="w-full whitespace-nowrap rounded-md">
-            <div className="flex w-full space-x-4 px-2 pb-4">
-              {similarProducts.map((p, i) => (
-                <ProductCard
-                  key={i}
-                  href={p.products.id}
-                  imageUrl={p.products.showCase}
-                  productTitle={p.products.name}
-                  brand={p.shoe_models.brand}
-                  price={p.products.price}
-                  className="basis-2/3 lg:basis-1/4"
-                />
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-
+              <div className="flex w-full space-x-4 px-2 pb-4">
+                {similarProducts.map((p, i) => (
+                  <ProductCard
+                    key={i}
+                    href={p.products.id}
+                    imageUrl={p.products.showCase}
+                    productTitle={p.products.name}
+                    brand={p.shoe_models.brand}
+                    price={p.products.price}
+                    className="basis-2/3 lg:basis-1/4"
+                  />
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
             </ScrollArea>
           </>
         ) : null}

@@ -8,82 +8,83 @@ import {
 } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import SizeButton from "./SizeButton";
-import { useState, useEffect, type ChangeEvent } from "react";
+import { type ChangeEvent } from "react";
 import { Input } from "./ui/input";
 import { Filter } from "lucide-react";
 import { ScrollArea } from "./ui/scroll-area";
 import { cn } from "@/lib/utils";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function FilterTool({
   models,
   sizes,
-  selectModelFilter,
-  selectSizesFilter,
-  setPricelimit,
 }: {
   models: string[];
   sizes: number[];
-  selectModelFilter: (models: string[]) => void;
-  selectSizesFilter: (sizes: number[]) => void;
-  setPricelimit: (priceLimit: { min: number; max: number }) => void;
 }) {
-  const [selectedModels, setSelectedModels] = useState<string[]>([]);
-  const [selectedSizes, setSelectedSizes] = useState<number[]>([]);
-  const [minPrice, setMinPrice] = useState<number | undefined>();
-  const [maxPrice, setMaxPrice] = useState<number | undefined>();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
-  // Ensure filter callbacks receive updated state
-  useEffect(() => {
-    selectModelFilter(selectedModels);
-    console.log(selectedModels);
-  }, [selectedModels, selectModelFilter]);
+  // Get filters from URL
+  const modelParam = searchParams.get("models")?.split(",") ?? [];
+  const sizeParam =
+    searchParams
+      .get("sizes")
+      ?.split(",")
+      .map((size) => parseFloat(size)) ?? [];
+  const minPrice = searchParams.get("minPrice");
+  const maxPrice = searchParams.get("maxPrice");
 
-  useEffect(() => {
-    selectSizesFilter(selectedSizes);
-    console.log(selectedSizes);
-  }, [selectedSizes, selectSizesFilter]);
+  function createQueryString(name: string, value: string) {
+    const params = new URLSearchParams(searchParams);
+    if (value) {
+      params.set(name, value);
+    } else {
+      params.delete(name);
+    }
+    return params.toString();
+  }
 
-  const handleModelChange = (model: string) => {
-    setSelectedModels((prev) =>
-      prev.includes(model) ? prev.filter((m) => m !== model) : [...prev, model],
-    );
-  };
+  function selectModelFilterS(newModel: string) {
+    const Check = modelParam.includes(newModel)
+      ? modelParam.filter((m) => m !== newModel)
+      : [...modelParam, newModel];
 
-  function handleSelectSize(size: number) {
-    setSelectedSizes((prev) =>
-      prev.includes(size) ? prev.filter((s) => s !== size) : [...prev, size],
-    );
+    const newValue = Check.length > 0 ? Check.join(",") : "";
+
+    router.push(`${pathname}?${createQueryString("models", newValue)}`, {
+      // Use encodeURIComponent here
+      scroll: false,
+    });
+  }
+
+  function selectSizesFilterS(size: number) {
+    const Check = sizeParam.includes(size)
+      ? sizeParam.filter((m) => m !== size)
+      : [...sizeParam, size];
+
+    const newValue = Check.length > 0 ? Check.join(",") : "";
+
+    router.push(`${pathname}?${createQueryString("sizes", newValue)}`, {
+      scroll: false,
+    });
+  }
+
+  function updatePrice(name: string, value: number) {
+    router.push(`${pathname}?${createQueryString(name, value.toString())}`, {
+      scroll: false,
+    });
   }
 
   function minPriceCtrl(e: ChangeEvent<HTMLInputElement>) {
-    const value = e.target.value;
-    if (value === "") {
-      setMinPrice(undefined);
-      setPricelimit({ min: 0, max: maxPrice ? maxPrice : Infinity });
-      return;
-    }
-    const numValue = parseFloat(value);
-    if (!isNaN(numValue)) {
-      setMinPrice(numValue);
-      setPricelimit({ min: numValue, max: maxPrice ? maxPrice : Infinity });
-    }
-    console.log({ minPrice, maxPrice });
+    const numValue = parseFloat(e.target.value);
+    updatePrice("minPrice", !isNaN(numValue) ? numValue : 0);
   }
 
   function maxPriceCtrl(e: ChangeEvent<HTMLInputElement>) {
-    const value = e.target.value;
-    if (value === "") {
-      setMaxPrice(undefined);
-      setPricelimit({ min: minPrice ? minPrice : 0, max: Infinity });
-      return;
-    }
-    const numValue = parseFloat(value);
-    if (!isNaN(numValue)) {
-      setMaxPrice(numValue);
-      setPricelimit({ min: minPrice ? minPrice : 0, max: numValue });
-    }
-
-    console.log({ minPrice, maxPrice });
+    const numValue = parseFloat(e.target.value);
+    updatePrice("maxPrice", !isNaN(numValue) ? numValue : Infinity);
   }
 
   return (
@@ -93,12 +94,14 @@ export default function FilterTool({
         <Filter className="size-6" color="#aaa" strokeWidth={2} />
       </div>
 
-      <Accordion type="single" className="w-full">
+      <Accordion type="single" className="w-full" collapsible>
         <AccordionItem value="model">
-          <AccordionTrigger className={cn(
+          <AccordionTrigger
+            className={cn(
               "text-lg font-light text-black [&[data-state=open]>]:font-medium",
-              selectedModels.length>0 ? "font-medium text-purple-900" : "",
-            )}>
+              modelParam.length > 0 ? "font-medium text-purple-900" : "",
+            )}
+          >
             <p>Model</p>
           </AccordionTrigger>
           <AccordionContent className="space-y-4">
@@ -110,8 +113,8 @@ export default function FilterTool({
                 >
                   <Checkbox
                     id={m}
-                    checked={selectedModels.includes(m)}
-                    onCheckedChange={() => handleModelChange(m)}
+                    checked={modelParam.includes(m)}
+                    onCheckedChange={() => selectModelFilterS(m)}
                   />
                   <label htmlFor={m} className="text-base">
                     {m}
@@ -122,10 +125,12 @@ export default function FilterTool({
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="size">
-          <AccordionTrigger className={cn(
+          <AccordionTrigger
+            className={cn(
               "text-lg font-light text-black [&[data-state=open]>]:font-medium",
-              selectedSizes.length>0 ? "font-medium text-purple-900" : "",
-            )}>
+              sizeParam.length > 0 ? "font-medium text-purple-900" : "",
+            )}
+          >
             <p>Size</p>
           </AccordionTrigger>
           <AccordionContent className="flex flex-wrap items-center gap-2">
@@ -133,9 +138,9 @@ export default function FilterTool({
               <SizeButton
                 key={s}
                 disabled={false}
-                selectHandler={() => handleSelectSize(s)}
+                selectHandler={() => selectSizesFilterS(s)}
                 size={s}
-                isSelected={selectedSizes.includes(s)}
+                isSelected={sizeParam.includes(s)}
               />
             ))}
           </AccordionContent>
@@ -155,7 +160,6 @@ export default function FilterTool({
               <div className="w-full flex-grow">
                 <Input
                   id="minprice"
-                  value={minPrice ?? ""}
                   name="minprice"
                   type="number"
                   className="h-12 w-full rounded-lg border border-gray-300 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -168,7 +172,6 @@ export default function FilterTool({
               <div className="w-full flex-grow">
                 <Input
                   id="maxprice"
-                  value={maxPrice ?? ""}
                   name="maxprice"
                   type="number"
                   className="h-12 w-full rounded-lg border border-gray-300 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
