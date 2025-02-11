@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
 import { useCartState } from "@/hooks/useCartState";
 import Image from "next/image";
+// import { Button } from "./ui/button";
+// import { seedDatabase } from "@/server/db/seedProducts";
 // import { db } from "@/server/db";
 // import { Button } from "./ui/button";
 // import { seedDatabase } from "@/server/db/seedProducts";

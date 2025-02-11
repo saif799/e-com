@@ -1,103 +1,220 @@
-{"lebrons" : [
+{"GT Cut Academy" : [
   {
-    "name": "Lebron Nxxt Gen Lakers",
-    "modelId": "lfdsjofsie",
-    "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
-    "showcase": "https://sneakerbardetroit.com/wp-content/uploads/2023/08/Nike-LeBron-NXXT-Gen-Lakers-Court-Purple-DR8784-500-Release-Date-1.jpg",
+    "name": "GT Cut Academy Panda",
+    "modelId": "c99e5a2a02153",
+    "description": "Whether you're playing in the gym, at the park or on your driveway, lace up in the all-new G.T. Cut Academy. Designed to help you create space for step-back jumpers, back-door cuts and other game-changing plays, its sticky multi-court traction helps you stop in an instant and shift gears at will—wherever your next game is calling you. With its extra-durable rubber outsole, this version gives you traction for outdoor courts.",
+    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/238472f3-20cb-4d76-b6f6-61db16d27542/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png",
     "images": [
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/08/Nike-LeBron-NXXT-Gen-Lakers-Court-Purple-DR8784-500-Release-Date.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/08/Nike-LeBron-NXXT-Gen-Lakers-Court-Purple-DR8784-500-Release-Date-3.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/08/Nike-LeBron-NXXT-Gen-Lakers-Court-Purple-DR8784-500-Release-Date-4.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/08/Nike-LeBron-NXXT-Gen-Lakers-Court-Purple-DR8784-500-Release-Date-5.jpg", "productId": "" }
-    ],
-    "price": 22000,
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0435663b-e51a-4c5d-aa0a-a2f948aee247/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82cadc9a-d851-4bfd-a8c8-03a65740d443/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4a9c52f-7b8b-4e95-b71d-8db4514247c8/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f6f5c14-adff-4865-a58a-3682f50114fd/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2bee6e25-bc3a-43e0-a96d-622c709bd619/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" }
+     ],
+    "price": 24000,
+    "productSizes": [
+      { "productId": "", "size": 45, "stock": 2 }
+    ]
+  }
+],
+"GT Hustle 2" : [
+  {
+    "name": "GT Hustle 2 Victor Wembanyama \"Alien\"",
+    "modelId": "bbf22c8f8a2b6",
+    "description": "Victor Wembanyama's mythical size, skills and grace are straight science fiction, as if they were imported from another planet. The extraterrestrial tones and galactic greens of this G.T. Hustle 2 highlight a design that's sure to dazzle in your own Wemby-like way. Loaded with cushioning in the core and an Air Zoom unit, this shoe helps you stay moving forwards—from check-up to \"that's game\". With its extra-durable rubber outsole, this version gives you traction for outdoor courts.",
+    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d4891548-b1c0-4d55-817a-42d84f37a6e0/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png",
+    "images": [
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10346086-78d9-47c1-ae6b-5dc24224b642/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/097a9b22-16c2-4fa1-866e-a12be60c68c6/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31296676-6420-4c36-a1ca-060e2a7a1665/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e464787-895b-4a39-848e-4762eca37283/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deb5384c-edaf-4449-9e8d-325eaee7e172/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/34309838-fb85-4517-9db2-0f89fed37ce3/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/de84df0b-7bcf-4929-87f5-db6d93ff5426/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" }
+     ],
+    "price": 19500,
+    "productSizes": [
+      { "productId": "", "size": 47, "stock": 1 }
+    ]
+  }
+],
+"GT Cut Cross" : [
+  {
+    "name": "GT Cut Cross Hot punch",
+    "modelId": "e03f6940efe04",
+    "description": "Whether you're at the gym, the park, or your own backyard, the G.T. Cut Cross is perfect for everyday wear. Designed to help you stand out with step-backs, quick changes of direction, and all those decisive moves. With this durable shoe that offers exceptional grip, you can stop on a dime and adjust your speed at will, no matter what surface you're playing on.",
+    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c27046b-d722-4d7c-9565-b996cedd8ced/G.T.+CUT+CROSS.png",
+    "images": [
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8a782071-b506-4631-a3e4-f6e4fdd45249/G.T.+CUT+CROSS.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/213ab06a-455c-4c56-8b3a-32bffff96ffc/G.T.+CUT+CROSS.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d66c9780-20f1-4be7-8456-b94c3b410c43/G.T.+CUT+CROSS.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5bea4591-bfd5-42e2-a26e-fde1b4b4a89f/G.T.+CUT+CROSS.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/08446bb6-aa11-4273-8c3f-fe99f2f589d5/G.T.+CUT+CROSS.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f5112943-b84e-43ac-b73d-c3c7e9b2e494/G.T.+CUT+CROSS.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f6694c40-975e-4274-bf7f-8ff7ee5ab9e6/G.T.+CUT+CROSS.png", "productId": "" }
+     ],
+    "price": 24500,
+    "productSizes": [
+      { "productId": "", "size": 45, "stock": 1 }
+    ]
+  }
+],
+"GT Hustle 3" : [
+  {
+    "name": "GT Hustle 3 University Red",
+    "modelId": "07d5f02f87321",
+    "description": "Fly high and play hard in the GT Hustle 3.  Experience ultimate comfort and support with a lightweight design that won't hold you back.  Lock in your fit and unleash your full potential on the court.",
+    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3b6f9db2-013f-4772-bbfc-bc3dc8bc73da/G.T.+HUSTLE+3.png",
+    "images": [
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/861de198-0db7-4cbf-bced-0407af8abfbf/G.T.+HUSTLE+3.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/09a8f4c9-33f8-4e3d-89f7-084703695443/G.T.+HUSTLE+3.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/61796baf-fae6-40bd-9682-c598ceb13110/G.T.+HUSTLE+3.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5fe7659a-19fc-4c36-9b87-321ba1c6aeb4/G.T.+HUSTLE+3.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e610573a-0883-4e27-a644-f6a6d8f11d5d/G.T.+HUSTLE+3.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dcf26b66-c89a-48ac-a838-bdd73553e30c/G.T.+HUSTLE+3.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/75bf67ab-9601-41e2-a8bd-c7a69f714bbf/G.T.+HUSTLE+3.png", "productId": "" }
+     ],
+    "price": 28500,
     "productSizes": [
       { "productId": "", "size": 42, "stock": 1 }
     ]
-  },
+  }
+],
+"Precision 7" : [
   {
-    "name": "Lebron Nxxt Gen Ghost green",
-    "modelId": "lfdsjofsie",
-    "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
-    "showcase": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300.jpg",
+    "name": "Precision 7 Smoke grey", 
+    "modelId": "6ed75e0f2d489",
+    "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
+    "showcase": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwc1e9f788/nk/43a/a/d/5/f/0/43aad5f0_7d09_49f6_999d_8f6dd61f4d6a.jpg",
     "images": [
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300-2.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300-4.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300-5.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300-5.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300-6.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/05/Nike-Zoom-LeBron-NXXT-Gen-Ghost-Green-DR8784-300-7.jpg", "productId": "" }
-    ],
-    "price": 22000,
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwdcf0f359/nk/90b/7/3/6/9/f/90b7369f_abf9_4d7f_abb5_f2f76c0dcd29.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd140cb9d/nk/afe/b/d/c/0/9/afebdc09_a655_4ef8_a2ac_072369f90420.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwdc1f2690/nk/40d/d/0/d/e/e/40dd0dee_f2f2_4069_a723_63725fcce9a8.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4f023ab0/nk/78c/5/6/3/b/0/78c563b0_f60c_4553_befe_eb5b7c34e80f.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4cf7ecd4/nk/4d2/c/6/9/0/8/4d2c6908_30d4_4599_905a_53991da894a2.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw1e5ef9ff/nk/d37/4/7/6/f/a/d37476fa_4480_45d7_99e9_c73832c1e97a.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4d4fd3fe/nk/86f/2/4/0/f/f/86f240ff_70a3_4b59_a99f_eaf191330167.jpg", "productId": "" }
+     ],
+    "price": 18500,
     "productSizes": [
-      { "productId": "", "size": 44, "stock": 1 }
+      { "productId": "", "size": 44, "stock": 1 },
+      { "productId": "", "size": 45, "stock": 3 }
     ]
   },
   {
-    "name": "Lebron Nxxt Gen Wolf gray",
-    "modelId": "lfdsjofsie",
-    "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
-    "showcase": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004.jpg",
+    "name": "Precision 7 Bred", 
+    "modelId": "6ed75e0f2d489",
+    "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
+    "showcase": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwdaf14453/nk/e6c/a/d/6/b/9/e6cad6b9_b122_49d4_b15b_a504180b5a6c.jpg",
     "images": [
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004-2.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004-4.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004-1.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004-5.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004-7.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-NXXT-Gen-Wolf-Grey-Metallic-Gold-DR8784-004-5.jpg", "productId": "" }
-    ],
-    "price": 22000,
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw5cd409a1/nk/e03/5/9/5/d/8/e03595d8_f4bc_4229_85d8_dd76be4b1800.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwad1f85c8/nk/eac/0/8/0/6/8/eac08068_7319_4f5d_a7be_1b4e7b9fa99c.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw432d538a/nk/01b/b/8/a/6/1/01bb8a61_ec25_4321_b443_6dfd77fb584c.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwab7a3569/nk/7fd/7/3/3/9/3/7fd73393_c2b3_4524_90e7_f885a336fc2f.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw91f248fa/nk/f47/f/d/7/b/5/f47fd7b5_992b_43c6_a4d8_e4a9f9ca95b5.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw35bc258d/nk/d4a/e/b/b/e/a/d4aebbea_13be_42aa_8bec_dd2dea43377d.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw2191b166/nk/eed/b/1/9/3/0/eedb1930_c374_4725_90db_874db6af1a12.jpg", "productId": "" }
+     ],
+    "price": 18500,
     "productSizes": [
-      { "productId": "", "size": 46, "stock": 1 }
+      { "productId": "", "size": 42, "stock": 1 }
     ]
-  },
+  }
+  ,
   {
-    "name": "Lebron Nxxt Gen Geode Teal",
-    "modelId": "lfdsjofsie",
-    "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
-    "showcase": "https://cdn-images.farfetch-contents.com/22/27/32/33/22273233_53058403_1000.jpg",
+    "name": "Precision 7 Community Of Hoops", 
+    "modelId": "6ed75e0f2d489",
+    "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
+    "showcase": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw720b5dea/nk/a89/6/2/3/4/d/a896234d_f22a_4842_af51_abd25e22d230.jpg",
     "images": [
-      { "imageUrl": "https://cdn-images.farfetch-contents.com/22/27/32/33/22273233_53058401_1000.jpg", "productId": "" },
-      { "imageUrl": "https://cdn-images.farfetch-contents.com/22/27/32/33/22273233_53058404_1000.jpg", "productId": "" },
-      { "imageUrl": "https://cdn-images.farfetch-contents.com/22/27/32/33/22273233_53058402_1000.jpg", "productId": "" }    ],
-    "price": 22000,
-    "productSizes": [
-      { "productId": "", "size": 40, "stock": 1 }
-    ]
-  },
-  {
-    "name": "Lebron Nxxt Gen Blue Tint",
-    "modelId": "lfdsjofsie",
-    "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
-    "showcase": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Blue-Tint-Teal-Nebula-Guava-Ice-DR8784-400-1.jpg",
-    "images": [
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Blue-Tint-Teal-Nebula-Guava-Ice-DR8784-400-2.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Blue-Tint-Teal-Nebula-Guava-Ice-DR8784-400.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Blue-Tint-Teal-Nebula-Guava-Ice-DR8784-400-4.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Blue-Tint-Teal-Nebula-Guava-Ice-DR8784-400-5.jpg", "productId": "" } , 
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Blue-Tint-Teal-Nebula-Guava-Ice-DR8784-400-3.jpg", "productId": "" }  
-    ],  
-    "price": 22000,
-    "productSizes": [
-      { "productId": "", "size": 42, "stock": 1 },
-      { "productId": "", "size": 44, "stock": 1 }
-    ]
-  },
-  {
-    "name": "Lebron Nxxt Gen Track Red",
-    "modelId": "lfdsjofsie",
-    "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
-    "showcase": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Track-Red-Emerald-Rise-DR8784-600-1.jpg",
-    "images": [
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Track-Red-Emerald-Rise-DR8784-600-3.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Track-Red-Emerald-Rise-DR8784-600.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Track-Red-Emerald-Rise-DR8784-600-2.jpg", "productId": "" },
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Track-Red-Emerald-Rise-DR8784-600-6.jpg", "productId": "" },  
-      { "imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/06/Nike-Zoom-LeBron-NXXT-Gen-Track-Red-Emerald-Rise-DR8784-600-5.jpg", "productId": "" }
-    ],  
-    "price": 22000,
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwb5c38310/nk/ccc/b/0/6/0/6/cccb0606_848b_4c92_bf11_95b7083dd20d.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw48a492ea/nk/b31/2/4/0/8/e/b312408e_8274_4546_a94f_54f8b7564c8f.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw82bda278/nk/b7c/d/0/5/f/6/b7cd05f6_94ec_4c4f_970c_50763d11621a.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwfa945430/nk/ac1/c/7/e/4/0/ac1c7e40_40db_4cab_9812_cbf4ec133575.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwf77edb65/nk/887/9/1/e/f/d/88791efd_a838_4f78_a544_1e315cfa6bc5.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw07d4e460/nk/782/8/f/f/6/1/7828ff61_5029_4b64_b424_8514fcd903be.jpg", "productId": "" },
+      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd90d51ac/nk/d14/8/5/c/5/c/d1485c5c_d86e_4160_8584_903f48723d7a.jpg", "productId": "" }
+     ],
+    "price": 18500,
     "productSizes": [
       { "productId": "", "size": 41, "stock": 1 }
+    ]
+  }
+],
+"Lebron 21" : [
+  {
+    "name": "Lebron 21 Aragonite",
+    "modelId": "4c2e9ce1e1859",
+    "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
+    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6c3f153c-9adc-41eb-9dd1-0c19efa66ef9/LEBRON+XXI+EP.png",
+    "images": [
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5146dc4d-a5f9-4542-98a7-200fa417550b/LEBRON+XXI+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6037fc55-dc8d-4454-b4df-8529502073a9/LEBRON+XXI+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a3c03ecc-b10f-44e5-bb6c-24a786ae14e9/LEBRON+XXI+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f873001a-35fe-465b-9a9f-0ca5a7e181c7/LEBRON+XXI+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_default/1cdd34bd-5434-4594-b204-7df7b091d784/LEBRON+XXI+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_default/ddf14d72-1508-4efa-80c8-8fa5fdc14f77/LEBRON+XXI+EP.png", "productId": "" },
+      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b9da97b8-c8e1-496b-ba13-187b509d65eb/LEBRON+XXI+EP.png", "productId": "" }
+     ],
+    "price": 29000,
+    "productSizes": [
+      { "productId": "", "size": 44.5, "stock": 1 }
+    ]
+  },
+  {
+    "name": "Lebron 21 Diver Blue",
+    "modelId": "4c2e9ce1e1859",
+    "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
+    "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/03e76d065f154a6bb71f5515b4648346.jpg",
+    "images": [
+      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/e6595fbab530421ea1eb42dbc7e4a6cc.jpg", "productId": "" },
+      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/9517dc70cd1c41789bcebfffa15bc5fb.jpg", "productId": "" },
+      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/92fd7e04f9374463969df06b08b59fa3.jpg", "productId": "" },
+      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/9517dc70cd1c41789bcebfffa15bc5fb.jpg", "productId": "" },
+      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/0ba7bb9af25d46be8b99c75aef6a5fb6.jpg", "productId": "" }
+     ],
+    "price": 29000,
+    "productSizes": [
+      { "productId": "", "size": 43, "stock": 1 }
+    ]
+  },
+  {
+    "name": "Lebron 21 Serenity",
+    "modelId": "4c2e9ce1e1859",
+    "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
+    "showcase": "https://cdn-img.poizonapp.com/pro-img/origin-img/20240514/406d681a002f4e17b08ebe16ca90c1b5.jpg",
+    "images": [
+      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw2cc6f444/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-2.jpg", "productId": "" },
+      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dwd8f839d0/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-5.jpg", "productId": "" },
+      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw36138768/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-4.jpg", "productId": "" },
+      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw0f719852/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-3.jpg", "productId": "" },
+      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw36138768/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-4.jpg", "productId": "" }
+     ],
+    "price": 29000,
+    "productSizes": [
+      { "productId": "", "size": 44.5, "stock": 1 }
+    ]
+  }
+],
+"Curry 2" : [
+  {
+    "name": "Curry 2 Retro",
+    "modelId": "4cf3af3d6df75",
+    "description": "Relive the legend. The Curry 2 Retro brings back the iconic design that changed the game. Experience the same explosive performance and unmatched agility that made Steph a phenomenon.",
+    "showcase": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-1.webp",
+    "images": [
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-2.webp", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-0.webp", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-4.webp", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-5.webp", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-3.webp", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/detalles/3026052-601_10.jpg", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/detalles/3026052-601_7.jpg", "productId": "" },
+      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/detalles/3026052-601_8.jpg", "productId": "" }
+     ],
+    "price": 19500,
+    "productSizes": [
+      { "productId": "", "size": 46, "stock": 1 }
     ]
   }
 ]

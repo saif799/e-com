@@ -68,7 +68,7 @@ export async function GetShowCaseProducts() {
       .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
       .innerJoin(productSizes, eq(productSizes.productId, products.id))
       .where(gt(productSizes.stock, 0))
-      .orderBy(desc(products.createdAt));
+      .orderBy(desc(products.createdAt)).limit(500);
     return yourProducts;
   } catch (err) {
     console.log("error selecting a product ", err);
