@@ -88,17 +88,17 @@ export default function FilterTool({
   }
 
   return (
-    <div className="px-5 lg:px-0">
+    <div className="px-5 lg:px-0 lg:sticky lg:top-[73px]">
       <div className="hidden w-full items-center justify-between pb-4 lg:flex">
         <h3 className="w-full text-left text-xl font-medium">Filters</h3>
-        <Filter className="size-6" color="#aaa" strokeWidth={2} />
+        <Filter className="size-6" color={(modelParam.length > 0 || sizeParam.length > 0 || minPrice || maxPrice) ? "#581c87" :"#aaa"} strokeWidth={2} />
       </div>
 
       <Accordion type="single" className="w-full" collapsible>
         <AccordionItem value="model">
           <AccordionTrigger
             className={cn(
-              "text-lg font-light text-black [&[data-state=open]>]:font-medium",
+              "pl-2 text-lg font-light text-black [&[data-state=open]>]:font-medium",
               modelParam.length > 0 ? "font-medium text-purple-900" : "",
             )}
           >
@@ -127,7 +127,7 @@ export default function FilterTool({
         <AccordionItem value="size">
           <AccordionTrigger
             className={cn(
-              "text-lg font-light text-black [&[data-state=open]>]:font-medium",
+              "pl-2 text-lg font-light text-black [&[data-state=open]>]:font-medium",
               sizeParam.length > 0 ? "font-medium text-purple-900" : "",
             )}
           >
@@ -148,7 +148,7 @@ export default function FilterTool({
         <AccordionItem value="price">
           <AccordionTrigger
             className={cn(
-              "text-lg font-light text-black [&[data-state=open]>]:font-medium",
+              "pl-2 text-lg font-light text-black [&[data-state=open]>]:font-medium",
               minPrice || maxPrice ? "font-medium text-purple-900" : "",
             )}
             value={"open"}
@@ -159,6 +159,7 @@ export default function FilterTool({
             <div className="flex flex-row items-center gap-4 px-1 py-1">
               <div className="w-full flex-grow">
                 <Input
+                  value={minPrice ? parseFloat(minPrice) : undefined}
                   id="minprice"
                   name="minprice"
                   type="number"
@@ -171,6 +172,7 @@ export default function FilterTool({
               <div className="my-0 w-5 border-t-[3px] border-black"></div>
               <div className="w-full flex-grow">
                 <Input
+                  value={maxPrice ? parseFloat(maxPrice) : undefined}
                   id="maxprice"
                   name="maxprice"
                   type="number"
