@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const year = new Date().getFullYear()
   return (
     <footer className="flex flex-col items-center justify-center gap-8 bg-secondary-foreground py-12">
       <div className="flex flex-col items-center gap-6">
@@ -52,7 +53,7 @@ const Footer = () => {
           </Link>
         </div>
         <p className="text-sm font-thin text-gray-300">
-          LegenWear © 2024 All rights reserved.
+          LegenWear © {year} All rights reserved.
         </p>
       </div>
     </footer>
