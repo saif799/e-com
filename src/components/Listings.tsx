@@ -167,39 +167,51 @@ export default function Listings({
                   <Filter className="size-6" color="#000" strokeWidth={2} />
                 </div>{" "}
               </DrawerHeader>
-                <div className="flex w-full flex-col pl-6 lg:hidden pb-2">
-                  <h5 className="pb-4 text-lg text-black">Sort by</h5>
-                  <div className="flex items-center space-x-2 pl-3 hover:font-medium">
-                    <RadioGroup
-                      className="flex flex-col space-y-3"
-                      defaultValue="none"
-                      value={sortOption ? sortOption : "none"}
-                      onValueChange={(v) => handleSorting(v)}
-                    >
-                      <div className="flex w-full gap-3">
-                        <RadioGroupItem value="none" id="most-recent" className=" text-purple-800 "/>
-                        <Label className="text-black" htmlFor="most-recent">
-                          Most Recent
-                        </Label>
-                      </div>
-                      <div className="flex w-full gap-3">
-                        <RadioGroupItem value="asc" id="price-asc" className=" text-purple-800 "/>
-                        <Label className="text-black" htmlFor="price-asc">
-                          Price : Ascending
-                        </Label>
-                        <ArrowUp strokeWidth={1.8} size={17} />
-                      </div>
-                      <div className="flex w-full gap-3">
-                        <RadioGroupItem value="desc" id="price-desc" className=" text-purple-800 "/>
-                        <Label className="text-black" htmlFor="price-desc">
-                          Price : Descending
-                        </Label>
-                        <ArrowDown strokeWidth={1.8} size={17} />
-                      </div>
-                    </RadioGroup>
-                  </div>
+              <div className="flex w-full flex-col pb-2 pl-6 lg:hidden">
+                <h5 className="pb-4 text-lg text-black">Sort by</h5>
+                <div className="flex items-center space-x-2 pl-3 hover:font-medium">
+                  <RadioGroup
+                    className="flex flex-col space-y-3"
+                    defaultValue="none"
+                    value={sortOption ? sortOption : "none"}
+                    onValueChange={(v) => handleSorting(v)}
+                  >
+                    <div className="flex w-full gap-3">
+                      <RadioGroupItem
+                        value="none"
+                        id="most-recent"
+                        className="text-purple-800"
+                      />
+                      <Label className="text-black" htmlFor="most-recent">
+                        Most Recent
+                      </Label>
+                    </div>
+                    <div className="flex w-full gap-3">
+                      <RadioGroupItem
+                        value="asc"
+                        id="price-asc"
+                        className="text-purple-800"
+                      />
+                      <Label className="text-black" htmlFor="price-asc">
+                        Price : Ascending
+                      </Label>
+                      <ArrowUp strokeWidth={1.8} size={17} />
+                    </div>
+                    <div className="flex w-full gap-3">
+                      <RadioGroupItem
+                        value="desc"
+                        id="price-desc"
+                        className="text-purple-800"
+                      />
+                      <Label className="text-black" htmlFor="price-desc">
+                        Price : Descending
+                      </Label>
+                      <ArrowDown strokeWidth={1.8} size={17} />
+                    </div>
+                  </RadioGroup>
                 </div>
-                <FilterTool models={strModels} sizes={sizes} />
+              </div>
+              <FilterTool models={strModels} sizes={sizes} />
             </DrawerContent>
           </Drawer>
         </div>
