@@ -45,7 +45,7 @@ export function OrderData({ Product }: OrderDataProps) {
           <h3 className="text-md font-medium md:text-xl">Select Size</h3>
           <p className="md:text-md text-sm text-secondary">Size guide</p>
         </div>
-        <div className="grid grid-cols-5 justify-items-center py-5 md:grid-cols-8 lg:space-x-8">
+        <div className="flex justify-items-center py-5 space-x-3">
           {Product.sizes.map((s) => (
             <SizeBlock
               selectPiece={selectPiece}
