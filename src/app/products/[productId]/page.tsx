@@ -49,7 +49,7 @@ export default async function Component({ params: { productId } }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-stretch gap-8 pt-5 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
+    <div className="flex flex-col items-stretch gap-8 md:px-24 lg:flex-row lg:flex-wrap lg:px-16">
       {/* <div className="w-full lg:w-3/4 xl:w-2/3"> */}
       <div className="max-w-[100vw] lg:w-[60%]">
         <div className="lg:sticky lg:top-20">
@@ -73,7 +73,7 @@ export default async function Component({ params: { productId } }: Props) {
       </div>
 
       {/* </div> */}
-      <div className="flex w-screen flex-col gap-1 px-3 py-1 md:w-2/3 lg:w-1/3">
+      <div className="flex w-screen flex-col gap-1 px-3 py-1 md:w-2/3 lg:w-1/3 top-4">
         <div className="hidden pt-12 lg:inline-block">
           <h2 className="hidden">{/* {products[0]?.products.brand} DA */}</h2>
           <h1 className="mb-3 text-2xl font-medium">
@@ -83,7 +83,7 @@ export default async function Component({ params: { productId } }: Props) {
             {products[0]?.products.price} DA
           </h2>
         </div>
-        <p className="pt-5 text-sm font-light md:text-base lg:text-base">
+        <p className="text-sm font-light md:text-base lg:text-base">
           {products[0].products.description}
         </p>
         <OrderData Product={product} />
@@ -101,11 +101,11 @@ export default async function Component({ params: { productId } }: Props) {
                 {ProductsWithSimilarSizes.map((p, i) => (
                   <ProductCard
                     key={i}
-                    href={p.id}
-                    imageUrl={p.showCase}
-                    productTitle={p.name}
-                    brand={"Nike"}
-                    price={p.price}
+                    href={p.products.id}
+                    imageUrl={p.products.showCase}
+                    productTitle={p.products.name}
+                    brand={p.shoe_models?.brand}
+                    price={p.products.price}
                     className="basis-2/3 lg:basis-1/4"
                   />
                 ))}

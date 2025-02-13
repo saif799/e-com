@@ -12,8 +12,8 @@ export default async function page({ params: { modelId } }: Props) {
     .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
     .where(eq(products.modelId, modelId));
   return (
-    <div className="min-h-screen">
-      <h1 className="px-4 text-lg text-center w-full font-light md:px-10 md:text-2xl pt-8">
+    <div className="min-h-screen pt-20">
+      <h1 className="px-4 text-lg text-center w-full font-light md:px-10 md:text-2xl">
        All {shoes[0]?.shoe_models.modelName}
       </h1>
       <div className="grid w-full grid-cols-2 gap-3 px-3 pb-44 md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-4 lg:px-8">
@@ -23,7 +23,7 @@ export default async function page({ params: { modelId } }: Props) {
             href={shoe.products.id}
             imageUrl={shoe.products.showCase}
             productTitle={shoe.products.name}
-            brand={"NIKE"}
+            brand={shoe.shoe_models.brand}
             price={shoe.products.price}
           />
         ))}

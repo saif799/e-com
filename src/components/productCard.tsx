@@ -42,7 +42,7 @@ export default function ProductCard({
         <h2 className="md:text-md text-wrap font-medium md:text-xl">
           {productTitle}
         </h2>
-        <p className="text-sm text-secondary md:text-lg">{brand}</p>
+        <p className="text-sm text-secondary md:text-lg">{brand?.toUpperCase()}</p>
         <p className="text-md font-medium text-purple-900 md:text-lg">
           {price?.toLocaleString("en-US",{style : "decimal", useGrouping : true})} DA
         </p>
