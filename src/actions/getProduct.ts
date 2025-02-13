@@ -1,6 +1,6 @@
 import { db } from "@/server/db";
 import { shoeModels, images, productSizes, products } from "@/server/db/schema";
-import { and, desc, eq, gt, inArray, isNotNull, ne } from "drizzle-orm";
+import { and, desc, eq, gt, inArray, ne } from "drizzle-orm";
 
 export async function GetProduct(productId: string) {
   try {
@@ -9,6 +9,7 @@ export async function GetProduct(productId: string) {
       .from(products)
       .leftJoin(images, eq(images.productId, products.id))
       .leftJoin(productSizes, eq(productSizes.productId, products.id))
+      .leftJoin(shoeModels, eq(shoeModels.id, products.modelId))
       .where(eq(products.id, productId));
 
     return yourProducts;
@@ -34,7 +35,8 @@ export async function GetSimilarProductsSizes(
     const productsWithSimilarSizes = await db
       .select()
       .from(products)
-      .where(inArray(products.id, subQuery));
+      .where(inArray(products.id, subQuery))
+      .leftJoin(shoeModels, eq(shoeModels.id, products.modelId));
     return productsWithSimilarSizes;
   } catch (err) {
     console.log("error selecting a product ", err);
@@ -68,7 +70,8 @@ export async function GetShowCaseProducts() {
       .innerJoin(shoeModels, eq(shoeModels.id, products.modelId))
       .innerJoin(productSizes, eq(productSizes.productId, products.id))
       .where(gt(productSizes.stock, 0))
-      .orderBy(desc(products.createdAt)).limit(500);
+      .orderBy(desc(products.createdAt))
+      .limit(500);
     return yourProducts;
   } catch (err) {
     console.log("error selecting a product ", err);
