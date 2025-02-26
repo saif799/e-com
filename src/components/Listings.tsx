@@ -103,7 +103,6 @@ export default function Listings({
   function handleSorting(value: string) {
     setSortOption(value === "asc" || value === "desc" ? value : undefined);
   }
-  console.log(sortOption);
 
   return (
     <div id="listings" className="grid w-full lg:grid-cols-4">

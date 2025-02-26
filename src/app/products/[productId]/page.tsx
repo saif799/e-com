@@ -11,7 +11,6 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
   const products = await GetProduct(productId);
-  products?.forEach((p) => console.log(p.product_sizes));
 
   // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
   if (!products || !products[0]?.products) return;
