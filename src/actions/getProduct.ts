@@ -27,10 +27,10 @@ export async function GetSimilarProductsSizes(
       .select({ id: productSizes.productId })
       .from(productSizes)
       .where(
-        and(
+        and(and(
           inArray(productSizes.size, sizes),
           ne(productSizes.productId, notEqualProductId),
-        ),
+        ),gt(productSizes.stock, 0)),
       );
     const productsWithSimilarSizes = await db
       .select()
@@ -39,7 +39,7 @@ export async function GetSimilarProductsSizes(
       .leftJoin(shoeModels, eq(shoeModels.id, products.modelId));
     return productsWithSimilarSizes;
   } catch (err) {
-    console.log("error selecting a product ", err);
+    console.log("error selecting similar sizes products ", err);
     return;
   }
 }

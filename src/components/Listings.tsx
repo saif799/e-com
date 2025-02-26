@@ -54,7 +54,7 @@ export default function Listings({
   const sizes: number[] = [];
   products.forEach((p) => {
     p.product_sizes!.forEach((s) => {
-      if (!sizes.includes(parseFloat(s.size))) {
+      if (!sizes.includes(parseFloat(s.size)) && s.stock > 0) {
         sizes.push(parseFloat(s.size));
       }
     });
