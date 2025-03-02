@@ -8,6 +8,8 @@ import {
 import { OrderData, type OrderProductType } from "@/components/OrderData";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
+export const revalidate = 3600 * 24;
+
 type Props = { params: { productId: string } };
 export default async function Component({ params: { productId } }: Props) {
   const products = await GetProduct(productId);
@@ -72,7 +74,7 @@ export default async function Component({ params: { productId } }: Props) {
       </div>
 
       {/* </div> */}
-      <div className="flex w-screen flex-col gap-1 px-3 py-1 md:w-2/3 lg:w-1/3 top-4">
+      <div className="top-4 flex w-screen flex-col gap-1 px-3 py-1 md:w-2/3 lg:w-1/3">
         <div className="hidden pt-12 lg:inline-block">
           <h2 className="hidden">{/* {products[0]?.products.brand} DA */}</h2>
           <h1 className="mb-3 text-2xl font-medium">

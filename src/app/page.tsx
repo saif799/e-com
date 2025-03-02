@@ -11,6 +11,8 @@ import {
 import type { InferSelectModel } from "drizzle-orm";
 import { Suspense } from "react";
 
+  export const revalidate = 3600 ;
+
 export type formattedProductsType = {
   products: InferSelectModel<typeof products>;
   shoe_models: InferSelectModel<typeof shoeModels>;
