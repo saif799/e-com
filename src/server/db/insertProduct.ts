@@ -1,4 +1,3 @@
-"use server";
 import { generateId } from "@/lib/generateId";
 import { db } from "@/server/db";
 import { images, products, productSizes } from "./schema";
