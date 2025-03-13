@@ -10,7 +10,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import SizeButton from "./SizeButton";
 import { type ChangeEvent } from "react";
 import { Input } from "./ui/input";
-import { Filter } from "lucide-react";
+import { Filter, X } from "lucide-react";
 import { ScrollArea } from "./ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -45,7 +45,17 @@ export default function FilterTool({
     }
     return params.toString();
   }
+  function clearQueryString() {
+    const params = new URLSearchParams(searchParams);
+    const paramNames = ["models", "sizes", "minPrice", "maxPrice"];
 
+  paramNames.forEach((name) => {
+    if (params.has(name)) {
+      params.delete(name);
+    }
+  });
+    return params.toString();
+  }
   function selectModelFilterS(newModel: string) {
     const Check = modelParam.includes(newModel)
       ? modelParam.filter((m) => m !== newModel)
@@ -88,10 +98,35 @@ export default function FilterTool({
   }
 
   return (
-    <div className="px-5 lg:px-0 lg:sticky lg:top-[73px]">
+    <div className="px-5 lg:sticky lg:top-[73px] lg:px-0">
       <div className="hidden w-full items-center justify-between pb-4 lg:flex">
         <h3 className="w-full text-left text-xl font-medium">Filters</h3>
-        <Filter className="size-6" color={(modelParam.length > 0 || sizeParam.length > 0 || minPrice || maxPrice) ? "#581c87" :"#aaa"} strokeWidth={2} />
+        <div className="flex items-center space-x-2">
+          {(modelParam.length > 0 ||
+            sizeParam.length > 0 ||
+            (maxPrice ?? minPrice)) && (
+            <X
+              strokeWidth={1.8}
+              className="cursor-pointer text-purple-900"
+              onClick={() => {
+                router.push(pathname + "?" + clearQueryString() , {
+                  scroll: false});
+              }}
+            />
+          )}
+          <Filter
+            className="size-6"
+            color={
+              modelParam.length > 0 ||
+              sizeParam.length > 0 ||
+              minPrice ||
+              maxPrice
+                ? "#581c87"
+                : "#aaa"
+            }
+            strokeWidth={2}
+          />
+        </div>
       </div>
 
       <Accordion type="single" className="w-full" collapsible>
@@ -105,22 +140,27 @@ export default function FilterTool({
             <p>Model</p>
           </AccordionTrigger>
           <AccordionContent className="space-y-4">
-            <ScrollArea className="relative h-[50vh] w-full pr-3 lg:h-full">
-              {models.map((m) => (
-                <div
-                  key={m}
-                  className="flex cursor-pointer items-center space-x-2 pl-3 hover:font-medium"
-                >
-                  <Checkbox
-                    id={m}
-                    checked={modelParam.includes(m)}
-                    onCheckedChange={() => selectModelFilterS(m)}
-                  />
-                  <label htmlFor={m} className="text-base">
-                    {m}
-                  </label>
-                </div>
-              ))}
+            <ScrollArea
+              className="relative h-[50vh] w-full pr-3"
+              scrollHideDelay={1000}
+            >
+              {models
+                .sort((a, b) => a.localeCompare(b))
+                .map((m) => (
+                  <div
+                    key={m}
+                    className="flex cursor-pointer items-center space-x-2 pl-3 hover:font-medium"
+                  >
+                    <Checkbox
+                      id={m}
+                      checked={modelParam.includes(m)}
+                      onCheckedChange={() => selectModelFilterS(m)}
+                    />
+                    <label htmlFor={m} className="text-base">
+                      {m}
+                    </label>
+                  </div>
+                ))}
             </ScrollArea>
           </AccordionContent>
         </AccordionItem>

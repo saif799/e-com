@@ -1,221 +1,819 @@
-{"GT Cut Academy" : [
-  {
-    "name": "GT Cut Academy Panda",
-    "modelId": "c99e5a2a02153",
-    "description": "Whether you're playing in the gym, at the park or on your driveway, lace up in the all-new G.T. Cut Academy. Designed to help you create space for step-back jumpers, back-door cuts and other game-changing plays, its sticky multi-court traction helps you stop in an instant and shift gears at will—wherever your next game is calling you. With its extra-durable rubber outsole, this version gives you traction for outdoor courts.",
-    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/238472f3-20cb-4d76-b6f6-61db16d27542/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png",
-    "images": [
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0435663b-e51a-4c5d-aa0a-a2f948aee247/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82cadc9a-d851-4bfd-a8c8-03a65740d443/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4a9c52f-7b8b-4e95-b71d-8db4514247c8/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f6f5c14-adff-4865-a58a-3682f50114fd/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2bee6e25-bc3a-43e0-a96d-622c709bd619/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png", "productId": "" }
-     ],
-    "price": 24000,
-    "productSizes": [
-      { "productId": "", "size": 45, "stock": 2 }
-    ]
-  }
-],
-"GT Hustle 2" : [
-  {
-    "name": "GT Hustle 2 Victor Wembanyama \"Alien\"",
-    "modelId": "bbf22c8f8a2b6",
-    "description": "Victor Wembanyama's mythical size, skills and grace are straight science fiction, as if they were imported from another planet. The extraterrestrial tones and galactic greens of this G.T. Hustle 2 highlight a design that's sure to dazzle in your own Wemby-like way. Loaded with cushioning in the core and an Air Zoom unit, this shoe helps you stay moving forwards—from check-up to \"that's game\". With its extra-durable rubber outsole, this version gives you traction for outdoor courts.",
-    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d4891548-b1c0-4d55-817a-42d84f37a6e0/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png",
-    "images": [
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10346086-78d9-47c1-ae6b-5dc24224b642/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/097a9b22-16c2-4fa1-866e-a12be60c68c6/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/31296676-6420-4c36-a1ca-060e2a7a1665/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5e464787-895b-4a39-848e-4762eca37283/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/deb5384c-edaf-4449-9e8d-325eaee7e172/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/34309838-fb85-4517-9db2-0f89fed37ce3/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/de84df0b-7bcf-4929-87f5-db6d93ff5426/AIR+ZOOM+G.T.+HUSTLE+2+VW+EP.png", "productId": "" }
-     ],
-    "price": 19500,
-    "productSizes": [
-      { "productId": "", "size": 47, "stock": 1 }
-    ]
-  }
-],
-"GT Cut Cross" : [
-  {
-    "name": "GT Cut Cross Hot punch",
-    "modelId": "e03f6940efe04",
-    "description": "Whether you're at the gym, the park, or your own backyard, the G.T. Cut Cross is perfect for everyday wear. Designed to help you stand out with step-backs, quick changes of direction, and all those decisive moves. With this durable shoe that offers exceptional grip, you can stop on a dime and adjust your speed at will, no matter what surface you're playing on.",
-    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2c27046b-d722-4d7c-9565-b996cedd8ced/G.T.+CUT+CROSS.png",
-    "images": [
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/8a782071-b506-4631-a3e4-f6e4fdd45249/G.T.+CUT+CROSS.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/213ab06a-455c-4c56-8b3a-32bffff96ffc/G.T.+CUT+CROSS.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d66c9780-20f1-4be7-8456-b94c3b410c43/G.T.+CUT+CROSS.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5bea4591-bfd5-42e2-a26e-fde1b4b4a89f/G.T.+CUT+CROSS.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/08446bb6-aa11-4273-8c3f-fe99f2f589d5/G.T.+CUT+CROSS.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f5112943-b84e-43ac-b73d-c3c7e9b2e494/G.T.+CUT+CROSS.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f6694c40-975e-4274-bf7f-8ff7ee5ab9e6/G.T.+CUT+CROSS.png", "productId": "" }
-     ],
-    "price": 24500,
-    "productSizes": [
-      { "productId": "", "size": 45, "stock": 1 }
-    ]
-  }
-],
-"GT Hustle 3" : [
-  {
-    "name": "GT Hustle 3 University Red",
-    "modelId": "07d5f02f87321",
-    "description": "Fly high and play hard in the GT Hustle 3.  Experience ultimate comfort and support with a lightweight design that won't hold you back.  Lock in your fit and unleash your full potential on the court.",
-    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3b6f9db2-013f-4772-bbfc-bc3dc8bc73da/G.T.+HUSTLE+3.png",
-    "images": [
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/861de198-0db7-4cbf-bced-0407af8abfbf/G.T.+HUSTLE+3.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/09a8f4c9-33f8-4e3d-89f7-084703695443/G.T.+HUSTLE+3.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/61796baf-fae6-40bd-9682-c598ceb13110/G.T.+HUSTLE+3.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5fe7659a-19fc-4c36-9b87-321ba1c6aeb4/G.T.+HUSTLE+3.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e610573a-0883-4e27-a644-f6a6d8f11d5d/G.T.+HUSTLE+3.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dcf26b66-c89a-48ac-a838-bdd73553e30c/G.T.+HUSTLE+3.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/75bf67ab-9601-41e2-a8bd-c7a69f714bbf/G.T.+HUSTLE+3.png", "productId": "" }
-     ],
-    "price": 28500,
-    "productSizes": [
-      { "productId": "", "size": 42, "stock": 1 }
-    ]
-  }
-],
-"Precision 7" : [
-  {
-    "name": "Precision 7 Smoke grey", 
-    "modelId": "6ed75e0f2d489",
-    "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
-    "showcase": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwc1e9f788/nk/43a/a/d/5/f/0/43aad5f0_7d09_49f6_999d_8f6dd61f4d6a.jpg",
-    "images": [
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwdcf0f359/nk/90b/7/3/6/9/f/90b7369f_abf9_4d7f_abb5_f2f76c0dcd29.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd140cb9d/nk/afe/b/d/c/0/9/afebdc09_a655_4ef8_a2ac_072369f90420.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwdc1f2690/nk/40d/d/0/d/e/e/40dd0dee_f2f2_4069_a723_63725fcce9a8.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4f023ab0/nk/78c/5/6/3/b/0/78c563b0_f60c_4553_befe_eb5b7c34e80f.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4cf7ecd4/nk/4d2/c/6/9/0/8/4d2c6908_30d4_4599_905a_53991da894a2.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw1e5ef9ff/nk/d37/4/7/6/f/a/d37476fa_4480_45d7_99e9_c73832c1e97a.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4d4fd3fe/nk/86f/2/4/0/f/f/86f240ff_70a3_4b59_a99f_eaf191330167.jpg", "productId": "" }
-     ],
-    "price": 18500,
-    "productSizes": [
-      { "productId": "", "size": 44, "stock": 1 },
-      { "productId": "", "size": 45, "stock": 3 }
-    ]
-  },
-  {
-    "name": "Precision 7 Bred", 
-    "modelId": "6ed75e0f2d489",
-    "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
-    "showcase": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwdaf14453/nk/e6c/a/d/6/b/9/e6cad6b9_b122_49d4_b15b_a504180b5a6c.jpg",
-    "images": [
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw5cd409a1/nk/e03/5/9/5/d/8/e03595d8_f4bc_4229_85d8_dd76be4b1800.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwad1f85c8/nk/eac/0/8/0/6/8/eac08068_7319_4f5d_a7be_1b4e7b9fa99c.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw432d538a/nk/01b/b/8/a/6/1/01bb8a61_ec25_4321_b443_6dfd77fb584c.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwab7a3569/nk/7fd/7/3/3/9/3/7fd73393_c2b3_4524_90e7_f885a336fc2f.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw91f248fa/nk/f47/f/d/7/b/5/f47fd7b5_992b_43c6_a4d8_e4a9f9ca95b5.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw35bc258d/nk/d4a/e/b/b/e/a/d4aebbea_13be_42aa_8bec_dd2dea43377d.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw2191b166/nk/eed/b/1/9/3/0/eedb1930_c374_4725_90db_874db6af1a12.jpg", "productId": "" }
-     ],
-    "price": 18500,
-    "productSizes": [
-      { "productId": "", "size": 42, "stock": 1 }
-    ]
-  }
-  ,
-  {
-    "name": "Precision 7 Community Of Hoops", 
-    "modelId": "6ed75e0f2d489",
-    "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
-    "showcase": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw720b5dea/nk/a89/6/2/3/4/d/a896234d_f22a_4842_af51_abd25e22d230.jpg",
-    "images": [
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwb5c38310/nk/ccc/b/0/6/0/6/cccb0606_848b_4c92_bf11_95b7083dd20d.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw48a492ea/nk/b31/2/4/0/8/e/b312408e_8274_4546_a94f_54f8b7564c8f.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw82bda278/nk/b7c/d/0/5/f/6/b7cd05f6_94ec_4c4f_970c_50763d11621a.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwfa945430/nk/ac1/c/7/e/4/0/ac1c7e40_40db_4cab_9812_cbf4ec133575.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwf77edb65/nk/887/9/1/e/f/d/88791efd_a838_4f78_a544_1e315cfa6bc5.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw07d4e460/nk/782/8/f/f/6/1/7828ff61_5029_4b64_b424_8514fcd903be.jpg", "productId": "" },
-      { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd90d51ac/nk/d14/8/5/c/5/c/d1485c5c_d86e_4160_8584_903f48723d7a.jpg", "productId": "" }
-     ],
-    "price": 18500,
-    "productSizes": [
-      { "productId": "", "size": 41, "stock": 1 }
-    ]
-  }
-],
-"Lebron 21" : [
-  {
-    "name": "Lebron 21 Aragonite",
-    "modelId": "4c2e9ce1e1859",
-    "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
-    "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6c3f153c-9adc-41eb-9dd1-0c19efa66ef9/LEBRON+XXI+EP.png",
-    "images": [
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5146dc4d-a5f9-4542-98a7-200fa417550b/LEBRON+XXI+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6037fc55-dc8d-4454-b4df-8529502073a9/LEBRON+XXI+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a3c03ecc-b10f-44e5-bb6c-24a786ae14e9/LEBRON+XXI+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f873001a-35fe-465b-9a9f-0ca5a7e181c7/LEBRON+XXI+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_default/1cdd34bd-5434-4594-b204-7df7b091d784/LEBRON+XXI+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_default/ddf14d72-1508-4efa-80c8-8fa5fdc14f77/LEBRON+XXI+EP.png", "productId": "" },
-      { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b9da97b8-c8e1-496b-ba13-187b509d65eb/LEBRON+XXI+EP.png", "productId": "" }
-     ],
-    "price": 29000,
-    "productSizes": [
-      { "productId": "", "size": 44.5, "stock": 1 }
-    ]
-  },
-  {
-    "name": "Lebron 21 Diver Blue",
-    "modelId": "4c2e9ce1e1859",
-    "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
-    "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/03e76d065f154a6bb71f5515b4648346.jpg",
-    "images": [
-      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/e6595fbab530421ea1eb42dbc7e4a6cc.jpg", "productId": "" },
-      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/9517dc70cd1c41789bcebfffa15bc5fb.jpg", "productId": "" },
-      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/92fd7e04f9374463969df06b08b59fa3.jpg", "productId": "" },
-      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/9517dc70cd1c41789bcebfffa15bc5fb.jpg", "productId": "" },
-      { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240718/0ba7bb9af25d46be8b99c75aef6a5fb6.jpg", "productId": "" }
-     ],
-    "price": 29000,
-    "productSizes": [
-      { "productId": "", "size": 43, "stock": 1 }
-    ]
-  },
-  {
-    "name": "Lebron 21 Serenity",
-    "modelId": "4c2e9ce1e1859",
-    "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
-    "showcase": "https://cdn-img.poizonapp.com/pro-img/origin-img/20240514/406d681a002f4e17b08ebe16ca90c1b5.jpg",
-    "images": [
-      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw2cc6f444/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-2.jpg", "productId": "" },
-      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dwd8f839d0/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-5.jpg", "productId": "" },
-      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw36138768/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-4.jpg", "productId": "" },
-      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw0f719852/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-3.jpg", "productId": "" },
-      { "imageUrl": "https://www.kickz.com/dw/image/v2/BGQV_PRD/on/demandware.static/-/Sites-kickz-master-catalog/default/dw36138768/images/large/nike-LEBRON_21_SERENITY-BARELY_GRAPE_LT_ARMORY_BLUE_LILAC_BLOOM_SUMMIT_WHITE_DAYBREAK-4.jpg", "productId": "" }
-     ],
-    "price": 29000,
-    "productSizes": [
-      { "productId": "", "size": 44.5, "stock": 1 }
-    ]
-  }
-],
-"Curry 2" : [
-  {
-    "name": "Curry 2 Retro",
-    "modelId": "4cf3af3d6df75",
-    "description": "Relive the legend. The Curry 2 Retro brings back the iconic design that changed the game. Experience the same explosive performance and unmatched agility that made Steph a phenomenon.",
-    "showcase": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-1.webp",
-    "images": [
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-2.webp", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-0.webp", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-4.webp", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-5.webp", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/grandes/zapatilla-under-armour-curry-2-retro-red-3.webp", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/detalles/3026052-601_10.jpg", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/detalles/3026052-601_7.jpg", "productId": "" },
-      { "imageUrl": "https://www.basketballemotion.com/imagesarticulos/215252/detalles/3026052-601_8.jpg", "productId": "" }
-     ],
-    "price": 19500,
-    "productSizes": [
-      { "productId": "", "size": 46, "stock": 1 }
-    ]
-  }
-]
+{
+  "Lebron 21": [
+    {
+      "name": "Lebron 21 Conchiolin",
+      "modelId": "4c2e9ce1e1859",
+      "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7d52773f-74cb-40e3-8b8e-f68bd68be241/LEBRON+XXI+%28GS%29.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d4e13180-6857-4dea-be60-ae831ca3e3c3/LEBRON+XXI+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/37cab598-972e-4d34-9e80-6d512b6e8e0d/LEBRON+XXI+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/63a0fe7a-e757-421f-bb01-5b3209090117/LEBRON+XXI+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a7a5e527-2dc5-4ce1-ae5b-6baf0dcca75e/LEBRON+XXI+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1ab7d7f3-5aa9-4476-9266-e207b5a0d8e0/LEBRON+XXI+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b1c82d7e-af0c-4f0e-bce3-1008c994f669/LEBRON+XXI+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ac84f1d-454b-4a94-8482-f08b9b2b90d0/LEBRON+XXI+%28GS%29.png","productId": ""}
+      ],
+      "price": 27500,
+      "productSizes": [{ "productId": "", "size": 44, "stock": 1 }]
+    },
+    {
+      "name": "Lebron 21 Multi-Color Optimistic",
+      "modelId": "4c2e9ce1e1859",
+      "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
+      "showcase": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/main-square_532b37a0-c631-49eb-8ea6-ffcd0e4c8288.jpg?v=1715336314",
+      "images": [
+        {"imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/3_6f2209ad-60de-462d-bad2-bcebfc0be633.jpg","productId": ""},
+        {"imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/5_92c4e216-b085-404b-9a9e-492c1af86ed2.jpg","productId": ""},
+        {"imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/6_aa2f58fd-800d-4f6c-9d7a-ef46d4bea45d.jpg","productId": ""},
+        {"imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/4_5f61af82-2e09-4ef5-b71f-c8cecf819a93.jpg","productId": ""},
+        {"imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/2_f30d0757-76fd-49f2-ad0e-e1f0e6596e93.jpg","productId": ""},
+        {"imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/7_d3fdb2ff-dd77-4207-918b-14132d94f302.jpg","productId": ""}
+      ],
+      "price": 27500,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 1 }]
+    },
+    {
+      "name": "Lebron 21 Abalone Pearl",
+      "modelId": "4c2e9ce1e1859",
+      "description": "Dominate the court with the Nike LeBron 21, a performance basketball shoe built for the King's unrivaled power, speed, and court vision. Experience explosive cushioning and lockdown support, designed to fuel your game and help you rise above the competition.",
+      "showcase": "https://titan22.com/cdn/shop/files/FN0709-400-A.png",
+      "images": [
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-C.png","productId": ""},
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-E.png","productId": ""},
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-F.png","productId": ""},
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-D.png","productId": ""},
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-B.png","productId": ""},
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-G.png","productId": ""},
+        {"imageUrl": "https://titan22.com/cdn/shop/files/FN0709-400-H.png","productId": ""}
+      ],
+      "price": 27500,
+      "productSizes": [{ "productId": "", "size": 44, "stock": 1 }]
+    }
+  ],
+  "Lebron NXXT Gen": [
+    {
+      "name": "Lebron NXXT Gen AMPD Black",
+      "modelId": "lfdsjofsie",
+      "description": "Dominate the court in the Nike LeBron Next Gen, a performance basketball shoe built for explosive power and lockdown support. Experience responsive cushioning and a secure fit, designed to help you elevate your game.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/dc382d38-07f2-42aa-b8a8-d41c2363b96a/ZM+LEBRON+NXXT+GEN+AMPD+EP.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cac96026-5ad0-4ef6-98d9-972658eba6ab/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/c7cf5687-affa-4a08-a2d3-4a60963ab686/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/476be79c-b2b5-45d6-8592-7df0068f8abe/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e5defa11-d4d4-4824-8204-b8ed8326360c/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b65c628a-b00f-430f-82d9-0e92c6eca4de/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ee5f42da-e801-4f28-97cf-e294df228b1c/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ed54b360-5dcc-43bb-85e7-aedd90bb9fa0/ZM+LEBRON+NXXT+GEN+AMPD+EP.png","productId": ""}
+      ],
+      "price": 27500,
+      "productSizes": [{ "productId": "", "size": 45, "stock": 0 }]
+    }
+  ],
+  "Lebron witness 8": [
+    {
+      "name": "Lebron Witness 8 Faze Clan",
+      "modelId": "18883b053a",
+      "description": "Witness your greatness in the LeBron Witness 8. Designed for powerful drives and explosive jumps, these shoes deliver the support and stability you need to dominate the court. Unleash your inner strength and play with confidence.",
+      "showcase": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001.jpeg",
+      "images": [
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-2.jpeg","productId": ""},
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-4.jpeg","productId": ""},
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-5.jpeg","productId": ""},
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-3.jpeg","productId": ""},
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-1.jpeg","productId": ""},
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-6.jpeg","productId": ""},
+        {"imageUrl": "https://sneakerbardetroit.com/wp-content/uploads/2023/07/Nike-LeBron-Witness-8-FaZe-Clan-FV0400-001-7.jpeg","productId": ""}
+      ],
+      "price": 18500,
+      "productSizes": [{ "productId": "", "size": 41, "stock": 1 }]
+    }
+  ],
+  "Kyrie 5": [
+    {
+      "name": "Kyrie 5 Bred",
+      "modelId": "28d50d4952",
+      "description": "Lock in and unleash your creativity in the Kyrie 5. Featuring a unique containment system, these shoes provide a secure fit and exceptional support, allowing you to make sharp turns and change direction on a dime. Play with the confidence to break down any defense.",
+      "showcase": "https://www.basketusa.com/wp-content/uploads/2018/12/nike-kyrie-5-university-red-black-ao2919-600.jpg",
+      "images": [
+        {"imageUrl": "https://www.basketusa.com/wp-content/uploads/2018/12/nike-kyrie-5-university-red-black-ao2919-600-3.jpg","productId": ""},
+        {"imageUrl": "https://www.basketusa.com/wp-content/uploads/2018/12/nike-kyrie-5-university-red-black-ao2919-600-5.jpg","productId": ""},
+        {"imageUrl": "https://www.basketusa.com/wp-content/uploads/2018/12/nike-kyrie-5-university-red-black-ao2919-600-6.jpg","productId": ""},
+        {"imageUrl": "https://www.basketusa.com/wp-content/uploads/2018/12/nike-kyrie-5-university-red-black-ao2919-600-4.jpg","productId": ""},
+        {"imageUrl": "https://www.basketusa.com/wp-content/uploads/2018/12/nike-kyrie-5-university-red-black-ao2919-600-2.jpg","productId": ""}
+      ],
+      "price": 18500,
+      "productSizes": [{ "productId": "", "size": 48, "stock": 1 }]
+    },
+    {
+      "name": "Kyrie 5 Low Team Red",
+      "modelId": "28d50d4952",
+      "description": "Lock in and unleash your creativity in the Kyrie 5. Featuring a unique containment system, these shoes provide a secure fit and exceptional support, allowing you to make sharp turns and change direction on a dime. Play with the confidence to break down any defense.",
+      "showcase": "https://i.ebayimg.com/images/g/xggAAOSwTI9mMkSb/s-l640.png",
+      "images": [
+        { "imageUrl": "", "productId": "" },
+        { "imageUrl": "", "productId": "" },
+        { "imageUrl": "", "productId": "" },
+        { "imageUrl": "", "productId": "" },
+        { "imageUrl": "", "productId": "" }
+      ],
+      "price": 22500,
+      "productSizes": [{ "productId": "", "size": 45, "stock": 1 }]
+    },
+    {
+      "name": "Kyrie 5 Bright Crimson",
+      "modelId": "28d50d4952",
+      "description": "Lock in and unleash your creativity in the Kyrie 5. Featuring a unique containment system, these shoes provide a secure fit and exceptional support, allowing you to make sharp turns and change direction on a dime. Play with the confidence to break down any defense.",
+      "showcase": "https://throwbackstore.com.au/cdn/shop/products/Nike_Kyrie_Low_5_Bright-Crimson_DJ6012-004_Black_hero.jpg",
+      "images": [
+        { "imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Kyrie_Low_5_Bright-Crimson_DJ6012-004_Black_hover.jpg", "productId": "" },
+        { "imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Kyrie_Low_5_Bright-Crimson_DJ6012-004_Black_both.jpg", "productId": "" },
+        { "imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Kyrie_Low_5_Bright-Crimson_DJ6012-004_Black_back.jpg", "productId": "" },
+        { "imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Kyrie_Low_5_Bright-Crimson_DJ6012-004_Black_top.jpg", "productId": "" },
+        { "imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Kyrie_Low_5_Bright-Crimson_DJ6012-004_Black_sole.jpg", "productId": "" }
+      ],
+      "price": 24500,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 2 }]
+    }
+  ],
+  "Gt cut 3": [
+    {
+      "name": "GT Cut 3 Electric",
+      "modelId": "135c9b3ea781d",
+      "description": "Experience explosive speed and game-changing agility with the Nike G.T. Cut 3, a basketball shoe featuring revolutionary ZoomX foam for unprecedented energy return. Dominate the court with responsive cushioning, secure lockdown, and exceptional traction designed to help you elevate your game to new heights.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bb66628d-7757-4d7f-99bd-7ace09037d58/G.T.+CUT+3+EP+OLY.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/237471da-d6c9-4d1a-9c9f-b854c90441a7/G.T.+CUT+3+EP+OLY.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d48fab10-6a4d-4607-82ee-df45612d9653/G.T.+CUT+3+EP+OLY.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1c46da57-a735-4878-8762-b29d53f968ca/G.T.+CUT+3+EP+OLY.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/73ddbda4-e5e4-485a-aa31-b911a34fd7bb/G.T.+CUT+3+EP+OLY.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6b23fc6c-0a04-42ee-975b-acbec08c0e6f/G.T.+CUT+3+EP+OLY.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a57e3d2a-2465-4892-94df-797642fd8229/G.T.+CUT+3+EP+OLY.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5cb7c2e0-3586-4134-8339-fa13046277e3/G.T.+CUT+3+EP+OLY.png","productId": ""}
+      ],
+      "price": 31500,
+      "productSizes": [{ "productId": "", "size": 42.5, "stock": 1 }]
+    }
+  ],
+  "GT Cut Cross": [
+    {
+      "name": "GT Cut Cross Sea Glass",
+      "modelId": "e03f6940efe04",
+      "description": "Whether you're at the gym, the park, or your own backyard, the G.T. Cut Cross is perfect for everyday wear. Designed to help you stand out with step-backs, quick changes of direction, and all those decisive moves. With this durable shoe that offers exceptional grip, you can stop on a dime and adjust your speed at will, no matter what surface you're playing on.",
+      "showcase": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw2749be17/nk/d2d/5/5/6/3/b/d2d5563b_775e_45d8_b411_bc9f291a5c50.jpg",
+      "images": [
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw8eb1efcb/nk/875/7/1/5/c/9/875715c9_6388_4167_a491_a037b6cb022a.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw6ee3578a/nk/b6f/4/f/6/c/4/b6f4f6c4_a113_4208_8ff2_26f8d99bef09.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw0c9d304f/nk/d6f/0/f/d/a/2/d6f0fda2_1d44_46a1_aa77_f513288a4cd6.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4a9e40b4/nk/35f/5/3/c/1/3/35f53c13_d550_4e13_aac6_82acfba14722.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw8d393192/nk/534/c/2/5/4/7/534c2547_3128_42fe_807b_8139247a6781.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw7df8c0f1/nk/e40/5/d/3/7/1/e405d371_5f16_47fb_b018_fe4a62cf3188.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw6ae10b7b/nk/581/8/7/3/3/6/58187336_5535_4c18_b7c2_e950a8252836.jpg","productId": ""}
+      ],
+      "price": 23000,
+      "productSizes": [{ "productId": "", "size": 41, "stock": 1 }]
+    }
+  ],
+  "GT Cut Academy": [
+    {
+      "name": "GT Cut Academy Oil Green",
+      "modelId": "35fd02c04f7dc",
+      "description": "Sharpen your skills with the GT Cut Academy. Designed for quick cuts and explosive moves, these shoes give you the agility you need to dominate the court. Elevate your game and leave defenders behind.",
+      "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240327/821ad58acf3641ef8db67ecde097ba70.jpg",
+      "images": [
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240327/3c40428364494aceb8c2edbeaa4c3257.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240327/f1e0c0896e174dda8aeb775dab0f5fdc.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240327/129bb2471cbc473ca2435efa73b26741.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240327/ea5a5339d6234d0e8080b7d96727ae4c.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240327/0ddf333b820c41a1ad7ab1dfa6b496e4.jpg","productId": ""}
+      ],
+      "price": 24000,
+      "productSizes": [
+        { "productId": "", "size": 44.5, "stock": 1 },
+        { "productId": "", "size": 47, "stock": 1 }
+      ]
+    },
+    {
+      "name": "GT Cut Academy Panda",
+      "modelId": "35fd02c04f7dc",
+      "description": "Sharpen your skills with the GT Cut Academy. Designed for quick cuts and explosive moves, these shoes give you the agility you need to dominate the court. Elevate your game and leave defenders behind.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/238472f3-20cb-4d76-b6f6-61db16d27542/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0435663b-e51a-4c5d-aa0a-a2f948aee247/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/82cadc9a-d851-4bfd-a8c8-03a65740d443/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e4a9c52f-7b8b-4e95-b71d-8db4514247c8/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7f6f5c14-adff-4865-a58a-3682f50114fd/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2bee6e25-bc3a-43e0-a96d-622c709bd619/AIR+ZOOM+G.T.+CUT+ACADEMY+EP.png","productId": ""}
+      ],
+      "price": 24000,
+      "productSizes": [
+        { "productId": "", "size": 45, "stock": 3 },
+        { "productId": "", "size": 46, "stock": 1 }
+      ]
+    },
+    {
+      "name": "GT Cut Academy Grey Barely Grape",
+      "modelId": "35fd02c04f7dc",
+      "description": "Sharpen your skills with the GT Cut Academy. Designed for quick cuts and explosive moves, these shoes give you the agility you need to dominate the court. Elevate your game and leave defenders behind.",
+      "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240203/01890924d75e468284e687c349bffb9d.jpg",
+      "images": [
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240203/63ce010329b44f4e8470de5810cc6ddc.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240203/7066e993d24e442aa2d901704a3677c8.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240203/eaa081337c9e48ed92c8ebc6478658dd.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240203/dd3850bbf99d4c35801941fdcecc1e06.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20240203/4e94795e90f845fa8c3ab748b6f4c8c7.jpg","productId": ""}
+      ],
+      "price": 24000,
+      "productSizes": [
+        { "productId": "", "size": 42, "stock": 1 },
+        { "productId": "", "size": 44, "stock": 1 }
+      ]
+    }
+  ],
+  "Precision 5": [
+    {
+      "name": "Precision 5 Pure Platinium",
+      "modelId": "dc77656ce0",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 5. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52151d44-3027-4d69-bfc9-c9cc164fc298/NIKE+PRECISION+V.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2bd9d3f9-a58b-4271-9f1d-42e290e5bfc6/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e46d286a-05b1-41b9-88dd-6de8af79106c/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e5cb1a4e-5683-40e3-8150-2cfbd606dc26/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a348d248-3b8d-46b5-a4cd-9454181dd148/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/765d06b2-a7c9-484f-bc3f-6ca881209e3e/NIKE+PRECISION+V.png","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": []
+    },
+    {
+      "name": "Precision 5 Black & White",
+      "modelId": "dc77656ce0",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 5. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/1e6c9c87-7f21-4ab7-b1f5-376f358f073a/NIKE+PRECISION+V.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/90bf93d6-2d7b-4948-9740-3c52debd8103/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5592cc57-9062-4473-92e7-ebcff52df2f1/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a6985c8b-3e04-4de3-8ed7-c2e58f966557/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/71e33066-4d5d-4aa3-a239-65925dd2d04c/NIKE+PRECISION+V.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/fe823780-3a99-486c-b60c-61b4f70e3b45/NIKE+PRECISION+V.png","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": []
+    }
+  ],
+  "Precision 6": [
+    {
+      "name": "Precision 6 Clear Jade",
+      "modelId": "58b825b0f3",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 6. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230619/991e066f9b5d4814ad6f2480658d8084.jpg",
+      "images": [
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230619/3dadbcf2f4cd4fcb8a7b02679e3e7cbb.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230619/3818bc92527249e8b7b198253cbbf802.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230619/873b13eafda44f458dff5db9638ba743.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230619/6017ffe580b34fe5b1e8923bedfba8ba.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230619/132eb2dd1c9a400e97ca54e8436d7783.jpg","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 44, "stock": 1 }]
+    },
+    {
+      "name": "Precision 6 Bred",
+      "modelId": "58b825b0f3",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 6. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4a36274f-c86e-4737-86a5-58c055aaf17c/NIKE+PRECISION+VI.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4087c139-d14e-4f20-854f-a80f7964067f/NIKE+PRECISION+VI.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/63384f32-c30c-44bf-918b-3015b889926b/NIKE+PRECISION+VI.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0f80dae3-d879-44e5-bd32-01a166ead8a8/NIKE+PRECISION+VI.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/419d46cf-a668-4e00-82a1-f016382e13a7/NIKE+PRECISION+VI.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/707420d8-4b87-4399-9846-b9202c30a0f8/NIKE+PRECISION+VI.png","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 45, "stock": 1 }]
+    },
+    {
+      "name": "Precision 6 Dutch Blue",
+      "modelId": "58b825b0f3",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 6. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://sportland.com/media/catalog/product/D/D/DD9535_400_bcfe.jpg",
+      "images": [
+        {"imageUrl": "https://sportland.com/media/catalog/product/cache/a93584b4c19196955ba77379dc459454/D/D/DD9535_400_1_198c.jpg","productId": ""},
+        {"imageUrl": "https://sportland.com/media/catalog/product/cache/a93584b4c19196955ba77379dc459454/D/D/DD9535_400_2_842c.jpg","productId": ""},
+        {"imageUrl": "https://sportland.com/media/catalog/product/cache/a93584b4c19196955ba77379dc459454/D/D/DD9535_400_4_efbb.jpg","productId": ""},
+        {"imageUrl": "https://sportland.com/media/catalog/product/cache/a93584b4c19196955ba77379dc459454/D/D/DD9535_400_3_1df9.jpg","productId": ""},
+        {"imageUrl": "https://sportland.com/media/catalog/product/cache/a93584b4c19196955ba77379dc459454/D/D/DD9535_400_5_e5d6.jpg","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 42, "stock": 1 }]
+    },
+    {
+      "name": "Precision 6 Malachite",
+      "modelId": "58b825b0f3",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 6. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw354eeb18/nk/433/0/d/4/e/4/4330d4e4_0431_4a4d_9d62_55f69803091d.jpg",
+      "images": [
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw996ecbee/nk/497/d/1/3/1/2/497d1312_b28d_4f9c_911b_81e3cb14c786.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd628aa48/nk/7a0/3/0/9/c/6/7a0309c6_f669_4afd_b84c_b940647cfb28.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw49b8115e/nk/781/3/0/8/2/7/78130827_ec2d_46dd_b611_1b3205a323d4.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd168a1d4/nk/fe9/6/8/b/8/e/fe968b8e_4c20_410e_b8de_879b9c711223.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4e35855b/nk/3d5/2/a/8/a/d/3d52a8ad_591e_4027_9339_8dba075a76fd.jpg","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 2 }]
+    },
+    {
+      "name": "Precision 6 Panda",
+      "modelId": "58b825b0f3",
+      "description": "Experience all-game comfort and reliable performance with the Nike Precision 6. Featuring a plush collar and responsive cushioning, this shoe keeps you comfortable while its modified herringbone traction delivers the grip you need to excel.",
+      "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230614/7ad3df4ce7ec416eb79e140afb60b958.jpg",
+      "images": [
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230614/77c320374838480aac19d1637e5c83c8.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230614/c64ef87955774a40ab3b0e3b97ba0062.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230614/0c6edc0183f14f87a8e7cc048e4d4ce8.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230614/ccdc4c995578492699cc437800bed8f6.jpg","productId": ""},
+        {"imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230614/d6d0a31032af4c24bd9d87b39632e53b.jpg","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 40, "stock": 1 }]
+    }
+  ],
+  "Precision 7": [
+    {
+      "name": "Precision 7 Black",
+      "modelId": "6ed75e0f2d489",
+      "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
+      "showcase": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwd4495076/nk/8c2/e/5/7/b/1/8c2e57b1_aa47_434a_a3f1_f2bf4a8090de.jpg",
+      "images": [
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwb00ae510/nk/6d8/6/2/0/c/a/6d8620ca_e193_4948_99fb_403a7b7ec1ab.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw1000c4bc/nk/e6f/9/3/e/8/2/e6f93e82_a85f_43d3_b384_26f378f50aa7.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw77f6e6eb/nk/5b8/7/a/d/e/0/5b87ade0_4350_422b_850e_da723c4bb9f3.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw1fa8b7a3/nk/d94/4/a/a/b/2/d944aab2_c02d_4572_935c_e179e0aa5b46.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw589776ff/nk/e97/0/a/9/3/8/e970a938_708b_4b04_ba2d_21fa2c6c32a0.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.sa/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwab412bf1/nk/149/c/5/0/e/0/149c50e0_c012_4666_b8e4_85741fae7d0a.jpg","productId": ""}
+      ],
+      "price": 18500,
+      "productSizes": [
+        { "productId": "", "size": 45, "stock": 1 },
+        { "productId": "", "size": 46, "stock": 1 }
+      ]
+    },
+    {
+      "name": "Precision 7 Black Iron",
+      "modelId": "6ed75e0f2d489",
+      "description": "The Precision 7 is a versatile shoe that can be worn on and off the court. The shoe is designed to provide maximum comfort and support for all-day wear. The shoe features a durable rubber outsole that provides excellent traction on any surface.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/4b9d8cb8-39d7-49f1-b121-fcbe33558a1d/NIKE+PRECISION+VII.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3b687fd6-18fe-4e7b-8770-7e7ebdebfd85/NIKE+PRECISION+VII.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/72bde47d-6d0e-410d-8a54-dcb16f581600/NIKE+PRECISION+VII.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/872d3ccc-bc4e-47bc-8ed0-b9b12e9d6be5/NIKE+PRECISION+VII.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/86dc0492-7bc6-47f1-b76f-0c35e81a7322/NIKE+PRECISION+VII.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5c27c6a6-23f2-4048-8120-acc3d05aaf59/NIKE+PRECISION+VII.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/959ae7dd-7502-48e0-bc2f-ca37aa5f1df1/NIKE+PRECISION+VII.png","productId": ""}
+      ],
+      "price": 18500,
+      "productSizes": [
+        { "productId": "", "size": 44, "stock": 1 },
+        { "productId": "", "size": 45, "stock": 1 }
+      ]
+    }
+  ],
+  "Adidas D Rose Son of Chi 3": [
+    {
+      "name": "D Rose Son of Chi 3 Core Black Pink Spark",
+      "modelId": "756cd2df45",
+      "description": "Honor the journey with the adidas D Rose Son of Chi 3. These shoes pay homage to Derrick Rose's legendary career, delivering responsive Bounce cushioning and reliable traction for explosive plays. Experience the speed and agility that made D-Rose a legend.",
+      "showcase": "https://www.slamdunk.gr/2921858/adidas-d-rose-son-of-chi-iii.jpg",
+      "images": [
+        { "imageUrl": "https://www.slamdunk.gr/2921859-product_large/adidas-d-rose-son-of-chi-iii.jpg", "productId": "" },
+        { "imageUrl": "https://www.slamdunk.gr/2921860-product_large/adidas-d-rose-son-of-chi-iii.jpg", "productId": "" },
+        { "imageUrl": "https://www.slamdunk.gr/2921861-product_large/adidas-d-rose-son-of-chi-iii.jpg", "productId": "" },
+        { "imageUrl": "https://www.slamdunk.gr/2921864-product_large/adidas-d-rose-son-of-chi-iii.jpg", "productId": "" },
+        { "imageUrl": "https://www.slamdunk.gr/2921865-product_large/adidas-d-rose-son-of-chi-iii.jpg", "productId": "" }
+      ],
+      "price": 27500,
+      "productSizes": [{ "productId": "", "size": 44.5, "stock": 1 }]
+    }
+  ],
+  "Jordan Tatum 1": [
+    {
+      "name": "Tatum 1 Home Team",
+      "modelId": "6a73b21332da5",
+      "description": "Experience lightweight speed in the Jordan Tatum 1. Designed for JT's dynamic style, these shoes deliver exceptional responsiveness and agility, allowing you to move with lightning-fast quickness. Elevate your game and attack the basket with confidence.",
+      "showcase": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-001.jpg",
+      "images": [
+        {"imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-002.jpg","productId": ""},
+        {"imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-tw.jpg","productId": ""},
+        {"imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-005.jpg","productId": ""},
+        {"imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-004.jpg","productId": ""},
+        {"imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-006.jpg","productId": ""},
+        {"imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2023%2F08%2Fjordan-tatum-1-home-team-dz3324-108-release-info-009.jpg","productId": ""}
+      ],
+      "price": 17500,
+      "productSizes": [{ "productId": "", "size": 47.5, "stock": 1 }]
+    }
+  ],
+  "Jordan Tatum 2": [
+    {
+      "name": "Jordan Tatum 2 Legacy",
+      "modelId": "1fb78c5295b37",
+      "description": "Unleash explosive drives in the Jordan Tatum 2. Engineered for enhanced containment and lightweight speed, these shoes provide the stability and responsiveness you need to dominate. Experience next-level agility and attack the rim with unmatched confidence.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/25f80230-e6d5-4c2d-928b-008e2270fdaa/JORDAN+TATUM+2+PF.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/425dddeb-dd90-4382-b720-4322dafb013c/JORDAN+TATUM+2+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/6dba8f25-8565-473a-a888-97c3142f56ac/JORDAN+TATUM+2+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b1e5b987-0a4b-4bf9-aebd-ee31013f4bf3/JORDAN+TATUM+2+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/38038c2e-efe1-454d-9fcf-82956f7f8900/JORDAN+TATUM+2+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/e94c71b3-4586-48fe-a782-de0722caad17/JORDAN+TATUM+2+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8173b426-9994-4f78-bff8-001481845b8e/JORDAN+TATUM+2+PF.png","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 36, "stock": 1 }]
+    }
+  ],
+  "Jordan Why Not": [
+    {
+      "name": "Jordan Why Not .6",
+      "modelId": "dd740566d7",
+      "description": "Embrace disruptive style with the Jordan Why Not .6. Featuring a bold design and innovative technology, these shoes are built for players who dare to be different. Make a statement on and off the court with a shoe that reflects your unique personality.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a3dc0b96-972c-469f-9998-34fc3910c2ba/JORDAN+WHY+NOT+.6+PF.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/b20b3276-ccb1-40b8-9bb5-19126856ee0a/JORDAN+WHY+NOT+.6+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8b28a67c-b4e7-42ab-a1bc-07063e98b190/JORDAN+WHY+NOT+.6+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/8aa4a8c7-4b92-4325-bdb3-c1178ed4aaa1/JORDAN+WHY+NOT+.6+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/aa637183-3bb6-4aa0-8121-65e05f785afd/JORDAN+WHY+NOT+.6+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d185e5e4-3151-4be5-9759-73144a8d7975/JORDAN+WHY+NOT+.6+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/268bf73c-7af4-4b3b-999b-502d3cb01ddc/JORDAN+WHY+NOT+.6+PF.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/f22724cd-249b-4532-9853-4d4eb4d9b76a/JORDAN+WHY+NOT+.6+PF.png","productId": ""}
+      ],
+      "price": 17500,
+      "productSizes": [{ "productId": "", "size": 44, "stock": 1 }]
+    }
+  ],
+  "Freak 5": [
+    {
+      "name": "Giannis Freak 5 GS All Star",
+      "modelId": "ffbb35c292444",
+      "description": " Unleash your inner 'Greek Freak' in the Nike Giannis Freak 5, a powerful basketball shoe engineered for explosive drives and unstoppable dominance. Experience responsive cushioning and a secure lockdown fit to help you conquer the court with unmatched force.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0aa4e3be-a042-40a1-af08-05e06688460d/FREAK+5+SE+%28GS%29.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/15d3ac58-2833-4f60-8e04-805e0cd018f2/FREAK+5+SE+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/89376dcf-00fe-43d5-9172-1969d3257754/FREAK+5+SE+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/980c0634-90dd-460b-8293-c958f794370f/FREAK+5+SE+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/10452089-a91a-4bb5-b91a-27f10798eda3/FREAK+5+SE+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/a0ffb190-1587-4f04-9ed5-6d9e0469a5ca/FREAK+5+SE+%28GS%29.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d348a2c9-f28a-4c6d-81f2-cd58438d1cd4/FREAK+5+SE+%28GS%29.png","productId": ""}
+      ],
+      "price": 19000,
+      "productSizes": [{ "productId": "", "size": 39, "stock": 1 }]
+    }
+  ],
+  "Cosmic Unity 2": [
+    {
+      "name": "Cosmic Unity 2 Sisterhood",
+      "modelId": "0b4d3f7d4d",
+      "description": "Step into the future with the Nike Cosmic Unity 2. Featuring a unique design and eco-conscious construction, these shoes are built for players who value performance and sustainability. Make a statement on and off the court with a shoe that's good for the game and the planet.",
+      "showcase": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_hero.jpg",
+      "images": [
+        {"imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_hover.jpg","productId": ""},
+        {"imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_both.jpg","productId": ""},
+        {"imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_back.jpg","productId": ""},
+        {"imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_top.jpg","productId": ""},
+        {"imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_sole.jpg","productId": ""},
+        {"imageUrl": "https://throwbackstore.com.au/cdn/shop/products/Nike_Cosmic_Unity_2_Just-Do-It_DH1537-102_milk_detail-heel.jpg","productId": ""}
+      ],
+      "price": 15500,
+      "productSizes": [{ "productId": "", "size": 45, "stock": 1 }]
+    }
+  ],
+  "Cosmic Unity 3": [
+    {
+      "name": "Cosmic Unity 3 Black Brilliant Orange",
+      "modelId": "94c9561f0c",
+      "description": "Step into the future with the Nike Cosmic Unity 3. Featuring a unique design and eco-conscious construction, these shoes are built for players who value performance and sustainability. Make a statement on and off the court with a shoe that's good for the game and the planet.",
+      "showcase": "https://images.prodirectsport.com/ProductImages/Gallery_1/284771_Gallery_1_1396841.jpg",
+      "images": [
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_2/284771_Gallery_2_1396842.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Main/284771_Main_1396839.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_4/284771_Gallery_4_1396848.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_3/284771_Gallery_3_1396843.jpg","productId": ""}
+      ],
+      "price": 15500,
+      "productSizes": [{ "productId": "", "size": 47.5, "stock": 1 }]
+    }
+  ],
+  "Jordan One Take 5": [
+    {
+      "name": "One Take 5 White Black Red",
+      "modelId": "8bfd3666e2",
+      "description": "Dominate every possession in the Jordan One Take 5. Built for lightning-fast reactions and explosive moves, these shoes deliver exceptional responsiveness and agility. Take control of the game with Russell Westbrook's signature speed",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/bda146d6-9f7a-47b7-a748-60c00328ea0c/JORDAN+ONE+TAKE+5.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/c8b3717f-8e73-4d51-b29d-6cc992d0e64b/JORDAN+ONE+TAKE+5.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/91462ffd-3c5f-427c-918a-7b4769b5c609/JORDAN+ONE+TAKE+5.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/fac60f3f-a1d9-4743-89b9-68f5542c4274/JORDAN+ONE+TAKE+5.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/d50e94aa-e8a2-4a2c-a734-2b07227bc17e/JORDAN+ONE+TAKE+5.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/16524329-2ab4-4a0d-b5b9-e4927e06d61b/JORDAN+ONE+TAKE+5.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/08d688c2-4523-4eda-835c-82f55414fdc6/JORDAN+ONE+TAKE+5.png","productId": ""}
+      ],
+      "price": 19000,
+      "productSizes": [
+        { "productId": "", "size": 42.5, "stock": 1 },
+        { "productId": "", "size": 44.5, "stock": 1 }
+      ]
+    },
+    {
+      "name": "One Take 5 Anthracite Taxi",
+      "modelId": "8bfd3666e2",
+      "description": "Dominate every possession in the Jordan One Take 5. Built for lightning-fast reactions and explosive moves, these shoes deliver exceptional responsiveness and agility. Take control of the game with Russell Westbrook's signature speed",
+      "showcase": "https://i.ebayimg.com/images/g/v74AAOSwghFmneAA/s-l1600.webp",
+      "images": [
+        {"imageUrl": "https://i.ebayimg.com/images/g/Fe4AAOSw-JNmneAD/s-l1600.webp","productId": ""},
+        {"imageUrl": "https://i.ebayimg.com/images/g/sTsAAOSwP59mneAG/s-l1600.jpg","productId": ""},
+        {"imageUrl": "https://i.ebayimg.com/images/g/E-4AAOSw4gZmneAI/s-l1600.webp","productId": ""},
+        {"imageUrl": "https://i.ebayimg.com/images/g/PQgAAOSwaD1mneAE/s-l1600.webp","productId": ""},
+        {"imageUrl": "https://i.ebayimg.com/images/g/mi4AAOSwUuRmneAB/s-l1600.webp","productId": ""},
+        {"imageUrl": "https://i.ebayimg.com/images/g/i4EAAOSwJalmneAL/s-l1600.webp","productId": ""}
+      ],
+      "price": 19000,
+      "productSizes": [{ "productId": "", "size": 45, "stock": 1 }]
+    }
+  ],
+  "Under Armour Lockdown 4": [
+    {
+      "name": "Under Armour Lockdown 4 Light Blue",
+      "modelId": "5353b79aac",
+      "description": "Under Armour Lockdown 4 Light Blue",
+      "showcase": "https://images-na.ssl-images-amazon.com/images/I/717g9cQsZxL.jpg",
+      "images": [
+        { "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71usnVryMpL.jpg", "productId": "" },
+        { "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81fWI9-Q67L.jpg", "productId": "" },
+        { "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/71E2mjHPDTL.jpg", "productId": "" },
+        { "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/81l83OOQVGL.jpg", "productId": "" }
+      ],
+      "price": 10500,
+      "productSizes": [{ "productId": "", "size": 42.5, "stock": 1 }]
+    }
+  ],
+  "Under Armour M-TAG Low": [
+    {
+      "name": "Under Armour M-TAG Low White",
+      "modelId": "03275e1e64",
+      "description": "Under Armour M-TAG Low White",
+      "showcase": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/2_d0d80c1c-afde-4058-99b4-45f4f195dc0d.jpg",
+      "images": [
+        { "imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/main-square_773fee4b-c9de-4616-b76a-9f601c4fcd50_828x.jpg", "productId": "" },
+        { "imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/4_fd8269c4-a5e5-4aa6-8f90-d9ef3eb90907.jpg", "productId": "" }
+      ],
+      "price": 10500,
+      "productSizes": [{ "productId": "", "size": 42.5, "stock": 1 }]
+    }
+  ],
+  "Under Armour Curry 3Zer0 3": [
+    {
+      "name": " Under Armour Curry 3Zer0 3 Black Mod Grey",
+      "modelId": "3a121cf9f8",
+      "description": "Under Armour M-TAG Low White",
+      "showcase": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/1_46157eb1-e195-4342-a403-4ddb473ad034.jpg",
+      "images": [
+        { "imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/main-square_d71d1c2d-8729-4fa6-939b-54833e516444_1920x.jpg", "productId": "" },
+        { "imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/2_215d55f6-f801-418b-b984-1621a4f3fe6d.jpg", "productId": "" },
+        { "imageUrl": "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/2_215d55f6-f801-418b-b984-1621a4f3fe6d.jpg", "productId": "" }      ],
+      "price": 10500,
+      "productSizes": [{ "productId": "", "size": 38, "stock": 1 },
+      { "productId": "", "size": 39, "stock": 1 }]
+    }
+  ],
+  "Lebron Witness 7": [
+    {
+      "name": "Lebron Witness 7 Lakers Home",
+      "modelId": "f18e18a625",
+      "description": "Drive to the basket with power in the LeBron Witness 7. Designed for strong, impactful plays, these shoes offer reliable support and stability, allowing you to dominate the paint. Experience the strength and stability you need to make game-changing moves.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/416820b6-bbf5-46ce-aa9e-d1784904f8f4/LEBRON+WITNESS+VII+EP.png",
+      "images": [
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/267f3a2e-1c08-424f-9383-7f2db916a61a/LEBRON+WITNESS+VII+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/bc14604a-a67d-4014-8aa0-93153153a0e6/LEBRON+WITNESS+VII+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/197640b6-254f-4512-a34a-4caf1fd493ac/LEBRON+WITNESS+VII+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ab2808c5-3a1e-4a21-a1be-eaec06043780/LEBRON+WITNESS+VII+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2982d6b1-65b1-44a1-902a-d5a74c92c763/LEBRON+WITNESS+VII+EP.png","productId": ""},
+        {"imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/622b9c20-060f-46da-b646-8aa6dc511304/LEBRON+WITNESS+VII+EP.png","productId": ""}
+      ],
+      "price": 17500,
+      "productSizes": [{ "productId": "", "size": 44.5, "stock": 1 }]
+    },
+    {
+      "name": "Lebron Witness 7 Bright Crimson",
+      "modelId": "f18e18a625",
+      "description": "Drive to the basket with power in the LeBron Witness 7. Designed for strong, impactful plays, these shoes offer reliable support and stability, allowing you to dominate the paint. Experience the strength and stability you need to make game-changing moves.",
+      "showcase": "https://images.prodirectsport.com/ProductImages/Gallery_1/274035_Gallery_1_1224064.jpg",
+      "images": [
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_2/274035_Gallery_2_1224065.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Main/274035_Main_Thumb_1224062.jpg","productId": ""},
+        {"imageUrl": "https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/099/859/799/original/1072086_06.jpg.jpeg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_3/274035_Gallery_3_1224066.jpg","productId": ""}
+      ],
+      "price": 17500,
+      "productSizes": [{ "productId": "", "size": 47, "stock": 1 }]
+    }
+  ],
+  "Air Deldon": [
+    {
+      "name": "Air Deldon Phantom Sangria",
+      "modelId": "c8d96f5e29",
+      "description": "Experience effortless entry and all-day comfort with the Nike Air Deldon. Designed with a unique FlyEase system, these shoes provide easy on and off access, allowing you to focus on your game. Play with confidence and comfort, no matter your needs.",
+      "showcase": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA9.jpg",
+      "images": [
+        {"imageUrl": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA2.jpg","productId": ""},
+        {"imageUrl": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA4.jpg","productId": ""},
+        {"imageUrl": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA5.jpg","productId": ""},
+        {"imageUrl": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA3.jpg","productId": ""},
+        {"imageUrl": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA1.jpg","productId": ""},
+        {"imageUrl": "https://imgnike-a.akamaihd.net/1920x1920/0248067TA7.jpg","productId": ""}
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 47, "stock": 1 }]
+    },
+    {
+      "name": "Air Deldon Lyme",
+      "modelId": "c8d96f5e29",
+      "description": "Experience effortless entry and all-day comfort with the Nike Air Deldon. Designed with a unique FlyEase system, these shoes provide easy on and off access, allowing you to focus on your game. Play with confidence and comfort, no matter your needs.",
+      "showcase": "https://images.prodirectsport.com/ProductImages/Gallery_1/274039_Gallery_1_1256423.jpg",
+      "images": [
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_2/274039_Gallery_2_1256424.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Main/274039_Main_Thumb_1256421.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_4/274039_Gallery_4_1256426.jpg","productId": ""},
+        {"imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_3/274039_Gallery_3_1256425.jpg","productId": ""}
+        ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 1 }]
+    }
+  ],
+  "Impact 3": [
+    {
+      "name": "Impact 3 Black Wolf Grey",
+      "modelId": "d677d2b774",
+      "description": "Influence the game at both ends of the court in the Nike Air Max Impact 3. Ideal for players who create separation with their vertical, it features pressure-tested Max Air cushioning to help absorb impact. Plus, rubber wraps up the sides for added durability and stability.",
+      "showcase": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230526/ae918b0532e7439282d5051342d3703a.jpg",
+      "images": [
+        { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230526/d15612a8ca1c47e09395a34d5ab09627.jpg", "productId": "" },
+        { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230526/9bf5bab91c6c406e874a3fc206d939f2.jpg", "productId": "" },
+        { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230526/374b6537b14b4c69a5718aae86c4a277.jpg", "productId": "" },
+        { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230526/d7e1f6cab35246c7be38dca1a9d9c70b.jpg", "productId": "" },
+        { "imageUrl": "https://cdn-img.poizonapp.com/pro-img/cut-img/20230526/9c17547e55574775b30cc29546796cd0.jpg", "productId": "" }
+      ],
+      "price": 15000,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 1 }]
+    }
+  ],
+  "Impact 4": [
+    {
+      "name": "Impact 4 Jade Ice",
+      "modelId": "047a45f465",
+      "description": "Built for impact, the Jordan Impact 4 delivers durable performance for any court. Designed for versatility, these shoes provide the support and traction you need to excel in any game. Take on any challenge with confidence.",
+      "showcase": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw4c95e517/nk/96a/c/6/0/f/8/96ac60f8_9489_4da8_b92a_31bef8ba10c9.jpg",
+      "images": [
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw39df2f53/nk/c7d/0/4/c/0/7/c7d04c07_8a0a_4fb2_b46c_46b7c9e2714e.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw67f68788/nk/8da/1/2/9/1/9/8da12919_ad54_43d3_87f8_6aec5cc7217e.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwda3d9038/nk/4fe/3/9/5/d/4/4fe395d4_380b_48a7_9a4a_5dd927965806.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw343562e1/nk/4f2/c/1/5/7/d/4f2c157d_103d_4922_984a_7bd297040389.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwec2c1a59/nk/92f/4/f/f/6/b/92f4ff6b_5ca4_4a35_95cb_f2e2947d39ee.jpg","productId": ""},
+        {"imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw5622de43/nk/59d/5/4/c/0/7/59d54c07_af33_4291_8e8e_b025b66f23c5.jpg","productId": ""}
+      ],
+      "price": 16000,
+      "productSizes": [{ "productId": "", "size": 45.5, "stock": 1 }]
+    },
+    {
+      "name": "Impact 4 Volt",
+      "modelId": "047a45f465",
+      "description": "Built for impact, the Jordan Impact 4 delivers durable performance for any court. Designed for versatility, these shoes provide the support and traction you need to excel in any game. Take on any challenge with confidence.",
+      "showcase": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dw586947df/images/63969001/Rebel_63969001_blacknavy_hi-res.jpg",
+      "images": [
+        {"imageUrl": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dwad33dd16/images/63969001/Rebel_63969001-00_blacknavy_hi-res.jpg","productId": ""},
+        {"imageUrl": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dw8f6970ac/images/63969001/Rebel_63969001-01_blacknavy_hi-res.jpg","productId": ""},
+        {"imageUrl": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dw0f0ac515/images/63969001/Rebel_63969001-03_blacknavy_hi-res.jpg","productId": ""},
+        {"imageUrl": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dw9ca4a32c/images/63969001/Rebel_63969001-02_blacknavy_hi-res.jpg","productId": ""},
+        {"imageUrl": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dw1219e58c/images/63969001/Rebel_63969001-04_blacknavy_hi-res.jpg","productId": ""},
+        {"imageUrl": "https://www.rebelsport.com.au/dw/image/v2/BBRV_PRD/on/demandware.static/-/Sites-srg-internal-master-catalog/default/dwedd3fff5/images/63969001/Rebel_63969001-06_blacknavy_hi-res.jpg","productId": ""}
+      ],
+      "price": 16000,
+      "productSizes": [{ "productId": "", "size": 45, "stock": 1 }]
+    }
+  ],
+  "Jordan 37": [
+    {
+      "name": "Air Jordan 37 Toronto Raptors",
+      "modelId": "859387da0b",
+      "description": "Experience next-level speed and explosive flight in the Air Jordan 37. Engineered for lightweight performance, these shoes deliver unparalleled responsiveness and agility, allowing you to soar above the competition. Unleash your inner flight",
+      "showcase": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F10%2Fair-jordan-37-raptors-dd6958-065-release-date-1.jpg",
+      "images": [
+        { "imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F10%2Fair-jordan-37-raptors-dd6958-065-release-date-2.jpg", "productId": "" },
+        { "imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F10%2Fair-jordan-37-raptors-dd6958-065-release-date-3.jpg", "productId": "" },
+        { "imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F10%2Fair-jordan-37-raptors-dd6958-065-release-date-5.jpg", "productId": "" },
+        { "imageUrl": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F10%2Fair-jordan-37-raptors-dd6958-065-release-date-4.jpg", "productId": "" }
+      ],
+      "price": 17500,
+      "productSizes": []
+    }
+  ],
+  "Freak 4": [
+    {
+      "name": "Giannis Freak 4 Barely Volt",
+      "modelId": "1a56b8594c",
+      "description": "Control the court with the Nike Zoom Freak 4. Designed for multi-directional movement, these shoes provide exceptional traction and stability, allowing you to change direction on a dime. Dominate with Giannis's signature control.",
+      "showcase": "https://images.prodirectsport.com/ProductImages/Gallery_1/274026_Gallery_1_1234536.jpg",
+      "images": [
+        { "imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_2/274026_Gallery_2_1234540.jpg", "productId": "" },
+        { "imageUrl": "https://images.prodirectsport.com/ProductImages/Main/274026_Main_1234533.jpg", "productId": "" },
+        { "imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_4/274026_Gallery_4_1234542.jpg", "productId": "" },
+        { "imageUrl": "https://images.prodirectsport.com/ProductImages/Gallery_3/274026_Gallery_3_1234541.jpg", "productId": "" }
+      ],
+      "price": 16500,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 1 }]
+    }
+  ],
+  "under armour HOVR HAVOC 3": [
+    {
+      "name": "Under Armour HOVR HAVOC 3 Laser Green",
+      "modelId": "4db0a45402",
+      "description": "Lock in and dominate with the Under Armour HOVR Havoc 3 Laser Green. Designed for stability and support, these shoes feature a midfoot TPU shank and a secure fit, allowing you to make quick cuts and powerful drives with confidence. Stand out with the vibrant Laser Green colorway.",
+      "showcase": "https://d3pnpe87i1fkwu.cloudfront.net/IMG/009996-under-armour-hovr-havoc-3-3023088-300_2048x2048.webp",
+      "images": [
+        { "imageUrl": "https://d3pnpe87i1fkwu.cloudfront.net/IMG/009998-under-armour-hovr-havoc-3-3023088-300_2048x2048.webp", "productId": "" },
+        { "imageUrl": "https://d3pnpe87i1fkwu.cloudfront.net/IMG/010001-under-armour-hovr-havoc-3-3023088-300_2048x2048.webp", "productId": "" },
+        { "imageUrl": "https://d3pnpe87i1fkwu.cloudfront.net/IMG/009997-under-armour-hovr-havoc-3-3023088-300_2048x2048.webp", "productId": "" },
+        { "imageUrl": "https://d3pnpe87i1fkwu.cloudfront.net/IMG/009999-under-armour-hovr-havoc-3-3023088-300_2048x2048.webp", "productId": "" }
+      ],
+      "price": 13000,
+      "productSizes": [{ "productId": "", "size": 44, "stock": 2 }]
+    }
+  ],
+  "Immortality 3": [
+    {
+      "name": "Giannis Immoratality 3 Black",
+      "modelId": "85fa7b2f4c097",
+      "description": " Elevate your game in the Nike Giannis Immortality 3, a high-performance basketball shoe designed for precision and control. Experience responsive cushioning and a secure lockdown fit, engineered to help you dominate the court with unmatched speed and agility.",
+      "showcase": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwe8da5c12/nk/3e5/2/1/f/9/3/3e521f93_92df_4d95_acc7_d56eaceca009.jpg",
+      "images": [
+        { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw360cc237/nk/610/b/8/e/b/0/610b8eb0_7d62_46dc_b987_779feafed5f1.jpg", "productId": "" },
+        { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw847a2719/nk/c40/8/7/6/9/8/c4087698_3e76_4679_a1ad_ca4b5f1fb080.jpg", "productId": "" },
+        { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw1ce2056f/nk/d97/9/4/7/4/c/d979474c_8ba6_40ca_ac6c_a34e0c4658c8.jpg", "productId": "" },
+        { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dwee6e1d0a/nk/c50/6/d/c/2/c/c506dc2c_40f6_4240_b5e4_50d79769588d.jpg", "productId": "" },
+        { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw5e2d85ae/nk/dcd/c/7/6/b/e/dcdc76be_0582_42ca_b3f2_cb4f17cb9a84.jpg", "productId": "" },
+        { "imageUrl": "https://www.nike.ae/dw/image/v2/BDVB_PRD/on/demandware.static/-/Sites-akeneo-master-catalog/default/dw277a2a54/nk/254/a/7/e/b/a/254a7eba_cf42_4541_94f9_4bf171d76dd4.jpg", "productId": "" }
+      ],
+      "price": 17500,
+      "productSizes": [{ "productId": "", "size": 44.5, "stock": 1 }]
+    },
+    {
+      "name": "Giannis Immoratality 3 Black and White",
+      "modelId": "85fa7b2f4c097",
+      "description": " Elevate your game in the Nike Giannis Immortality 3, a high-performance basketball shoe designed for precision and control. Experience responsive cushioning and a secure lockdown fit, engineered to help you dominate the court with unmatched speed and agility.",
+      "showcase": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/21021f20-29c3-4c55-9db2-a955dbc44e64/GIANNIS+IMMORTALITY+3+EP.png",
+      "images": [
+        { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/cc273b55-3e36-45ba-99c7-fe22ac726621/GIANNIS+IMMORTALITY+3+EP.png", "productId": "" },
+        { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/2f3d1212-2d4a-46db-a8da-f42d26240695/GIANNIS+IMMORTALITY+3+EP.png", "productId": "" },
+        { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/08be6025-19d1-4a18-a969-d5f2a8d5259b/GIANNIS+IMMORTALITY+3+EP.png", "productId": "" },
+        { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/233f4f03-ae39-4ea7-8c8c-f475f6baaf6a/GIANNIS+IMMORTALITY+3+EP.png", "productId": "" },
+        { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0f3273dd-1d71-4f42-b3be-3668a28c90b8/GIANNIS+IMMORTALITY+3+EP.png", "productId": "" },
+        { "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/d644ca2e-0b72-4378-93b5-62aa8d95bdc8/GIANNIS+IMMORTALITY+3+EP.png", "productId": "" }
+      ],
+      "price": 17500,
+      "productSizes": [{ "productId": "", "size": 46, "stock": 1 }]
+    }
+  ],
+  "Luka 2": [
+    {
+      "name": "Big Luka 2 Coconut Milk",
+      "modelId": "7a34ddaa26e5b",
+      "description": "Dominate the court with the Jordan Luka 2, a performance basketball shoe designed for the unique style of Luka Dončić. Experience responsive cushioning and secure lockdown support, built for explosive moves and game-changing creativity.",
+      "showcase": "https://titan22.com/cdn/shop/files/DX9012-100-A.png",
+      "images": [
+        { "imageUrl": "https://titan22.com/cdn/shop/files/DX9012-100-C.png", "productId": "" },
+        { "imageUrl": "https://titan22.com/cdn/shop/files/DX9012-100-E.png", "productId": "" },
+        { "imageUrl": "https://titan22.com/cdn/shop/files/DX9012-100-B.png", "productId": "" },
+        { "imageUrl": "https://titan22.com/cdn/shop/files/DX9012-100-F.png", "productId": "" },
+        { "imageUrl": "https://titan22.com/cdn/shop/files/DX9012-100-D.png", "productId": "" }
+      ],
+      "price": 19000,
+      "productSizes": [{ "productId": "", "size": 44.5, "stock": 1 }]
+    }
+  ],
+  "KD Trey 5 X": [
+    {
+      "name": "KD Trey 5 X Volt",
+      "modelId": "35d7b59560",
+      "description": "Float like KD with the Nike KD Trey 5 X. Designed for lightweight agility, these shoes deliver responsive Zoom Air cushioning and a secure fit, allowing you to move with precision and speed. Take your game to new heights with KD's signature style.",
+      "showcase": "https://i.ebayimg.com/images/g/l7YAAOSwfQBmF8wS/s-l1600.jpg",
+      "images": [
+        { "imageUrl": "https://i.ebayimg.com/images/g/B40AAOSwUXlmF8wV/s-l1600.jpg", "productId": "" },
+        { "imageUrl": "https://i.ebayimg.com/images/g/iwYAAOSwk3RmF8wU/s-l1600.webp", "productId": "" },
+        { "imageUrl": "https://i.ebayimg.com/images/g/5JcAAOSwKEZmF8wY/s-l1600.webp", "productId": "" },
+        { "imageUrl": "https://i.ebayimg.com/images/g/OqAAAOSwtYFmF8wW/s-l1600.jpg", "productId": "" },
+        { "imageUrl": "https://i.ebayimg.com/images/g/okgAAOSwG8pmF8wX/s-l1600.jpg", "productId": "" }
+      ],
+      "price": 18000,
+      "productSizes": [{ "productId": "", "size": 44.5, "stock": 1 }]
+    }
+  ]
 }

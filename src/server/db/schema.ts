@@ -8,7 +8,6 @@ import {
   unique,
   numeric,
 } from "drizzle-orm/pg-core";
-import { sql } from "drizzle-orm";
 
 export const products = pgTable(
   "products",
