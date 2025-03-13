@@ -19,15 +19,15 @@ type OrderDataProps = {
 export function OrderData({ Product }: OrderDataProps) {
   const [selectedPiece, setSelectedPiece] = useState<sizesType | null>(null);
   useEffect(() => {
-    const fbq = window.fbq || null;
+    const fbq = window.fbq ?? null;
     if (fbq) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       fbq("track", "ViewContent", {
         content_name: Product.name,
-        content_ids: [Product.id], // Product ID
+        content_ids: [Product.id],
         content_type: "product", // Type of content (product in this case)
-        value: Product.price, // Price of the product
-        currency: "DZD", // Use DZD (Algerian Dinar) as the currency
+        value: Product.price, 
+        currency: "DZD",
       });
     }
   }, [Product]);
