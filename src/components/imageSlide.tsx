@@ -18,6 +18,7 @@ type ImageSlideProps = {
 export default function ImageSlide({ productImages }: ImageSlideProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [count, setCount] = React.useState(0);
 
   // Update current slide index when API is available or changes
