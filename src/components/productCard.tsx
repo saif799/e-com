@@ -25,7 +25,7 @@ export default function ProductCard({
       href={`/products/${href}`}
       className={cn(
         className,
-        "flex min-w-44 flex-col gap-5 py-4 px-3 transition-transform hover:scale-105 ",
+        "flex min-w-44 flex-col gap-5 py-4 px-3  ",
       )}
     >
       <div className="flex min-h-52 w-11/12 items-center justify-center overflow-hidden text-wrap  bg-gray-white md:size-[30vw] lg:size-[22vw]">
@@ -34,7 +34,7 @@ export default function ProductCard({
           alt={`Product image `}
           width={500}
           height={500}
-          className="block w-full object-cover "
+          className="block w-full object-cover transition-transform hover:scale-105"
         />
       </div>
 
