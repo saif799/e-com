@@ -225,8 +225,9 @@ export default function Listings({
                 return 0; // Keep original order
               }
             })
-            .map((p) => (
+            .map((p, i) => (
               <ProductCard
+                priority={i < 6 ? "eager" : "lazy"}
                 key={p.products.id}
                 href={p.products.id}
                 imageUrl={p.products.showCase}
