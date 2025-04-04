@@ -101,6 +101,7 @@ export default async function Component({ params: { productId } }: Props) {
               <div className="flex flex-grow gap-3 px-2 pb-4">
                 {ProductsWithSimilarSizes.map((p, i) => (
                   <ProductCard
+                    priority="lazy"
                     key={i}
                     href={p.products.id}
                     imageUrl={p.products.showCase}
@@ -126,6 +127,7 @@ export default async function Component({ params: { productId } }: Props) {
               <div className="flex w-full space-x-4 px-2 pb-4">
                 {similarProducts.map((p, i) => (
                   <ProductCard
+                    priority="lazy"
                     key={i}
                     href={p.products.id}
                     imageUrl={p.products.showCase}
